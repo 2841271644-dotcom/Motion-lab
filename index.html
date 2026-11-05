@@ -4,10 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0b1020">
-<title>MOTION LAB - Animation Workbench</title>
+<title>MOTION LAB V2.6 - 动画素材转换工作台</title>
 <style>
 :root{--bg:#090e1b;--panel:#111a2d;--panel2:#151f35;--panel3:#0d1527;--line:#25324b;--muted:#8795ad;--text:#edf4ff;--blue:#39a5ff;--cyan:#5ee7f4;--green:#49d6a1;--red:#ff6f83;--gold:#f4c76b;--radius:16px;--shadow:0 18px 50px rgba(0,0,0,.24)}
-*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:radial-gradient(circle at 65% -20%,#17294b 0,transparent 38%),var(--bg);color:var(--text);font:14px/1.45 Inter,"Segoe UI",Arial,sans-serif}button,input,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.42;cursor:not-allowed}.app{min-height:100vh;display:grid;grid-template-rows:68px 1fr}.topbar{height:68px;border-bottom:1px solid rgba(139,164,205,.14);display:flex;align-items:center;padding:0 24px;gap:22px;background:rgba(8,14,27,.84);backdrop-filter:blur(18px);position:sticky;top:0;z-index:20}.brand{display:flex;align-items:center;gap:12px;min-width:215px}.brand-mark{width:34px;height:34px;border-radius:11px;background:linear-gradient(145deg,#4ac4ff,#5268ff 65%,#9b72ff);display:grid;place-items:center;box-shadow:0 7px 22px #2d8dff55;color:white;font-weight:900;font-size:18px}.brand-name{font-weight:800;letter-spacing:.13em;font-size:13px}.brand-sub{font-size:9px;color:#7f91b0;letter-spacing:.2em;margin-top:1px}.top-divider{height:26px;width:1px;background:var(--line)}.crumb{color:#aab7ce;font-size:12px}.crumb b{color:#f2f7ff;font-weight:650}.top-spacer{flex:1}.privacy{display:flex;align-items:center;gap:8px;color:#a8bad3;font-size:11px;padding:8px 12px;border:1px solid #263853;border-radius:30px;background:#101b2f}.dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 12px #49d6a1}.top-btn{border:1px solid #30415f;background:#17243a;color:#dceaff;border-radius:10px;padding:9px 14px;font-weight:650}.top-btn.primary{background:linear-gradient(110deg,#1989f7,#3dbeef);border:0;color:white;box-shadow:0 8px 20px #1b8fff33}.layout{display:grid;grid-template-columns:218px minmax(500px,1fr);min-height:calc(100vh - 68px)}.sidebar{border-right:1px solid rgba(139,164,205,.12);padding:22px 14px;background:rgba(9,16,31,.48)}.side-label{font-size:10px;color:#657794;letter-spacing:.16em;font-weight:800;padding:10px 12px 8px}.nav{display:flex;align-items:center;gap:11px;padding:11px 12px;border-radius:10px;color:#9eacc3;margin:3px 0;cursor:pointer}.nav:hover,.nav.active{background:linear-gradient(100deg,#1b3658,#172744);color:#eff7ff}.nav.active{box-shadow:inset 2px 0 0 var(--blue)}.nav-icon{width:20px;text-align:center;font-size:16px;color:#7cbcff}.side-card{margin:24px 5px 0;padding:14px;border:1px solid #243550;border-radius:13px;background:linear-gradient(145deg,#15233b,#10192b)}.side-card strong{display:block;font-size:12px;margin-bottom:5px}.side-card p{font-size:11px;color:#8ea0bd;margin:0 0 12px}.side-card .mini{height:5px;border-radius:8px;background:#263b5c;overflow:hidden}.side-card .mini span{display:block;width:68%;height:100%;background:linear-gradient(90deg,#2c8cf5,#5de1ef);border-radius:8px}.main{min-width:0;padding:22px 24px 30px;max-width:1800px;width:100%;margin:0 auto}.page-head{display:flex;align-items:center;gap:14px;margin-bottom:18px}.page-title{font-size:21px;font-weight:760;letter-spacing:-.03em}.page-title small{display:block;color:#8494ae;font-size:11px;font-weight:450;letter-spacing:.02em;margin-top:3px}.head-spacer{flex:1}.head-stat{font-size:11px;color:#8fa0bb;padding:7px 10px;border:1px solid #263650;border-radius:9px;background:#10192b}.dropzone{border:1px dashed #3b5b83;background:linear-gradient(100deg,rgba(25,58,96,.44),rgba(19,35,61,.32));border-radius:14px;min-height:78px;display:flex;align-items:center;padding:14px 18px;gap:15px;margin-bottom:17px;transition:.2s}.dropzone.drag{border-color:#5de1ef;background:#173454}.upload-icon{width:42px;height:42px;border-radius:12px;background:#1b4774;color:#7edaff;display:grid;place-items:center;font-size:20px}.drop-copy{flex:1}.drop-copy strong{display:block;font-size:13px}.drop-copy span{display:block;color:#8fa1be;font-size:11px;margin-top:3px}.drop-actions{display:flex;gap:8px}.btn{border:1px solid #30415e;border-radius:10px;background:#17243a;color:#dceaff;padding:9px 13px;font-size:12px;font-weight:650}.btn:hover{border-color:#4b81bd}.btn.blue{border:0;background:linear-gradient(110deg,#178af7,#39b6f0);color:#fff;box-shadow:0 7px 20px #148df333}.btn.ghost{background:transparent}.workgrid{display:grid;grid-template-columns:minmax(350px,1fr) 350px;gap:16px;align-items:stretch}.panel{border:1px solid rgba(117,145,188,.2);background:linear-gradient(160deg,rgba(20,31,52,.96),rgba(15,24,42,.98));border-radius:var(--radius);box-shadow:var(--shadow);min-width:0}.preview-panel{display:flex;flex-direction:column;min-height:555px}.panel-head{height:52px;display:flex;align-items:center;padding:0 16px;border-bottom:1px solid rgba(133,158,197,.13);gap:10px}.panel-head strong{font-size:12px}.panel-head .sub{font-size:10px;color:#7e91af}.panel-head .spacer{flex:1}.file-tag{font-size:10px;color:#a9c7ed;border:1px solid #2a4264;background:#152b48;border-radius:6px;padding:4px 7px}.stage-wrap{padding:14px;flex:1;min-height:390px;display:flex;flex-direction:column}.stage{position:relative;flex:1;min-height:360px;border-radius:12px;overflow:hidden;border:1px solid #2d3b55;background-color:#10182a;background-image:linear-gradient(45deg,#1a2639 25%,transparent 25%),linear-gradient(-45deg,#1a2639 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#1a2639 75%),linear-gradient(-45deg,transparent 75%,#1a2639 75%);background-size:22px 22px;background-position:0 0,0 11px,11px -11px,-11px 0;display:grid;place-items:center}.stage.empty{background-image:radial-gradient(circle at center,#1a2c48 0,transparent 56%),linear-gradient(45deg,#111d31 25%,transparent 25%),linear-gradient(-45deg,#111d31 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#111d31 75%),linear-gradient(-45deg,transparent 75%,#111d31 75%);background-size:auto,22px 22px,22px 22px,22px 22px,22px 22px;background-position:center,0 0,0 11px,11px -11px,-11px 0}.empty-state{text-align:center;color:#8296b6;padding:30px}.empty-state .big{font-size:36px;opacity:.8;margin-bottom:10px}.empty-state strong{display:block;color:#dbe9fb;font-size:14px}.empty-state span{font-size:11px}.stage img,.stage video{max-width:100%;max-height:100%;object-fit:contain;display:block}.stage video{width:100%;height:100%}.svga-holder{width:100%;height:100%;display:grid;place-items:center}.svga-holder canvas{max-width:100%;max-height:100%;object-fit:contain}.stage-overlay{position:absolute;left:12px;top:12px;display:flex;gap:6px}.overlay-chip{font-size:10px;padding:5px 8px;border-radius:6px;background:#0a1222cc;border:1px solid #42536e;color:#d7e6fa;backdrop-filter:blur(8px)}.preview-bottom{display:flex;align-items:center;gap:10px;padding:12px 3px 0}.icon-btn{width:31px;height:31px;border-radius:9px;background:#1a2942;border:1px solid #30415e;color:#dceaff}.timeline{height:5px;border-radius:9px;background:#2a3b57;flex:1;position:relative;cursor:pointer}.timeline-fill{height:100%;width:0;background:linear-gradient(90deg,#2f98ff,#5ce4ee);border-radius:9px}.time{font-size:10px;color:#8fa1bc;font-variant-numeric:tabular-nums;min-width:70px;text-align:right}.swatches{display:flex;gap:6px;margin-left:6px}.swatch{width:17px;height:17px;border-radius:6px;border:2px solid #65738a;cursor:pointer}.swatch.selected{outline:2px solid #7edaff;outline-offset:2px}.info-row{display:flex;gap:8px;flex-wrap:wrap;padding:0 17px 14px}.info-pill{background:#17243a;border:1px solid #263a59;color:#a9bddb;border-radius:7px;padding:5px 8px;font-size:10px}.info-pill b{color:#eff6ff;font-weight:650;margin-left:4px}.settings{display:flex;flex-direction:column;min-height:555px}.tabs{display:flex;gap:4px;padding:8px;border-bottom:1px solid rgba(133,158,197,.13)}.tab{flex:1;border:0;background:transparent;color:#8295b3;padding:9px 5px;border-radius:8px;font-size:11px}.tab.active{background:#1b3557;color:#e7f5ff;box-shadow:inset 0 0 0 1px #31547b}.settings-body{padding:14px 15px;overflow:auto;flex:1}.setting-section{margin-bottom:18px}.section-title{display:flex;align-items:center;gap:7px;font-size:10px;color:#7e91af;font-weight:800;letter-spacing:.12em;margin:0 0 10px}.section-title:after{content:"";height:1px;background:#293851;flex:1}.field{margin-bottom:12px}.field label{display:flex;align-items:center;justify-content:space-between;color:#d7e4f7;font-size:11px;margin-bottom:6px}.hint{color:#7286a4;font-size:10px}.select,.number,.text-input{width:100%;background:#0b1425;border:1px solid #2b3d59;color:#e8f2ff;border-radius:8px;padding:9px 10px;outline:none}.select:focus,.number:focus,.text-input:focus{border-color:#45aaf4;box-shadow:0 0 0 2px #248ff522}.row2{display:grid;grid-template-columns:1fr 1fr;gap:9px}.unit-input{display:flex;align-items:center;gap:7px}.unit-input .number{min-width:0}.unit{font-size:10px;color:#7f93b1}.checkrow{display:flex;align-items:center;justify-content:space-between;padding:7px 0;color:#c8d8ed;font-size:11px}.switch{appearance:none;width:34px;height:19px;border-radius:20px;background:#2a3953;position:relative;outline:none;cursor:pointer;transition:.2s}.switch:before{content:"";position:absolute;width:13px;height:13px;top:3px;left:3px;border-radius:50%;background:#d8e6f7;transition:.2s}.switch:checked{background:#168de9}.switch:checked:before{left:18px;background:white}.range{width:100%;accent-color:#42b5f4}.range-row{display:flex;align-items:center;gap:10px}.range-value{width:44px;text-align:right;color:#8edcff;font-size:11px;font-variant-numeric:tabular-nums}.seg{display:flex;background:#0b1425;border:1px solid #293c58;border-radius:9px;padding:3px;gap:3px}.seg button{flex:1;border:0;background:transparent;color:#8396b4;padding:7px 4px;border-radius:6px;font-size:10px}.seg button.active{background:#1e4772;color:#eff8ff}.action-area{padding:14px 15px;border-top:1px solid rgba(133,158,197,.13)}.convert-btn{width:100%;padding:13px;border:0;border-radius:11px;color:white;font-weight:800;font-size:13px;background:linear-gradient(100deg,#1689f8,#38b9ed);box-shadow:0 9px 24px #148df333}.convert-note{text-align:center;color:#7589a8;font-size:10px;margin-top:8px}.queue-panel{margin-top:16px}.queue-head{display:flex;align-items:center;padding:14px 16px;border-bottom:1px solid rgba(133,158,197,.13);gap:10px}.queue-head strong{font-size:12px}.queue-head .spacer{flex:1}.queue-count{font-size:10px;color:#9cb1ce;background:#1b2b45;border-radius:6px;padding:4px 7px}.queue-list{padding:8px 14px}.queue-empty{padding:20px;text-align:center;color:#788ba8;font-size:11px}.queue-item{display:grid;grid-template-columns:minmax(150px,1.2fr) 90px 1fr 92px 70px;gap:12px;align-items:center;padding:10px 2px;border-bottom:1px solid rgba(133,158,197,.1);font-size:11px}.queue-item:last-child{border:0}.q-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#dce9fb}.q-meta{font-size:10px;color:#7186a5}.status{font-size:10px;color:#94a8c6}.status.done{color:#5cdbab}.status.error{color:#ff8496}.progress{height:5px;background:#273851;border-radius:8px;overflow:hidden}.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,#2c95f5,#54d9e7);transition:width .2s}.q-actions{display:flex;gap:5px;justify-content:flex-end}.q-actions button{font-size:10px;padding:5px 7px;border-radius:6px;border:1px solid #2d405e;background:#15233a;color:#d9e8fb}.toast{position:fixed;bottom:22px;right:24px;padding:12px 16px;border:1px solid #365174;border-radius:11px;background:#14233b;color:#e7f4ff;box-shadow:var(--shadow);z-index:99;opacity:0;transform:translateY(10px);pointer-events:none;transition:.25s;max-width:360px;font-size:12px}.toast.show{opacity:1;transform:translateY(0)}.hidden{display:none!important}.file-list{margin-top:9px;display:flex;gap:7px;flex-wrap:wrap}.file-chip{font-size:10px;color:#c3d8f5;border:1px solid #2d4668;background:#142641;border-radius:7px;padding:5px 8px;max-width:190px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.file-chip.active{border-color:#49baff;background:#18385d}.small-note{font-size:10px;color:#7186a4;line-height:1.5}.footer-note{font-size:10px;color:#667b9b;margin-top:12px;text-align:center}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:radial-gradient(circle at 65% -20%,#17294b 0,transparent 38%),var(--bg);color:var(--text);font:14px/1.45 Inter,"Segoe UI",Arial,sans-serif}button,input,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.42;cursor:not-allowed}.app{min-height:100vh;display:grid;grid-template-rows:68px 1fr}.topbar{height:68px;border-bottom:1px solid rgba(139,164,205,.14);display:flex;align-items:center;padding:0 24px;gap:22px;background:rgba(8,14,27,.84);backdrop-filter:blur(18px);position:sticky;top:0;z-index:20}.brand{display:flex;align-items:center;gap:12px;min-width:215px}.brand-mark{width:34px;height:34px;border-radius:11px;background:linear-gradient(145deg,#4ac4ff,#5268ff 65%,#9b72ff);display:grid;place-items:center;box-shadow:0 7px 22px #2d8dff55;color:white;font-weight:900;font-size:18px}.brand-name{font-weight:800;letter-spacing:.13em;font-size:13px}.brand-sub{font-size:9px;color:#7f91b0;letter-spacing:.2em;margin-top:1px}.top-divider{height:26px;width:1px;background:var(--line)}.crumb{color:#aab7ce;font-size:12px}.crumb b{color:#f2f7ff;font-weight:650}.top-spacer{flex:1}.privacy{display:flex;align-items:center;gap:8px;color:#a8bad3;font-size:11px;padding:8px 12px;border:1px solid #263853;border-radius:30px;background:#101b2f}.dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 12px #49d6a1}.top-btn{border:1px solid #30415f;background:#17243a;color:#dceaff;border-radius:10px;padding:9px 14px;font-weight:650}.top-btn.primary{background:linear-gradient(110deg,#1989f7,#3dbeef);border:0;color:white;box-shadow:0 8px 20px #1b8fff33}.layout{display:grid;grid-template-columns:218px minmax(500px,1fr);min-height:calc(100vh - 68px)}.sidebar{border-right:1px solid rgba(139,164,205,.12);padding:22px 14px;background:rgba(9,16,31,.48)}.side-label{font-size:10px;color:#657794;letter-spacing:.16em;font-weight:800;padding:10px 12px 8px}.nav{display:flex;align-items:center;gap:11px;padding:11px 12px;border-radius:10px;color:#9eacc3;margin:3px 0;cursor:pointer}.nav:hover,.nav.active{background:linear-gradient(100deg,#1b3658,#172744);color:#eff7ff}.nav.active{box-shadow:inset 2px 0 0 var(--blue)}.nav-icon{width:20px;text-align:center;font-size:16px;color:#7cbcff}.side-card{margin:24px 5px 0;padding:14px;border:1px solid #243550;border-radius:13px;background:linear-gradient(145deg,#15233b,#10192b)}.side-card strong{display:block;font-size:12px;margin-bottom:5px}.side-card p{font-size:11px;color:#8ea0bd;margin:0 0 12px}.side-card .mini{height:5px;border-radius:8px;background:#263b5c;overflow:hidden}.side-card .mini span{display:block;width:68%;height:100%;background:linear-gradient(90deg,#2c8cf5,#5de1ef);border-radius:8px}.main{min-width:0;padding:22px 24px 30px;max-width:1800px;width:100%;margin:0 auto}.page-head{display:flex;align-items:center;gap:14px;margin-bottom:18px}.page-title{font-size:21px;font-weight:760;letter-spacing:-.03em}.page-title small{display:block;color:#8494ae;font-size:11px;font-weight:450;letter-spacing:.02em;margin-top:3px}.head-spacer{flex:1}.head-stat{font-size:11px;color:#8fa0bb;padding:7px 10px;border:1px solid #263650;border-radius:9px;background:#10192b}.dropzone{border:1px dashed #3b5b83;background:linear-gradient(100deg,rgba(25,58,96,.44),rgba(19,35,61,.32));border-radius:14px;min-height:78px;display:flex;align-items:center;padding:14px 18px;gap:15px;margin-bottom:17px;transition:.2s}.dropzone.drag{border-color:#5de1ef;background:#173454}.upload-icon{width:42px;height:42px;border-radius:12px;background:#1b4774;color:#7edaff;display:grid;place-items:center;font-size:20px}.drop-copy{flex:1}.drop-copy strong{display:block;font-size:13px}.drop-copy span{display:block;color:#8fa1be;font-size:11px;margin-top:3px}.drop-actions{display:flex;gap:8px}.btn{border:1px solid #30415e;border-radius:10px;background:#17243a;color:#dceaff;padding:9px 13px;font-size:12px;font-weight:650}.btn:hover{border-color:#4b81bd}.btn.blue{border:0;background:linear-gradient(110deg,#178af7,#39b6f0);color:#fff;box-shadow:0 7px 20px #148df333}.btn.ghost{background:transparent}.workgrid{display:grid;grid-template-columns:minmax(350px,1fr) 350px;gap:16px;align-items:stretch}.panel{border:1px solid rgba(117,145,188,.2);background:linear-gradient(160deg,rgba(20,31,52,.96),rgba(15,24,42,.98));border-radius:var(--radius);box-shadow:var(--shadow);min-width:0}.preview-panel{display:flex;flex-direction:column;min-height:555px}.panel-head{height:52px;display:flex;align-items:center;padding:0 16px;border-bottom:1px solid rgba(133,158,197,.13);gap:10px}.panel-head strong{font-size:12px}.panel-head .sub{font-size:10px;color:#7e91af}.panel-head .spacer{flex:1}.file-tag{font-size:10px;color:#a9c7ed;border:1px solid #2a4264;background:#152b48;border-radius:6px;padding:4px 7px}.stage-wrap{padding:14px;flex:1;min-height:390px;display:flex;flex-direction:column}.stage{position:relative;flex:1;min-height:360px;border-radius:12px;overflow:hidden;border:1px solid #2d3b55;background-color:#10182a;background-image:linear-gradient(45deg,#1a2639 25%,transparent 25%),linear-gradient(-45deg,#1a2639 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#1a2639 75%),linear-gradient(-45deg,transparent 75%,#1a2639 75%);background-size:22px 22px;background-position:0 0,0 11px,11px -11px,-11px 0;display:grid;place-items:center}.stage.empty{background-image:radial-gradient(circle at center,#1a2c48 0,transparent 56%),linear-gradient(45deg,#111d31 25%,transparent 25%),linear-gradient(-45deg,#111d31 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#111d31 75%),linear-gradient(-45deg,transparent 75%,#111d31 75%);background-size:auto,22px 22px,22px 22px,22px 22px,22px 22px;background-position:center,0 0,0 11px,11px -11px,-11px 0}.empty-state{text-align:center;color:#8296b6;padding:30px}.empty-state .big{font-size:36px;opacity:.8;margin-bottom:10px}.empty-state strong{display:block;color:#dbe9fb;font-size:14px}.empty-state span{font-size:11px}.stage img,.stage video{max-width:100%;max-height:100%;object-fit:contain;display:block}.stage video{width:100%;height:100%}.svga-holder{width:100%;height:100%;display:grid;place-items:center}.svga-holder canvas{max-width:100%;max-height:100%;object-fit:contain}.stage-overlay{position:absolute;left:12px;top:12px;display:flex;gap:6px}.overlay-chip{font-size:10px;padding:5px 8px;border-radius:6px;background:#0a1222cc;border:1px solid #42536e;color:#d7e6fa;backdrop-filter:blur(8px)}.preview-bottom{display:flex;align-items:center;gap:10px;padding:12px 3px 0}.icon-btn{width:31px;height:31px;border-radius:9px;background:#1a2942;border:1px solid #30415e;color:#dceaff}.timeline{height:5px;border-radius:9px;background:#2a3b57;flex:1;position:relative;cursor:pointer}.timeline-fill{height:100%;width:0;background:linear-gradient(90deg,#2f98ff,#5ce4ee);border-radius:9px}.time{font-size:10px;color:#8fa1bc;font-variant-numeric:tabular-nums;min-width:70px;text-align:right}.swatches{display:flex;gap:6px;margin-left:6px}.swatch{width:17px;height:17px;border-radius:6px;border:2px solid #65738a;cursor:pointer}.swatch.selected{outline:2px solid #7edaff;outline-offset:2px}.info-row{display:flex;gap:8px;flex-wrap:wrap;padding:0 17px 14px}.info-pill{background:#17243a;border:1px solid #263a59;color:#a9bddb;border-radius:7px;padding:5px 8px;font-size:10px}.info-pill b{color:#eff6ff;font-weight:650;margin-left:4px}.settings{display:flex;flex-direction:column;min-height:555px}.tabs{display:flex;gap:4px;padding:8px;border-bottom:1px solid rgba(133,158,197,.13)}.tab{flex:1;border:0;background:transparent;color:#8295b3;padding:9px 5px;border-radius:8px;font-size:11px}.tab.active{background:#1b3557;color:#e7f5ff;box-shadow:inset 0 0 0 1px #31547b}.settings-body{padding:14px 15px;overflow:auto;flex:1}.setting-section{margin-bottom:18px}.section-title{display:flex;align-items:center;gap:7px;font-size:10px;color:#7e91af;font-weight:800;letter-spacing:.12em;margin:0 0 10px}.section-title:after{content:"";height:1px;background:#293851;flex:1}.field{margin-bottom:12px}.field label{display:flex;align-items:center;justify-content:space-between;color:#d7e4f7;font-size:11px;margin-bottom:6px}.hint{color:#7286a4;font-size:10px}.select,.number,.text-input{width:100%;background:#0b1425;border:1px solid #2b3d59;color:#e8f2ff;border-radius:8px;padding:9px 10px;outline:none}.select:focus,.number:focus,.text-input:focus{border-color:#45aaf4;box-shadow:0 0 0 2px #248ff522}.row2{display:grid;grid-template-columns:1fr 1fr;gap:9px}.unit-input{display:flex;align-items:center;gap:7px}.unit-input .number{min-width:0}.unit{font-size:10px;color:#7f93b1}.checkrow{display:flex;align-items:center;justify-content:space-between;padding:7px 0;color:#c8d8ed;font-size:11px}.switch{appearance:none;width:34px;height:19px;border-radius:20px;background:#2a3953;position:relative;outline:none;cursor:pointer;transition:.2s}.switch:before{content:"";position:absolute;width:13px;height:13px;top:3px;left:3px;border-radius:50%;background:#d8e6f7;transition:.2s}.switch:checked{background:#168de9}.switch:checked:before{left:18px;background:white}.range{width:100%;accent-color:#42b5f4}.range-row{display:flex;align-items:center;gap:10px}.range-value{width:44px;text-align:right;color:#8edcff;font-size:11px;font-variant-numeric:tabular-nums}.seg{display:flex;background:#0b1425;border:1px solid #293c58;border-radius:9px;padding:3px;gap:3px}.seg button{flex:1;border:0;background:transparent;color:#8396b4;padding:7px 4px;border-radius:6px;font-size:10px}.seg button.active{background:#1e4772;color:#eff8ff}.action-area{padding:14px 15px;border-top:1px solid rgba(133,158,197,.13)}.convert-btn{width:100%;padding:13px;border:0;border-radius:11px;color:white;font-weight:800;font-size:13px;background:linear-gradient(100deg,#1689f8,#38b9ed);box-shadow:0 9px 24px #148df333}.convert-note{text-align:center;color:#7589a8;font-size:10px;margin-top:8px}.queue-panel{margin-top:16px}.queue-head{display:flex;align-items:center;padding:14px 16px;border-bottom:1px solid rgba(133,158,197,.13);gap:10px}.queue-head strong{font-size:12px}.queue-head .spacer{flex:1}.queue-count{font-size:10px;color:#9cb1ce;background:#1b2b45;border-radius:6px;padding:4px 7px}.queue-list{padding:8px 14px}.queue-empty{padding:20px;text-align:center;color:#788ba8;font-size:11px}.queue-item{display:grid;grid-template-columns:minmax(150px,1.2fr) 90px 1fr 92px 70px;gap:12px;align-items:center;padding:10px 2px;border-bottom:1px solid rgba(133,158,197,.1);font-size:11px}.queue-item:last-child{border:0}.q-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#dce9fb}.q-meta{font-size:10px;color:#7186a5}.status{font-size:10px;color:#94a8c6}.status.done{color:#5cdbab}.status.error{color:#ff8496}.progress{height:5px;background:#273851;border-radius:8px;overflow:hidden}.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,#2c95f5,#54d9e7);transition:width .2s}.q-actions{display:flex;gap:5px;justify-content:flex-end}.q-actions button{font-size:10px;padding:5px 7px;border-radius:6px;border:1px solid #2d405e;background:#15233a;color:#d9e8fb}.toast{position:fixed;bottom:22px;right:24px;padding:12px 16px;border:1px solid #365174;border-radius:11px;background:#14233b;color:#e7f4ff;box-shadow:var(--shadow);z-index:99;opacity:0;transform:translateY(10px);pointer-events:none;transition:.25s;max-width:360px;font-size:12px}.toast.show{opacity:1;transform:translateY(0)}
+.modal-backdrop{position:fixed;inset:0;background:rgba(2,7,16,.76);backdrop-filter:blur(8px);display:grid;place-items:center;padding:18px;z-index:120}
+.modal-card{width:min(720px,100%);max-height:min(82vh,760px);overflow:auto;border:1px solid #344b6c;border-radius:16px;background:linear-gradient(160deg,#17243a,#0d1628);box-shadow:0 24px 80px #0009;padding:18px}
+.modal-head{display:flex;align-items:center;gap:12px;margin-bottom:12px}.modal-head strong{font-size:14px}.modal-head .spacer{flex:1}.modal-body{color:#bdcce2;font-size:12px;line-height:1.65;white-space:pre-wrap;overflow-wrap:anywhere}.modal-body pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#091222;border:1px solid #2a3c58;border-radius:10px;padding:12px;color:#dbeaff;font:11px/1.55 ui-monospace,Consolas,monospace;max-height:42vh;overflow:auto}.modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:14px}.preview-image-freeze{max-width:100%;max-height:100%;object-fit:contain;display:block}
+.hidden{display:none!important}.file-list{margin-top:9px;display:flex;gap:7px;flex-wrap:wrap}.file-chip{font-size:10px;color:#c3d8f5;border:1px solid #2d4668;background:#142641;border-radius:7px;padding:5px 8px;max-width:190px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.file-chip.active{border-color:#49baff;background:#18385d}.small-note{font-size:10px;color:#7186a4;line-height:1.5}.footer-note{font-size:10px;color:#667b9b;margin-top:12px;text-align:center}
 @media(max-width:1150px){.workgrid{grid-template-columns:minmax(300px,1fr) 320px}.layout{grid-template-columns:190px minmax(0,1fr)}.sidebar{padding-left:10px;padding-right:10px}.main{padding:18px}}
 @media(max-width:900px){.layout{grid-template-columns:1fr}.sidebar{display:none}.workgrid{grid-template-columns:1fr}.settings{min-height:0}.settings-body{display:grid;grid-template-columns:1fr 1fr;gap:12px}.setting-section{margin:0}.preview-panel{min-height:490px}.stage{min-height:300px}.queue-item{grid-template-columns:minmax(120px,1fr) 70px 1fr 70px}.queue-item .q-meta{display:none}}
 @media(max-width:600px){.topbar{padding:0 12px}.brand{min-width:auto}.brand-sub,.top-divider,.crumb,.privacy{display:none}.main{padding:14px 10px}.page-head{flex-wrap:wrap}.head-stat{display:none}.dropzone{align-items:flex-start;flex-wrap:wrap}.drop-copy{min-width:180px}.drop-actions{width:100%;padding-left:57px}.settings-body{grid-template-columns:1fr}.stage{min-height:270px}.preview-panel{min-height:420px}.queue-item{grid-template-columns:1fr 65px}.queue-item .progress{display:none}.q-actions{grid-column:2;grid-row:1}.queue-head{padding:12px}.panel-head{padding:0 12px}}
@@ -23,7 +27,7 @@
 <body>
 <div class="app">
 <header class="topbar">
-  <div class="brand"><div class="brand-mark">M</div><div><div class="brand-name">MOTION LAB</div><div class="brand-sub">ANIMATION WORKBENCH</div></div></div>
+  <div class="brand"><div class="brand-mark">M</div><div><div class="brand-name">MOTION LAB</div><div class="brand-sub">动画素材转换工作台</div></div></div>
   <div class="top-divider"></div><div class="crumb">工作空间&nbsp; / &nbsp;<b>动画格式转换</b></div>
   <div class="top-spacer"></div>
   <div class="privacy"><span class="dot"></span> 本地处理 &nbsp;|&nbsp; 文件不上传</div>
@@ -33,44 +37,44 @@
 <div class="layout">
   <aside class="sidebar">
     <div class="side-label">工作空间</div>
-    <div class="nav active"><span class="nav-icon">⇄</span> 格式转换</div>
-    <div class="nav"><span class="nav-icon">◈</span> 智能压缩</div>
-    <div class="nav"><span class="nav-icon">▦</span> 批量处理</div>
-    <div class="nav"><span class="nav-icon">▷</span> 动效预览</div>
+    <div class="nav active" data-nav="output"><span class="nav-icon">⇄</span> 格式转换</div>
+    <div class="nav" data-nav="quality"><span class="nav-icon">◈</span> 智能压缩</div>
+    <div class="nav" data-nav="queue"><span class="nav-icon">▦</span> 批量处理</div>
+    <div class="nav" data-nav="preview"><span class="nav-icon">▷</span> 动效预览</div>
     <div class="side-label" style="margin-top:22px">工具</div>
-    <div class="nav"><span class="nav-icon">⌗</span> 画布与缩放</div>
-    <div class="nav"><span class="nav-icon">◉</span> 帧率设置</div>
-    <div class="nav"><span class="nav-icon">♫</span> 音频设置</div>
+    <div class="nav" data-nav="canvas"><span class="nav-icon">⌗</span> 画布与缩放</div>
+    <div class="nav" data-nav="quality"><span class="nav-icon">◉</span> 帧率设置</div>
+    <div class="nav" data-nav="audio"><span class="nav-icon">♫</span> 音频设置</div>
     <div class="side-card"><strong>本地工作区</strong><p>所有转换均在浏览器本地执行，源文件不会上传。</p><div class="mini"><span></span></div><p style="margin:8px 0 0">处理过程会占用浏览器内存。</p></div>
   </aside>
   <main class="main">
     <div class="page-head">
       <div class="page-title">&#21160;&#30011;&#26684;&#24335;&#36716;&#25442;<small>多格式互转、画布调整、压缩优化与批量导出。</small></div>
       <div class="head-spacer"></div>
-      <div class="head-stat" id="fileStat">0 files loaded</div>
-      <div class="head-stat" id="engineStat">Engine not loaded</div>
+      <div class="head-stat" id="fileStat">0 个文件</div>
+      <div class="head-stat" id="engineStat">转换引擎未加载</div>
     </div>
     <section class="dropzone" id="dropzone">
       <div class="upload-icon">&#8593;</div>
-      <div class="drop-copy"><strong>将动画或图片素材拖到这里</strong><span>支持 SVGA / VAP / PAG / Lottie / MP4 / MOV / WEBM / GIF / WEBP / APNG / PNG / JPG · 支持批量导入</span></div>
+      <div class="drop-copy"><strong>将动画或图片素材拖到这里</strong><span>支持 SVGA / MP4 / MOV / WEBM / GIF / WEBP / APNG / Lottie / PNG / JPG · 支持批量导入</span></div>
       <div class="drop-actions"><button class="btn" id="sampleInfo">支持格式</button><button class="btn blue" id="chooseFiles">选择文件</button></div>
-      <input id="fileInput" type="file" multiple accept=".svga,.vap,.pag,.json,.lottie,.mp4,.mov,.m4v,.webm,.mkv,.avi,.gif,.webp,.apng,.png,.jpg,.jpeg,.bmp" class="hidden">
+      <input id="fileInput" type="file" multiple accept=".svga,.json,.lottie,.mp4,.mov,.m4v,.webm,.mkv,.avi,.gif,.webp,.apng,.png,.jpg,.jpeg,.bmp" class="hidden">
     </section>
     <div class="file-list" id="fileList"></div>
     <div class="workgrid" style="margin-top:14px">
       <section class="panel preview-panel">
-        <div class="panel-head"><strong>实时预览</strong><span class="sub">LIVE PREVIEW</span><div class="spacer"></div><span class="file-tag" id="previewFormat">暂无素材</span><span class="file-tag" id="previewStatus">等待导入</span></div>
+        <div class="panel-head"><strong>实时预览</strong><span class="sub">实时预览</span><div class="spacer"></div><span class="file-tag" id="previewFormat">暂无素材</span><span class="file-tag" id="previewStatus">等待导入</span></div>
         <div class="stage-wrap">
           <div class="stage empty" id="stage"><div class="empty-state"><div class="big">&#10022;</div><strong>导入素材开始处理</strong><span>实时预览动画，查看素材参数并调整导出设置。</span></div></div>
           <div class="preview-bottom">
-            <button class="icon-btn" id="playBtn" title="Play / pause">&#9654;</button>
-            <button class="icon-btn" id="restartBtn" title="Restart">&#8635;</button>
+            <button class="icon-btn" id="playBtn" title="播放 / 暂停">&#9654;</button>
+            <button class="icon-btn" id="restartBtn" title="重新播放">&#8635;</button>
             <div class="timeline" id="timeline"><div class="timeline-fill" id="timelineFill"></div></div>
             <div class="time" id="timeLabel">00:00 / 00:00</div>
             <div class="swatches"><span class="swatch selected" data-bg="#10182a" style="background:#10182a"></span><span class="swatch" data-bg="#ffffff" style="background:#fff"></span><span class="swatch" data-bg="#000000" style="background:#000"></span><span class="swatch" data-bg="#687386" style="background:#687386"></span></div>
           </div>
         </div>
-        <div class="info-row" id="infoRow"><span class="info-pill">Format <b>-</b></span><span class="info-pill">Size <b>-</b></span><span class="info-pill">Canvas <b>-</b></span><span class="info-pill">Duration <b>-</b></span><span class="info-pill">FPS <b>-</b></span></div>
+        <div class="info-row" id="infoRow"><span class="info-pill">格式 <b>-</b></span><span class="info-pill">大小 <b>-</b></span><span class="info-pill">画布 <b>-</b></span><span class="info-pill">时长 <b>-</b></span><span class="info-pill">帧率 <b>-</b></span></div>
       </section>
       <aside class="panel settings">
         <div class="tabs"><button class="tab active" data-tab="output">输出</button><button class="tab" data-tab="canvas">画布</button><button class="tab" data-tab="quality">画质</button><button class="tab" data-tab="audio">音频</button></div>
@@ -78,8 +82,8 @@
           <div class="tab-content" data-content="output">
             <div class="setting-section">
               <div class="section-title">输出格式</div>
-              <div class="field"><label>目标格式 <span class="hint">选择导出类型</span></label><select class="select" id="formatSelect"><option value="mp4">MP4 - H.264 video</option><option value="webm">WEBM - VP9 video</option><option value="gif">GIF - animated image</option><option value="webp">WEBP - animated image</option><option value="apng">APNG - animated PNG</option><option value="svga">SVGA - animation package (1.x)</option><option value="lottie">Lottie JSON - raster frame animation</option><option value="vapProject">VAP project ZIP - frames for VapTool</option><option value="vap" disabled>VAP MP4 - native export requires VapTool</option><option value="pag" disabled>PAG - native export requires PAGExporter</option><option value="pngseq">PNG sequence - ZIP</option><option value="png">PNG - first frame</option><option value="jpg">JPG - first frame</option></select></div>
-              <div class="field"><label>输出文件名</label><input class="text-input" id="nameInput" value="motion-export" placeholder="Output file name"></div><p class="small-note">Lottie JSON is exported as a rasterized frame animation, not editable vector layers. VAP project ZIP can be opened in Tencent VapTool. Native VAP/PAG authoring needs the official exporters.</p>
+              <div class="field"><label>目标格式 <span class="hint">选择导出类型</span></label><select class="select" id="formatSelect"><option value="mp4">MP4（H.264 视频）</option><option value="webm">WEBM（VP9 视频）</option><option value="gif">GIF（动态图片）</option><option value="webp">WEBP（动态图片）</option><option value="apng">APNG（动态 PNG）</option><option value="svga">SVGA（动画文件，导出 1.x）</option><option value="lottie">Lottie JSON（逐帧图片动画）</option><option value="pngseq">PNG 序列（ZIP）</option><option value="png">PNG（导出首帧）</option><option value="jpg">JPG（导出首帧）</option></select></div>
+              <div class="field"><label>输出文件名</label><input class="text-input" id="nameInput" value="motion-export" placeholder="输出文件名"></div><p class="small-note">Lottie JSON 导出为逐帧图片动画，不是可编辑的矢量图层。SVGA 导出为 1.x 格式。MP4 不支持透明通道；需要保留透明背景时，建议选择 WEBP 或 APNG。</p>
             </div>
             <div class="setting-section">
               <div class="section-title">时间与速度</div>
@@ -120,29 +124,35 @@
               <div class="checkrow"><span>静音输出</span><input class="switch" id="muteAudio" type="checkbox"></div>
               <div class="field"><label>音频码率 <span class="unit">kbps</span></label><select class="select" id="audioBitrate"><option>64</option><option>96</option><option selected>128</option><option>160</option><option>192</option><option>256</option><option>320</option></select></div>
               <div class="field"><label>替换音频（可选）</label><input class="text-input" type="file" id="audioInput" accept=".mp3,.wav,.m4a,.aac,.ogg,.opus"></div>
-              <div class="small-note">MP4 and WebM can contain audio. GIF, WebP, APNG, PNG sequence, SVGA, Lottie frame export and VAP frame projects are silent. VAP/PAG inputs are rendered to frames before conversion.</div>
+              <div class="small-note">MP4 和 WEBM 可以保留音频。GIF、WEBP、APNG、PNG 序列、SVGA 和 Lottie 逐帧导出不包含音频。静音或替换音频时，请在此处设置。</div>
             </div>
           </div>
         </div>
-        <div class="action-area"><button class="convert-btn" id="convertBtn">&#9654; &nbsp; 开始处理</button><div class="convert-note" id="convertNote">批量转换 · 本地处理 · 不上传素材</div></div>
+        <div class="action-area"><button class="convert-btn" id="convertBtn">&#9654; &nbsp; 开始处理</button><div class="convert-note" id="convertNote">批量转换 · 本地处理 · 素材不会上传</div></div>
       </aside>
     </div>
     <section class="panel queue-panel">
-      <div class="queue-head"><strong>处理队列</strong><span class="sub">PROCESSING QUEUE</span><span class="queue-count" id="queueCount">0 tasks</span><div class="spacer"></div><button class="btn ghost" id="clearQueue">清空队列</button><button class="btn" id="downloadAll" disabled>打包下载</button></div>
+      <div class="queue-head"><strong>处理队列</strong><span class="sub">处理队列</span><span class="queue-count" id="queueCount">0 个任务</span><div class="spacer"></div><button class="btn ghost" id="clearQueue">清空队列</button><button class="btn ghost" id="clearAllBtn">清空素材</button><button class="btn" id="downloadAll" disabled>打包下载</button></div>
       <div class="queue-list" id="queueList"><div class="queue-empty">暂无任务。导入素材、设置导出参数后，即可开始处理。</div></div>
     </section>
-    <div class="footer-note">MOTION LAB · Local animation workflow · FFmpeg + SVGA + Lottie + libpag + VAP</div>
+    <div class="footer-note">MOTION LAB · 本地动画素材转换工作台 · SVGA + FFmpeg + Lottie · V2.6</div>
   </main>
 </div>
 </div>
-<div class="toast" id="toast"></div>
-<script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/svgaplayerweb@2.3.2/build/svga.min.js"></script>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="modal-backdrop hidden" id="diagnosticModal" role="dialog" aria-modal="true" aria-labelledby="diagnosticTitle"><section class="modal-card"><div class="modal-head"><strong id="diagnosticTitle">转换错误详情</strong><div class="spacer"></div><button class="btn ghost" id="diagnosticClose">关闭</button></div><div class="modal-body" id="diagnosticBody"></div><div class="modal-actions"><button class="btn" id="diagnosticCopy">复制诊断信息</button><button class="btn blue" id="diagnosticOk">确定</button></div></section></div>
+<div class="modal-backdrop hidden" id="helpModal" role="dialog" aria-modal="true" aria-labelledby="helpTitle"><section class="modal-card"><div class="modal-head"><strong id="helpTitle">MOTION LAB 使用说明</strong><div class="spacer"></div><button class="btn ghost" id="helpClose">关闭</button></div><div class="modal-body" id="helpBody">支持导入：SVGA 1.x / 2.x、MP4、MOV、WEBM、GIF、WEBP、APNG、PNG、JPG、Lottie JSON / .lottie。
+
+支持导出：MP4、WEBM、GIF、动态 WEBP、APNG、SVGA 1.x、逐帧图片 Lottie JSON、PNG 序列 ZIP、PNG、JPG。
+
+格式说明：SVGA 导出为 1.x 格式；MP4 不支持透明通道；GIF 透明度受调色板限制；WEBP 和 APNG 更适合透明动画。首次转换需要从 CDN 加载 FFmpeg 转换引擎（约 30 MB）。本版本使用同源工作线程入口，减少跨域 Worker 启动失败；素材处理在当前浏览器本地完成，不会上传到服务器。</div><div class="modal-actions"><button class="btn blue" id="helpOk">我知道了</button></div></section></div>
+<script src="./vendor/jszip.min.js"></script>
+<script src="./vendor/svga.min.js"></script>
 <script type="module">
 const $ = (id) => document.getElementById(id);
-const state = {items:[], outputs:[], selectedId:null, ffmpeg:null, ffmpegReady:false, processing:false, currentTask:null, audioFile:null, fit:'contain', previewPlayer:null, previewVideo:null, previewPagView:null, previewLottie:null, previewVap:null, previewPaused:false, previewFrame:0, ratio:1, pagModule:null, pagInitPromise:null, vapCtor:null, lottieLoading:null};
-const supported = ['svga','vap','pag','json','lottie','mp4','mov','m4v','webm','mkv','avi','gif','webp','apng','png','jpg','jpeg','bmp'];
-const animated = new Set(['svga','vap','pag','json','lottie','mp4','mov','m4v','webm','mkv','avi','gif','webp','apng']);
+const state = {items:[], outputs:[], selectedId:null, ffmpeg:null, ffmpegReady:false, processing:false, currentTask:null, audioFile:null, fit:'contain', previewPlayer:null, previewVideo:null, previewLottie:null, previewPaused:false, previewFrame:0, previewImage:null, previewImageCanvas:null, ratio:1, ffmpegLoading:null, lottieLoading:null, jszipLoading:null, svgaLoading:null, activeDiagnostic:null};
+const supported = ['svga','json','lottie','mp4','mov','m4v','webm','mkv','avi','gif','webp','apng','png','jpg','jpeg','bmp'];
+const animated = new Set(['svga','json','lottie','mp4','mov','m4v','webm','mkv','avi','gif','webp','apng']);
 function toast(msg){const el=$('toast');el.textContent=msg;el.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>el.classList.remove('show'),3200)}
 function fmtBytes(n){if(!Number.isFinite(n))return '-';if(n<1024)return n+' B';if(n<1048576)return (n/1024).toFixed(1)+' KB';return (n/1048576).toFixed(2)+' MB'}
 function fmtTime(s){if(!Number.isFinite(s)||s<0)s=0;const m=Math.floor(s/60),sec=Math.floor(s%60);return String(m).padStart(2,'0')+':'+String(sec).padStart(2,'0')}
@@ -150,37 +160,60 @@ function extOf(name){return (name.split('.').pop()||'').toLowerCase()}
 function safeBase(name){return name.replace(/\.[^.]+$/,'').replace(/[^a-zA-Z0-9_-]+/g,'_').slice(0,48)||'motion'}
 function selected(){return state.items.find(x=>x.id===state.selectedId)||null}
 function getSettings(){const format=$('formatSelect').value;let width=Math.max(16,Math.min(4096,Number($('widthInput').value)||300));let height=Math.max(16,Math.min(4096,Number($('heightInput').value)||300));if(['mp4','webm'].includes(format)){width=Math.max(16,Math.round(width/2)*2);if($('ratioLock').checked&&state.ratio>0)height=Math.max(16,Math.round((width/state.ratio)/2)*2);else height=Math.max(16,Math.round(height/2)*2);$('widthInput').value=width;$('heightInput').value=height;updatePreviewCanvas()}return {format,width,height,fps:Number($('fpsInput').value)||15,quality:Number($('qualityInput').value)||80,bitrate:Number($('bitrateInput').value)||2500,duration:Math.max(.1,Math.min(120,Number($('durationInput').value)||2)),fullDuration:$('fullDuration').checked,start:Math.max(0,Number($('startInput').value)||0),speed:Number($('speedInput').value)||1,fit:state.fit,transparent:$('transparentBg').checked,bg:$('bgColor').value,keepAudio:$('keepAudio').checked&&!$('muteAudio').checked,replaceAudio:state.audioFile, audioBitrate:Number($('audioBitrate').value)||128,loop:$('loopInput').checked,stripMeta:$('stripMeta').checked,webOptimize:$('webOptimize').checked,compression:$('compressionInput').value}}
-function renderFileChips(){const el=$('fileList');el.innerHTML='';state.items.forEach(item=>{const b=document.createElement('button');b.className='file-chip'+(item.id===state.selectedId?' active':'');b.textContent=item.name;b.title=item.name;b.onclick=()=>selectItem(item.id);el.appendChild(b)});$('fileStat').textContent=state.items.length+' files loaded'}
-function renderInfo(item){const rows=[['Format',item.ext.toUpperCase()],['Size',fmtBytes(item.file.size)],['Canvas',item.width&&item.height?item.width+' x '+item.height:'-'],['Duration',item.duration?item.duration.toFixed(2)+' s':'-'],['FPS',item.fps||'-']];$('infoRow').innerHTML=rows.map(([a,b])=>`<span class="info-pill">${a}<b>${b}</b></span>`).join('')}
-function setSourceDimensions(item){if(item.width&&item.height){state.ratio=item.width/item.height;$('widthInput').value=item.width;$('heightInput').value=item.height;$('ratioPreset').value='source'}if(item.duration&&item.duration>0){$('durationInput').value=Math.min(120,item.duration.toFixed(2));$('startInput').value=0}}
-function selectItem(id){state.selectedId=id;const item=selected();if(!item)return;renderFileChips();renderInfo(item);$('previewFormat').textContent=item.ext.toUpperCase();$('previewStatus').textContent=item.status||'Ready';setSourceDimensions(item);renderPreview(item)}
-async function addFiles(fileList){const incoming=Array.from(fileList||[]);if(!incoming.length)return;let accepted=0;for(const file of incoming){const ext=extOf(file.name);if(!supported.includes(ext)){toast('Unsupported file: '+file.name);continue}if(file.size>150*1024*1024){toast('File is over 150 MB. Please use a smaller file for browser processing.');continue}const item={id:crypto.randomUUID(),file,name:file.name,ext,size:file.size,url:URL.createObjectURL(file),width:0,height:0,duration:0,fps:0,frames:0,status:'Loading',animated:animated.has(ext),videoItem:null,svgaPlayer:null};state.items.push(item);accepted++;if(state.items.length===1)state.selectedId=item.id;loadMetadata(item)}renderFileChips();if(accepted)toast(accepted+' file(s) imported');}
+function renderFileChips(){const el=$('fileList');el.innerHTML='';state.items.forEach(item=>{const b=document.createElement('button');b.className='file-chip'+(item.id===state.selectedId?' active':'');b.textContent=item.name;b.title=item.name+' · '+(item.status||'正在读取');b.onclick=()=>selectItem(item.id);el.appendChild(b)});$('fileStat').textContent=state.items.length+' 个素材'}
+function renderInfo(item){const rows=[['格式',item.ext.toUpperCase()],['大小',fmtBytes(item.file.size)],['画布',item.width&&item.height?item.width+' × '+item.height:'-'],['时长',item.duration?item.duration.toFixed(2)+' 秒':'-'],['帧率',item.fps||'-']];$('infoRow').innerHTML=rows.map(([a,b])=>`<span class="info-pill">${a}<b>${b}</b></span>`).join('')}
+function setSourceDimensions(item){if(item.width&&item.height){state.ratio=item.width/item.height;$('widthInput').value=item.width;$('heightInput').value=item.height;$('ratioPreset').value='source';updatePreviewCanvas()}if(item.duration&&item.duration>0){$('durationInput').value=Math.min(120,item.duration.toFixed(2));$('startInput').value=0}}
+function selectItem(id){state.selectedId=id;const item=selected();if(!item)return;renderFileChips();renderInfo(item);$('previewFormat').textContent=item.ext.toUpperCase();$('previewStatus').textContent=item.status||'已就绪';setSourceDimensions(item);renderPreview(item)}
+async function addFiles(fileList){const incoming=Array.from(fileList||[]);if(!incoming.length)return;let accepted=0;for(const file of incoming){const ext=extOf(file.name);if(!supported.includes(ext)){toast('不支持该文件格式：'+file.name);continue}if(file.size>150*1024*1024){toast('文件超过 150 MB，请缩小文件后再进行浏览器处理。');continue}const item={id:crypto.randomUUID(),file,name:file.name,ext,size:file.size,url:URL.createObjectURL(file),width:0,height:0,duration:0,fps:0,frames:0,status:'正在读取',animated:animated.has(ext),videoItem:null,svgaPlayer:null};state.items.push(item);accepted++;if(state.items.length===1)state.selectedId=item.id;loadMetadata(item)}renderFileChips();if(accepted)toast('已导入 '+accepted+' 个文件');}
 async function loadMetadata(item){
 if(item.ext==='svga'){loadSvga(item);return}
-if(item.ext==='pag'){loadPagItem(item);return}
 if(item.ext==='json'||item.ext==='lottie'){loadLottieItem(item);return}
-if(item.ext==='vap'){loadVapItem(item);return}
+if(item.ext==='webp'){loadWebPMetadata(item);return}
 if(['mp4','mov','m4v','webm','mkv','avi'].includes(item.ext)){
-if(item.ext==='mp4'){
-try{const cfg=await parseVapConfig(item.file);if(cfg){item.containerExt='mp4';item.ext='vap';item.vapConfig=cfg;setVapMetadata(item);loadVapPreviewWhenSelected(item);renderFileChips();return}}catch(e){}
+  const v=document.createElement('video');v.preload='metadata';v.muted=true;v.src=item.url;
+  v.onloadedmetadata=()=>{item.width=v.videoWidth;item.height=v.videoHeight;item.duration=Number.isFinite(v.duration)?v.duration:0;item.fps=0;item.status='\u5df2\u5c31\u7eea';if(item.id===state.selectedId){renderInfo(item);setSourceDimensions(item);renderPreview(item)}renderFileChips()};
+  v.onerror=()=>{item.status='\u65e0\u6cd5\u8bfb\u53d6\u89c6\u9891';item.error='\u6d4f\u89c8\u5668\u65e0\u6cd5\u8bfb\u53d6\u8be5\u89c6\u9891\u7684\u5143\u6570\u636e\u3002\u8bf7\u786e\u8ba4\u6587\u4ef6\u7f16\u7801\u53d7\u6d4f\u89c8\u5668\u652f\u6301\u3002';renderFileChips()};return;
 }
-const v=document.createElement('video');v.preload='metadata';v.src=item.url;v.onloadedmetadata=()=>{item.width=v.videoWidth;item.height=v.videoHeight;item.duration=Number.isFinite(v.duration)?v.duration:0;item.fps=0;item.status='Ready';if(item.id===state.selectedId){renderInfo(item);setSourceDimensions(item);renderPreview(item)}renderFileChips()};v.onerror=()=>{item.status='Preview unavailable';renderFileChips()};return}
-const img=new Image();img.onload=()=>{item.width=img.naturalWidth;item.height=img.naturalHeight;item.duration=0;item.fps=item.animated?15:0;item.status='Ready';if(item.id===state.selectedId){renderInfo(item);setSourceDimensions(item);renderPreview(item)}renderFileChips()};img.onerror=()=>{item.status='Preview unavailable';renderFileChips()};img.src=item.url
+const img=new Image();img.onload=()=>{item.width=img.naturalWidth;item.height=img.naturalHeight;item.duration=0;item.fps=item.animated?15:0;item.status='\u5df2\u5c31\u7eea';if(item.id===state.selectedId){renderInfo(item);setSourceDimensions(item);renderPreview(item)}renderFileChips()};img.onerror=()=>{item.status='\u65e0\u6cd5\u8bfb\u53d6\u56fe\u7247';item.error='\u6d4f\u89c8\u5668\u65e0\u6cd5\u89e3\u7801\u8be5\u56fe\u7247\u3002';renderFileChips()};img.src=item.url
 }
-function loadScript(src,globalName){return new Promise((resolve,reject)=>{if(window[globalName])return resolve(window[globalName]);const existing=Array.from(document.scripts).find(x=>x.src===src);if(existing){existing.addEventListener('load',()=>resolve(window[globalName]));existing.addEventListener('error',reject);if(window[globalName])resolve(window[globalName]);return}const script=document.createElement('script');script.src=src;script.async=true;script.onload=()=>window[globalName]?resolve(window[globalName]):reject(new Error(globalName+' failed to initialize'));script.onerror=()=>reject(new Error('Could not load '+globalName+' library'));document.head.appendChild(script)})}
-async function ensureLottie(){if(window.lottie)return window.lottie;if(!state.lottieLoading)state.lottieLoading=loadScript('https://cdn.jsdelivr.net/npm/lottie-web@5.13.0/build/player/lottie.min.js','lottie');return state.lottieLoading}
-async function ensurePAG(){if(state.pagModule)return state.pagModule;if(!state.pagInitPromise)state.pagInitPromise=(async()=>{await loadScript('https://cdn.jsdelivr.net/npm/libpag@4.1.8/lib/libpag.min.js','libpag');state.pagModule=await window.libpag.PAGInit({locateFile:()=> 'https://cdn.jsdelivr.net/npm/libpag@4.1.8/lib/libpag.wasm'});return state.pagModule})();return state.pagInitPromise}
-async function ensureVAP(){if(state.vapCtor)return state.vapCtor;const mod=await import('https://esm.sh/video-animation-player@1.0.5');state.vapCtor=mod.default||mod.Vap||mod.VAP||window.Vap||window.VAP;if(!state.vapCtor)throw new Error('VAP web player did not expose a constructor.');return state.vapCtor}
-function setVapMetadata(item){const info=item.vapConfig?.info||{};item.width=Number(info.w)||Number(info.rgbFrame?.[2])||300;item.height=Number(info.h)||Number(info.rgbFrame?.[3])||300;item.fps=Number(info.fps)||20;item.frames=Number(info.f)||0;item.duration=item.frames>0?item.frames/item.fps:0;item.status='Ready'}
-async function parseVapConfig(file){const bytes=new Uint8Array(await file.arrayBuffer());const view=new DataView(bytes.buffer,bytes.byteOffset,bytes.byteLength);for(let i=4;i<bytes.length-4;i++){if(bytes[i]===118&&bytes[i+1]===97&&bytes[i+2]===112&&bytes[i+3]===99){const boxStart=i-4;let size=view.getUint32(boxStart);if(size<8||boxStart+size>bytes.length)size=bytes.length-boxStart;const raw=new TextDecoder().decode(bytes.subarray(i+4,boxStart+size));const a=raw.indexOf('{'),b=raw.lastIndexOf('}');if(a>=0&&b>a){try{const obj=JSON.parse(raw.slice(a,b+1));if(obj.info||obj.src||obj.frame)return obj}catch(e){}}}}return null}
-async function loadVapItem(item){try{item.vapConfig=await parseVapConfig(item.file);if(!item.vapConfig)throw new Error('No vapc metadata found. This is not a standard VAP MP4 package.');setVapMetadata(item);if(item.id===state.selectedId){renderInfo(item);setSourceDimensions(item);renderPreview(item)}renderFileChips()}catch(e){item.status='VAP parse failed';item.error=e.message;renderFileChips()}}
-function loadVapPreviewWhenSelected(item){setVapMetadata(item);if(item.id===state.selectedId){renderInfo(item);setSourceDimensions(item);renderPreview(item)}}
-async function loadLottieItem(item){try{let data=null;let zip=null;if(item.ext==='lottie'){if(!window.JSZip)throw new Error('ZIP library unavailable.');zip=await JSZip.loadAsync(item.file);let manifest=null;const mf=zip.file('manifest.json');if(mf){try{manifest=JSON.parse(await mf.async('string'))}catch(e){}}let path=null;const manifestPath=manifest?.animations?.[0]?.id;if(manifestPath)path='a/'+manifestPath+'.json';if(path&&zip.file(path)){}else{const names=Object.keys(zip.files).filter(n=>/\.json$/i.test(n)&&n!=='manifest.json'&&!zip.files[n].dir);path=names.find(n=>/^a\//i.test(n))||names.find(n=>/^animations\//i.test(n))||names[0]}if(!path||!zip.file(path))throw new Error('No Lottie animation JSON found in this .lottie archive.');data=JSON.parse(await zip.file(path).async('string'));await embedZipLottieAssets(data,zip)}else{data=JSON.parse(await item.file.text())}
-if(!data||!Array.isArray(data.layers)||!Number(data.fr)||!Number(data.op))throw new Error('JSON is not a valid Bodymovin/Lottie animation.');if(!zip)await embedImportedLottieAssets(data);item.lottieData=data;item.width=Number(data.w)||300;item.height=Number(data.h)||300;item.fps=Number(data.fr)||30;item.frames=Math.max(1,Number(data.op)-Number(data.ip||0));item.duration=item.frames/item.fps;item.status='Ready';if(item.id===state.selectedId){renderInfo(item);setSourceDimensions(item);renderPreview(item)}renderFileChips()}catch(e){item.status='Lottie parse failed';item.error=e.message;renderFileChips()}}
+async function loadWebPMetadata(item){
+  let animatedFlag=false;
+  try{
+    const head=new Uint8Array(await item.file.slice(0,256).arrayBuffer());
+    const four=(o)=>String.fromCharCode(head[o]||0,head[o+1]||0,head[o+2]||0,head[o+3]||0);
+    if(four(0)==='RIFF'&&four(8)==='WEBP'){
+      let offset=12;
+      while(offset+8<=head.length){const name=four(offset);const size=(head[offset+4]|(head[offset+5]<<8)|(head[offset+6]<<16)|(head[offset+7]<<24))>>>0;if(name==='ANIM'){animatedFlag=true;break}if(name==='VP8X'&&size>=1){animatedFlag=!!(head[offset+8]&0x02);break}offset+=8+size+(size&1)}
+    }
+  }catch(e){}
+  if('ImageDecoder' in window){
+    let decoder=null;
+    try{
+      const bytes=await item.file.arrayBuffer();
+      decoder=new ImageDecoder({data:bytes,type:'image/webp',preferAnimation:true});
+      await decoder.tracks.ready;if(decoder.completed)await decoder.completed;
+      const track=decoder.tracks.selectedTrack;const count=Math.max(1,Number(track?.frameCount)||1);
+      const first=await decoder.decode({frameIndex:0});
+      item.width=first.image.displayWidth||first.image.codedWidth||first.image.width||300;
+      item.height=first.image.displayHeight||first.image.codedHeight||first.image.height||300;
+      try{first.image.close()}catch(e){}
+      item.frames=count;item.animated=count>1;item.fps=count>1?15:0;item.duration=count>1?count/15:0;item.webpImageDecoder=true;item.status='\u5df2\u5c31\u7eea';
+      decoder.close();if(item.id===state.selectedId){renderInfo(item);setSourceDimensions(item);renderPreview(item)}renderFileChips();return;
+    }catch(e){item.webpImageDecoderError=e?.message||String(e);try{decoder?.close()}catch(_){}}
+  }
+  const img=new Image();img.onload=()=>{item.width=img.naturalWidth;item.height=img.naturalHeight;item.animated=animatedFlag;item.frames=animatedFlag?0:1;item.fps=animatedFlag?15:0;item.duration=0;item.webpImageDecoder=false;item.status='\u5df2\u5c31\u7eea';if(item.id===state.selectedId){renderInfo(item);setSourceDimensions(item);renderPreview(item)}renderFileChips()};
+  img.onerror=()=>{item.status='\u65e0\u6cd5\u8bfb\u53d6 WEBP';item.error='\u6d4f\u89c8\u5668\u65e0\u6cd5\u89e3\u7801\u8be5 WEBP \u6587\u4ef6\u3002';renderFileChips()};img.src=item.url;
+}
+function loadScript(src,globalName,timeoutMs=10000){return new Promise((resolve,reject)=>{if(window[globalName])return resolve(window[globalName]);const script=document.createElement('script');let settled=false;const finish=(error)=>{if(settled)return;settled=true;clearTimeout(timer);script.onload=null;script.onerror=null;if(error){script.remove();reject(error)}else if(window[globalName])resolve(window[globalName]);else reject(new Error(globalName+' 组件初始化失败。'))};const timer=setTimeout(()=>finish(new Error('加载 '+globalName+' 超时：'+src)),timeoutMs);script.src=src;script.async=true;script.onload=()=>finish();script.onerror=()=>finish(new Error('无法加载 '+globalName+' 组件：'+src));document.head.appendChild(script)})}
+async function loadGlobalWithFallback(globalName,urls){if(window[globalName])return window[globalName];let lastError=null;for(const url of urls){try{return await loadScript(url,globalName,10000)}catch(e){lastError=e}}throw new Error(globalName+' 组件加载失败。已尝试本地资源和备用地址，请检查部署文件及网络。'+(lastError?.message||''))}
+async function ensureJSZip(){if(window.JSZip)return window.JSZip;if(!state.jszipLoading)state.jszipLoading=loadGlobalWithFallback('JSZip',[new URL('./vendor/jszip.min.js',location.href).href,'https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js','https://unpkg.com/jszip@3.10.1/dist/jszip.min.js']);try{return await state.jszipLoading}finally{state.jszipLoading=null}}
+async function ensureSVGA(){if(window.SVGA?.Parser)return window.SVGA;if(!state.svgaLoading)state.svgaLoading=loadGlobalWithFallback('SVGA',[new URL('./vendor/svga.min.js',location.href).href,'https://cdn.jsdelivr.net/npm/svgaplayerweb@2.3.2/build/svga.min.js','https://unpkg.com/svgaplayerweb@2.3.2/build/svga.min.js']);try{return await state.svgaLoading}finally{state.svgaLoading=null}}
+async function ensureLottie(){if(window.lottie)return window.lottie;if(!state.lottieLoading)state.lottieLoading=loadGlobalWithFallback('lottie',[new URL('./vendor/lottie.min.js',location.href).href,'https://cdn.jsdelivr.net/npm/lottie-web@5.13.0/build/player/lottie.min.js','https://unpkg.com/lottie-web@5.13.0/build/player/lottie.min.js']);try{return await state.lottieLoading}finally{state.lottieLoading=null}}
+async function loadLottieItem(item){try{let data=null;let zip=null;if(item.ext==='lottie'){await ensureJSZip();zip=await JSZip.loadAsync(item.file);let manifest=null;const mf=zip.file('manifest.json');if(mf){try{manifest=JSON.parse(await mf.async('string'))}catch(e){}}let path=null;const manifestPath=manifest?.animations?.[0]?.id;if(manifestPath)path='a/'+manifestPath+'.json';if(path&&zip.file(path)){}else{const names=Object.keys(zip.files).filter(n=>/\.json$/i.test(n)&&n!=='manifest.json'&&!zip.files[n].dir);path=names.find(n=>/^a\//i.test(n))||names.find(n=>/^animations\//i.test(n))||names[0]}if(!path||!zip.file(path))throw new Error('.lottie 压缩包中没有找到动画 JSON 文件。');data=JSON.parse(await zip.file(path).async('string'));await embedZipLottieAssets(data,zip)}else{data=JSON.parse(await item.file.text())}
+if(!data||!Array.isArray(data.layers)||!Number(data.fr)||!Number(data.op))throw new Error('JSON 文件不是有效的 Lottie 动画。');if(!zip)await embedImportedLottieAssets(data);item.lottieData=data;item.width=Number(data.w)||300;item.height=Number(data.h)||300;item.fps=Number(data.fr)||30;item.frames=Math.max(1,Number(data.op)-Number(data.ip||0));item.duration=item.frames/item.fps;item.status='已就绪';if(item.id===state.selectedId){renderInfo(item);setSourceDimensions(item);renderPreview(item)}renderFileChips()}catch(e){item.status='Lottie 解析失败';item.error=e.message;renderFileChips()}}
 function mimeForAsset(name){const ext=(name.split('.').pop()||'').toLowerCase();return ext==='jpg'||ext==='jpeg'?'image/jpeg':ext==='webp'?'image/webp':ext==='svg'?'image/svg+xml':'image/png'}
 async function embedZipLottieAssets(data,zip){for(const asset of data.assets||[]){if(!asset.p||asset.p.startsWith('data:'))continue;const path=(asset.u||'')+asset.p;const entry=zip.file(path)||zip.file('images/'+asset.p)||zip.file('assets/'+asset.p);if(entry){const b64=await entry.async('base64');asset.p='data:'+mimeForAsset(asset.p)+';base64,'+b64;asset.u='';asset.e=1}}}
 async function embedImportedLottieAssets(data){for(const asset of data.assets||[]){if(!asset.p||asset.p.startsWith('data:'))continue;const target=(asset.u||'')+asset.p;const match=state.items.find(x=>x!==selected()&&(x.name===asset.p||x.name===target));if(match){const b64=await new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(String(r.result).split(',')[1]);r.onerror=reject;r.readAsDataURL(match.file)});asset.p='data:'+match.file.type+';base64,'+b64;asset.u='';asset.e=1}}}
-async function loadPagItem(item){try{const PAG=await ensurePAG();item.pagFile=await PAG.PAGFile.load(await item.file.arrayBuffer());item.width=item.pagFile.width();item.height=item.pagFile.height();item.fps=item.pagFile.frameRate()||30;item.duration=(item.pagFile.duration()||0)/1000000;item.frames=Math.max(1,Math.round(item.duration*item.fps));item.status='Ready';if(item.id===state.selectedId){renderInfo(item);setSourceDimensions(item);renderPreview(item)}renderFileChips()}catch(e){item.status='PAG parse failed';item.error=e.message;renderFileChips()}}
 async function inspectSvgaFile(file){
   if(!file||!file.size)throw new Error('文件为空，无法解析。');
   const head=new Uint8Array(await file.slice(0,8).arrayBuffer());
@@ -188,8 +221,8 @@ async function inspectSvgaFile(file){
   const isZip=head.length>=4&&head[0]===0x50&&head[1]===0x4B&&(head[2]===0x03||head[2]===0x05||head[2]===0x07);
   const zlibHeader=head.length>=2&&head[0]===0x78&&(((head[0]<<8)|head[1])%31===0);
   if(isZip){
-    if(!window.JSZip)throw new Error('检测到 SVGA 1.x ZIP 文件，但 JSZip 组件未加载。请检查网络/CDN 后刷新页面。');
-    if(!window.JSZipUtils){try{await loadScript('https://cdn.jsdelivr.net/npm/jszip-utils@0.1.0/dist/jszip-utils.min.js','JSZipUtils')}catch(first){try{await loadScript('https://cdnjs.cloudflare.com/ajax/libs/jszip-utils/0.1.0/jszip-utils.min.js','JSZipUtils')}catch(second){throw new Error('检测到 SVGA 1.x，但 JSZipUtils 依赖加载失败。请检查网络/CDN 后刷新页面。')}}}
+    await ensureJSZip();
+    if(!window.JSZipUtils){try{await loadScript(new URL('./vendor/jszip-utils.min.js',location.href).href,'JSZipUtils')}catch(first){try{await loadScript('https://cdn.jsdelivr.net/npm/jszip-utils@0.1.0/dist/jszip-utils.min.js','JSZipUtils')}catch(second){try{await loadScript('https://cdnjs.cloudflare.com/ajax/libs/jszip-utils/0.1.0/jszip-utils.min.js','JSZipUtils')}catch(third){throw new Error('检测到 SVGA 1.x，但 JSZipUtils 依赖加载失败。请确认本地依赖已部署或检查网络。')}}}}
     let zip;
     try{zip=await JSZip.loadAsync(file)}catch(e){throw new Error('文件头是 ZIP，但压缩包损坏或无法解压。原始错误：'+(e?.message||e))}
     const names=Object.keys(zip.files);
@@ -217,7 +250,7 @@ function parserLoadSvga(parser,source,timeoutMs=20000){
 }
 async function loadSvga(item){
   try{
-    if(!window.SVGA||!window.SVGA.Parser)throw new Error('SVGA 播放器组件没有加载。请检查网络/CDN 后刷新页面。');
+    const SVGA=await ensureSVGA();
     const detected=await inspectSvgaFile(item.file);
     item.svgaVersion=detected.version;
     let videoItem;
@@ -238,82 +271,497 @@ async function loadSvga(item){
     item.fps=videoItem.FPS||15;
     item.frames=videoItem.frames||0;
     item.duration=item.frames/(item.fps||15);
-    item.status='Ready';
+    item.status='已就绪';
     item.error='';
     if(item.id===state.selectedId){renderInfo(item);setSourceDimensions(item);renderPreview(item)}
     renderFileChips();
   }catch(err){
-    item.status='SVGA parse failed';
+    item.status='SVGA 解析失败';
     item.error=err?.message||String(err||'未知错误');
     renderFileChips();
     toast('SVGA 解析失败：'+item.error);
     console.error('MOTION LAB SVGA diagnostic',item.name,item.svgaVersion||'version unknown',item.error);
   }
 }
-function destroyPreview(){if(state.previewPlayer){try{state.previewPlayer.stopAnimation()}catch(e){}state.previewPlayer=null}if(state.previewVideo){try{state.previewVideo.pause()}catch(e){}state.previewVideo=null}if(state.previewPagView){try{state.previewPagView.destroy()}catch(e){}state.previewPagView=null}if(state.previewLottie){try{state.previewLottie.destroy()}catch(e){}state.previewLottie=null}if(state.previewVap){try{state.previewVap.destroy()}catch(e){}state.previewVap=null}}
+function destroyPreview(){
+  if(state.previewPlayer){try{state.previewPlayer.stopAnimation()}catch(e){}state.previewPlayer=null}
+  if(state.previewVideo){try{state.previewVideo.pause()}catch(e){}state.previewVideo=null}
+  if(state.previewLottie){try{state.previewLottie.destroy()}catch(e){}state.previewLottie=null}
+  state.previewImage=null;state.previewImageCanvas=null;state.previewPaused=false;
+}
+
 async function renderLottiePreview(item,content){const lottie=await ensureLottie();if(selected()!==item)return;const holder=document.createElement('div');holder.style.cssText='width:100%;height:100%;min-height:0;overflow:hidden';content.appendChild(holder);const preserve=state.fit==='cover'?'xMidYMid slice':state.fit==='stretch'?'none':'xMidYMid meet';const anim=lottie.loadAnimation({container:holder,renderer:'canvas',loop:true,autoplay:true,animationData:JSON.parse(JSON.stringify(item.lottieData)),rendererSettings:{preserveAspectRatio:preserve,clearCanvas:true}});state.previewLottie=anim;anim.addEventListener('enterFrame',()=>{const t=Math.max(0,(anim.currentFrame-(item.lottieData.ip||0))/(item.fps||30));updateTime(t,item.duration)})}
-async function renderPagPreview(item,content){const PAG=await ensurePAG();if(selected()!==item)return;const canvas=document.createElement('canvas');canvas.width=item.width;canvas.height=item.height;content.appendChild(canvas);const view=await PAG.PAGView.init(item.pagFile,canvas,{firstFrame:true,useScale:false});view.setRepeatCount(0);state.previewPagView=view;await view.play()}
-async function renderVapPreview(item,content){if(!item.vapConfig)throw new Error('VAP metadata is missing. Import a VAP MP4 containing its vapc box.');const Vap=await ensureVAP();if(selected()!==item)return;const holder=document.createElement('div');holder.style.cssText='width:100%;height:100%;min-height:0;overflow:hidden';content.appendChild(holder);const player=new Vap({container:holder,src:item.url,config:item.vapConfig,width:item.width,height:item.height,fps:item.fps||20,mute:true,loop:true,accurate:true,precache:true});state.previewVap=player;try{player.on('loadError',e=>{item.status='VAP playback error';item.error=String(e||'Unknown error');renderFileChips()})}catch(e){}}
-function drawFrameFit(ctx,img,s){const iw=img.width||img.naturalWidth||s.width,ih=img.height||img.naturalHeight||s.height;ctx.clearRect(0,0,s.width,s.height);if(!s.transparent){ctx.fillStyle=s.bg;ctx.fillRect(0,0,s.width,s.height)}let dw=s.width,dh=s.height,dx=0,dy=0;if(s.fit==='contain'){const k=Math.min(s.width/iw,s.height/ih);dw=iw*k;dh=ih*k;dx=(s.width-dw)/2;dy=(s.height-dh)/2}else if(s.fit==='cover'){const k=Math.max(s.width/iw,s.height/ih);dw=iw*k;dh=ih*k;dx=(s.width-dw)/2;dy=(s.height-dh)/2}ctx.drawImage(img,dx,dy,dw,dh)}
+function drawFrameFit(ctx,img,s){const iw=img.displayWidth||img.videoWidth||img.width||img.naturalWidth||s.width,ih=img.displayHeight||img.videoHeight||img.height||img.naturalHeight||s.height;ctx.clearRect(0,0,s.width,s.height);if(!s.transparent){ctx.fillStyle=s.bg;ctx.fillRect(0,0,s.width,s.height)}let dw=s.width,dh=s.height,dx=0,dy=0;if(s.fit==='contain'){const k=Math.min(s.width/iw,s.height/ih);dw=iw*k;dh=ih*k;dx=(s.width-dw)/2;dy=(s.height-dh)/2}else if(s.fit==='cover'){const k=Math.max(s.width/iw,s.height/ih);dw=iw*k;dh=ih*k;dx=(s.width-dw)/2;dy=(s.height-dh)/2}ctx.drawImage(img,dx,dy,dw,dh)}
 function getCanvasDimensions(){const width=Math.max(16,Math.min(4096,Number($('widthInput').value)||300));const height=Math.max(16,Math.min(4096,Number($('heightInput').value)||300));return {width,height}}
-function updatePreviewCanvas(){const stage=$('stage');const surface=stage.querySelector('.preview-canvas');if(!surface)return;const {width,height}=getCanvasDimensions();const maxW=Math.max(100,stage.clientWidth-36);const maxH=Math.max(100,stage.clientHeight-36);const scale=Math.min(maxW/width,maxH/height);surface.style.width=Math.max(1,Math.round(width*scale))+'px';surface.style.height=Math.max(1,Math.round(height*scale))+'px';surface.style.backgroundColor=$('transparentBg').checked?'#17243a':$('bgColor').value;surface.style.backgroundImage=$('transparentBg').checked?'linear-gradient(45deg,#26354b 25%,transparent 25%),linear-gradient(-45deg,#26354b 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#26354b 75%),linear-gradient(-45deg,transparent 75%,#26354b 75%)':'none';surface.style.backgroundSize='18px 18px';surface.style.backgroundPosition='0 0,0 9px,9px -9px,-9px 0';surface.style.setProperty('--media-fit',state.fit==='stretch'?'fill':state.fit==='cover'?'cover':'contain');const label=surface.querySelector('.canvas-size');if(label)label.textContent='OUTPUT '+width+' x '+height+' PX'}
+function updatePreviewCanvas(){const stage=$('stage');const surface=stage.querySelector('.preview-canvas');if(!surface)return;const {width,height}=getCanvasDimensions();const maxW=Math.max(100,stage.clientWidth-36);const maxH=Math.max(100,stage.clientHeight-36);const scale=Math.min(maxW/width,maxH/height);surface.style.width=Math.max(1,Math.round(width*scale))+'px';surface.style.height=Math.max(1,Math.round(height*scale))+'px';surface.style.backgroundColor=$('transparentBg').checked?'#17243a':$('bgColor').value;surface.style.backgroundImage=$('transparentBg').checked?'linear-gradient(45deg,#26354b 25%,transparent 25%),linear-gradient(-45deg,#26354b 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#26354b 75%),linear-gradient(-45deg,transparent 75%,#26354b 75%)':'none';surface.style.backgroundSize='18px 18px';surface.style.backgroundPosition='0 0,0 9px,9px -9px,-9px 0';surface.style.setProperty('--media-fit',state.fit==='stretch'?'fill':state.fit==='cover'?'cover':'contain');const label=surface.querySelector('.canvas-size');if(label)label.textContent='输出画布 '+width+' × '+height+' px'}
 function createPreviewContent(stage){const surface=document.createElement('div');surface.className='preview-canvas';const content=document.createElement('div');content.className='preview-content';const label=document.createElement('div');label.className='canvas-size';surface.appendChild(content);surface.appendChild(label);stage.appendChild(surface);updatePreviewCanvas();return content}
 function syncCanvasDimensions(changed,finalize=false){const wi=$('widthInput'),hi=$('heightInput');let w=Number(wi.value),h=Number(hi.value);if(!Number.isFinite(w)||!Number.isFinite(h)||w<=0||h<=0)return;if($('ratioLock').checked&&state.ratio>0){if(changed==='height')w=Math.round(h*state.ratio);else h=Math.round(w/state.ratio)}if(finalize){w=Math.max(16,Math.min(4096,Math.round(w)));h=Math.max(16,Math.min(4096,Math.round(h)))}if(changed!=='width'||finalize)wi.value=w;if(changed!=='height'||finalize)hi.value=h;updatePreviewCanvas()}
-function renderPreview(item){destroyPreview();state.previewPaused=false;state.previewFrame=0;const stage=$('stage');stage.classList.remove('empty');stage.innerHTML='';$('previewFormat').textContent=item.ext.toUpperCase();$('previewStatus').textContent=item.status||'Ready';const overlay=document.createElement('div');overlay.className='stage-overlay';overlay.innerHTML=`<span class="overlay-chip">SOURCE ${item.width||'-'} x ${item.height||'-'}</span><span class="overlay-chip">${item.fps||'-'} FPS</span>`;stage.appendChild(overlay);const content=createPreviewContent(stage);if(item.ext==='svga'&&item.videoItem&&window.SVGA){const holder=document.createElement('div');holder.className='svga-holder';holder.id='svgaLivePlayer';content.appendChild(holder);const p=new SVGA.Player(holder);p.setVideoItem(item.videoItem);p.setContentMode(state.fit==='cover'?'AspectFill':state.fit==='stretch'?'Fill':'AspectFit');p.loops=0;p.onFrame(frame=>{state.previewFrame=frame});p.startAnimation();state.previewPlayer=p;return}if(item.ext==='lottie'||item.ext==='json'){renderLottiePreview(item,content).catch(e=>{item.status='Lottie preview failed';item.error=e.message;toast(e.message)});return}if(item.ext==='pag'){renderPagPreview(item,content).catch(e=>{item.status='PAG preview failed';item.error=e.message;toast(e.message)});return}if(item.ext==='vap'){renderVapPreview(item,content).catch(e=>{item.status='VAP preview failed';item.error=e.message;toast(e.message)});return}if(['mp4','mov','m4v','webm','mkv','avi'].includes(item.ext)){const v=document.createElement('video');v.src=item.url;v.controls=false;v.autoplay=true;v.loop=true;v.muted=true;v.playsInline=true;content.appendChild(v);state.previewVideo=v;v.onloadedmetadata=()=>updateTime(v.currentTime,v.duration);v.ontimeupdate=()=>updateTime(v.currentTime,v.duration);return}const img=document.createElement('img');img.src=item.url;img.alt=item.name;content.appendChild(img);$('timeLabel').textContent=item.animated?'ANIMATED PREVIEW':'STILL IMAGE';$('timelineFill').style.width='0%'}
+function renderPreview(item){
+  destroyPreview();state.previewPaused=false;state.previewFrame=0;$('playBtn').textContent='▶';
+  const stage=$('stage');stage.classList.remove('empty');stage.innerHTML='';
+  $('previewFormat').textContent=item.ext.toUpperCase();$('previewStatus').textContent=item.status||'已就绪';
+  const overlay=document.createElement('div');overlay.className='stage-overlay';
+  overlay.innerHTML=`<span class="overlay-chip">原始尺寸 ${item.width||'-'} × ${item.height||'-'}</span><span class="overlay-chip">${item.fps||'-'} 帧/秒</span>`;
+  stage.appendChild(overlay);const content=createPreviewContent(stage);
+  if(item.ext==='svga'&&item.videoItem&&window.SVGA){
+    const holder=document.createElement('div');holder.className='svga-holder';holder.id='svgaLivePlayer';content.appendChild(holder);
+    const p=new SVGA.Player(holder);p.setVideoItem(item.videoItem);p.setContentMode(state.fit==='cover'?'AspectFill':state.fit==='stretch'?'Fill':'AspectFit');p.loops=0;
+    p.onFrame(frame=>{state.previewFrame=frame;updateTime(frame/(item.fps||15),item.duration)});p.startAnimation();state.previewPlayer=p;return;
+  }
+  if(item.ext==='lottie'||item.ext==='json'){renderLottiePreview(item,content).catch(e=>{item.status='动画预览失败';item.error=e.message;renderFileChips();toast('动画预览失败：'+e.message)});return}
+  if(['mp4','mov','m4v','webm','mkv','avi'].includes(item.ext)){
+    const v=document.createElement('video');v.src=item.url;v.controls=false;v.autoplay=true;v.loop=true;v.muted=true;v.playsInline=true;content.appendChild(v);state.previewVideo=v;
+    v.onloadedmetadata=()=>updateTime(v.currentTime,v.duration);v.ontimeupdate=()=>updateTime(v.currentTime,v.duration);v.onerror=()=>toast('视频预览失败，请检查视频编码格式。');return;
+  }
+  const img=new Image();img.className='preview-image-freeze';img.src=item.url;img.alt=item.name;content.appendChild(img);state.previewImage=img;
+  $('timeLabel').textContent=item.animated?'动态图片预览':'静态图片';$('timelineFill').style.width='0%';
+}
+
 function updateTime(now,duration){$('timeLabel').textContent=fmtTime(now)+' / '+fmtTime(duration);$('timelineFill').style.width=(duration>0?Math.min(100,now/duration*100):0)+'%'}
-function renderQueue(){const el=$('queueList');$('queueCount').textContent=state.outputs.length+' tasks';$('downloadAll').disabled=!state.outputs.some(x=>x.status==='done');if(!state.outputs.length){el.innerHTML='<div class="queue-empty">暂无任务。导入素材、设置导出参数后，即可开始处理。</div>';return}el.innerHTML='';state.outputs.forEach(task=>{const row=document.createElement('div');row.className='queue-item';const statusClass=task.status==='done'?'done':task.status==='error'?'error':'';row.innerHTML=`<div><div class="q-name" title="${escapeHtml(task.name)}">${escapeHtml(task.name)}</div><div class="q-meta">${task.sourceExt.toUpperCase()} &rarr; ${task.format.toUpperCase()} &nbsp; ${task.size?fmtBytes(task.size):''}</div></div><div class="status ${statusClass}">${task.statusLabel}</div><div class="progress"><span style="width:${task.progress||0}%"></span></div><div class="q-meta">${task.progress||0}%</div><div class="q-actions"></div>`;const actions=row.querySelector('.q-actions');if(task.status==='done'){const d=document.createElement('button');d.textContent='Download';d.onclick=()=>downloadTask(task);actions.appendChild(d)}else if(task.status==='error'){const e=document.createElement('button');e.textContent='Details';e.onclick=()=>toast(task.error||'Conversion failed');actions.appendChild(e)}el.appendChild(row)})}
+function renderQueue(){
+  const el=$('queueList');$('queueCount').textContent=state.outputs.length+' 个任务';
+  $('downloadAll').disabled=!state.outputs.some(x=>x.status==='done');
+  if(!state.outputs.length){el.innerHTML='<div class="queue-empty">暂无处理任务。请先导入素材、选择输出格式，再开始处理。</div>';return}
+  el.innerHTML='';state.outputs.forEach(task=>{
+    const row=document.createElement('div');row.className='queue-item';
+    const statusClass=task.status==='done'?'done':task.status==='error'?'error':'';
+    const stage=task.stage?' · '+escapeHtml(task.stage):'';
+    const statusText=task.status==='done'?'已完成':task.status==='error'?'失败':'处理中';
+    row.innerHTML=`<div><div class="q-name" title="${escapeHtml(task.name)}">${escapeHtml(task.name)}</div><div class="q-meta">${task.sourceExt.toUpperCase()} → ${task.format.toUpperCase()} ${task.size?' · '+fmtBytes(task.size):''}${stage}</div></div><div class="status ${statusClass}">${statusText}</div><div class="progress"><span style="width:${task.progress||0}%"></span></div><div class="q-meta">${task.progress||0}%</div><div class="q-actions"></div>`;
+    const actions=row.querySelector('.q-actions');
+    if(task.status==='done'){const d=document.createElement('button');d.textContent='下载';d.onclick=()=>downloadTask(task);actions.appendChild(d)}
+    else if(task.status==='error'){const e=document.createElement('button');e.textContent='错误详情';e.onclick=()=>showDiagnostic(task);actions.appendChild(e)}
+    el.appendChild(row);
+  });
+}
+function showDiagnostic(task){
+  state.activeDiagnostic=task;const logs=(task.logs||[]).slice(-16).join('\n');
+  const text=['文件：'+task.name,'输入格式：'+task.sourceExt,'输出格式：'+task.format,'失败阶段：'+(task.stage||'未知'),'失败进度：'+(task.progress||0)+'%','错误信息：'+(task.error||'未知错误'),'最近的转换日志：',logs||task.lastLog||'没有捕获到转换日志'].join('\n');
+  $('diagnosticBody').innerHTML='<pre></pre>';$('diagnosticBody').querySelector('pre').textContent=text;$('diagnosticModal').classList.remove('hidden');
+}
+function closeDiagnostic(){$('diagnosticModal').classList.add('hidden');state.activeDiagnostic=null}
+function showHelp(){$('helpModal').classList.remove('hidden')}
+
 function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-async function ensureFFmpeg(){if(state.ffmpegReady)return state.ffmpeg;if(!window.isSecureContext&&location.protocol!=='file:'){}$('engineStat').textContent='Loading engine...';toast('Loading FFmpeg WebAssembly. First load may take a while.');const {FFmpeg}=await import('https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.12.10/dist/esm/index.js');const {toBlobURL}=await import('https://cdn.jsdelivr.net/npm/@ffmpeg/util@0.12.1/dist/esm/index.js');const ff=new FFmpeg();ff.on('progress',({progress})=>{if(state.currentTask){state.currentTask.progress=Math.max(state.currentTask.progress,Math.min(95,Math.round(progress*95)));renderQueue()}});ff.on('log',({message})=>{if(state.currentTask&&message)state.currentTask.lastLog=message});const base='https://cdn.jsdelivr.net/npm/@ffmpeg/core@0.12.6/dist/umd';await ff.load({coreURL:await toBlobURL(base+'/ffmpeg-core.js','text/javascript'),wasmURL:await toBlobURL(base+'/ffmpeg-core.wasm','application/wasm')});state.ffmpeg=ff;state.ffmpegReady=true;$('engineStat').textContent='Engine ready';toast('Conversion engine ready');return ff}
+function withTimeout(promise,timeoutMs,label){
+  let timer=null;
+  return Promise.race([
+    promise,
+    new Promise((_,reject)=>{timer=setTimeout(()=>reject(new Error(label+'超时（'+Math.round(timeoutMs/1000)+' 秒）')),timeoutMs)})
+  ]).finally(()=>{if(timer)clearTimeout(timer)});
+}
+function setEngineStage(message,progress){
+  $('engineStat').textContent=message;
+  if(state.currentTask){
+    state.currentTask.stage=message;
+    if(Number.isFinite(progress))state.currentTask.progress=Math.max(state.currentTask.progress,progress);
+    state.currentTask.logs=state.currentTask.logs||[];
+    state.currentTask.logs.push('[引擎] '+message);
+    if(state.currentTask.logs.length>50)state.currentTask.logs.shift();
+    renderQueue();
+  }
+}
+async function fetchAsBlobURL(url,mimeType,timeoutMs=18000){
+  const controller=new AbortController();
+  const timer=setTimeout(()=>controller.abort(),timeoutMs);
+  try{
+    const response=await fetch(url,{mode:'cors',cache:'no-store',signal:controller.signal});
+    if(!response.ok)throw new Error('资源请求失败（HTTP '+response.status+'）：'+url);
+    const data=await response.arrayBuffer();
+    if(!data||!data.byteLength)throw new Error('资源文件为空：'+url);
+    return URL.createObjectURL(new Blob([data],{type:mimeType}));
+  }catch(error){
+    if(controller.signal.aborted)throw new Error('下载资源超时（'+Math.round(timeoutMs/1000)+' 秒）：'+url);
+    throw error;
+  }finally{clearTimeout(timer)}
+}
+async function resolveFFmpegWorkerURL(){
+  const localURL=new URL('ffmpeg-worker.js',location.href).href;
+  const controller=new AbortController();
+  const timer=setTimeout(()=>controller.abort(),7000);
+  try{
+    const response=await fetch(localURL,{cache:'no-store',signal:controller.signal});
+    if(response.ok){
+      const text=await response.text();
+      if(!text.includes('worker.js'))throw new Error('ffmpeg-worker.js 内容不完整。');
+      return localURL;
+    }
+    throw new Error('HTTP '+response.status);
+  }catch(error){
+    if(controller.signal.aborted)throw new Error('检测本地 ffmpeg-worker.js 超时。请确认它与 index.html 放在同一目录并已上传 GitHub。');
+    throw new Error('找不到同目录的 ffmpeg-worker.js（'+(error?.message||error)+'）。请把它与 index.html 一起上传到 GitHub Pages 根目录。');
+  }finally{clearTimeout(timer)}
+}
+async function ensureFFmpeg(){
+  if(state.ffmpegReady&&state.ffmpeg)return state.ffmpeg;
+  if(state.ffmpegLoading)return state.ffmpegLoading;
+  state.ffmpegLoading=(async()=>{
+    setEngineStage('正在启动转换引擎（首次需要下载约 30 MB）',42);
+    const localVendorBase=new URL('./vendor/npm/',location.href).href.replace(/\/$/,'');
+    const candidates=[
+      {name:'网站本地资源',base:localVendorBase},
+      {name:'jsDelivr',base:'https://cdn.jsdelivr.net/npm'},
+      {name:'unpkg',base:'https://unpkg.com'},
+      {name:'Fastly',base:'https://fastly.jsdelivr.net/npm'},
+      {name:'Gcore',base:'https://gcore.jsdelivr.net/npm'}
+    ];
+    const failures=[];
+    for(let index=0;index<candidates.length;index++){
+      const cdn=candidates[index];let ff=null;const urls=[];
+      try{
+        setEngineStage('正在连接转换资源：'+cdn.name+'（线路 '+(index+1)+' / '+candidates.length+'）',42);
+        const moduleURL=cdn.base+'/@ffmpeg/ffmpeg@0.12.10/dist/esm/index.js';
+        const module=await withTimeout(import(moduleURL),10000,cdn.name+' 转换模块连接');
+        if(typeof module.FFmpeg!=='function')throw new Error('没有找到 FFmpeg 初始化接口。');
+        const FFmpegCtor=module.FFmpeg;
+        const coreBase=cdn.base+'/@ffmpeg/core@0.12.6/dist/umd';
+        setEngineStage('正在准备转换核心文件：'+cdn.name+'（约 30 MB）',43);
+        let coreURL,wasmURL;
+        if(cdn.name==='网站本地资源'){
+          // Same-origin files can be loaded directly; avoid unnecessary Blob URLs in the worker.
+          coreURL=coreBase+'/ffmpeg-core.js';
+          wasmURL=coreBase+'/ffmpeg-core.wasm';
+        }else{
+          [coreURL,wasmURL]=await Promise.all([
+            fetchAsBlobURL(coreBase+'/ffmpeg-core.js','text/javascript',20000),
+            fetchAsBlobURL(coreBase+'/ffmpeg-core.wasm','application/wasm',30000)
+          ]);
+          urls.push(coreURL,wasmURL);
+        }
+        setEngineStage('正在检查本地转换工作线程',44);
+        const classWorkerURL=await resolveFFmpegWorkerURL();
+        ff=new FFmpegCtor();
+        ff.on('progress',({progress})=>{if(state.currentTask){state.currentTask.progress=Math.max(state.currentTask.progress,Math.min(96,Math.round(46+progress*50)));state.currentTask.stage='正在编码输出文件';renderQueue()}});
+        ff.on('log',({message})=>{if(state.currentTask&&message){state.currentTask.lastLog=message;state.currentTask.logs=state.currentTask.logs||[];state.currentTask.logs.push(message);if(state.currentTask.logs.length>50)state.currentTask.logs.shift()}});
+        setEngineStage('正在启动转换工作线程：'+cdn.name,45);
+        await withTimeout(ff.load({coreURL,wasmURL,classWorkerURL}),45000,cdn.name+' 工作线程启动');
+        state.ffmpeg=ff;state.ffmpegReady=true;state.ffmpegCdn=cdn.name;state.ffmpegObjectURLs=urls;
+        $('engineStat').textContent='转换引擎已就绪';
+        if(state.currentTask){state.currentTask.progress=Math.max(state.currentTask.progress,46);state.currentTask.stage='转换引擎已就绪';renderQueue()}
+        toast('转换引擎已就绪（'+cdn.name+'）');
+        return ff;
+      }catch(error){
+        const detail=error?.message||String(error);
+        failures.push(cdn.name+'：'+detail);
+        try{ff?.terminate()}catch(_){}
+        urls.forEach(url=>{try{URL.revokeObjectURL(url)}catch(_){}});
+        if(index<candidates.length-1)setEngineStage(cdn.name+' 连接失败，正在切换备用线路',42);
+      }
+    }
+    $('engineStat').textContent='转换引擎连接失败';
+    throw new Error('无法启动动画转换引擎。已在每条线路设置超时，并尝试全部备用地址。\n\n'+failures.join('\n\n')+'\n\n请检查浏览器是否能访问 jsDelivr / unpkg，且确认 ffmpeg-worker.js 与 index.html 位于同一目录。若这些 CDN 均无法访问，需要改为把 FFmpeg 依赖文件放在网站本地。');
+  })();
+  try{return await state.ffmpegLoading}finally{state.ffmpegLoading=null}
+}
 function scaleFilter(s,alphaOutput){const w=s.width,h=s.height;const alpha=!!(s.transparent&&alphaOutput);let color=alpha?'black@0':('0x'+String(s.bg||'#10182a').replace('#',''));const pre=alpha?'format=rgba,':'';const post=alpha?',format=rgba':'';if(s.fit==='stretch')return `${pre}scale=${w}:${h}${post},setsar=1`;if(s.fit==='cover')return `${pre}scale=${w}:${h}:force_original_aspect_ratio=increase,crop=${w}:${h}${post},setsar=1`;return `${pre}scale=${w}:${h}:force_original_aspect_ratio=decrease,pad=${w}:${h}:(ow-iw)/2:(oh-ih)/2:color=${color}${post},setsar=1`}
 async function writeFrames(ff,frames,prefix){for(let i=0;i<frames.length;i++){await ff.writeFile(`${prefix}${String(i).padStart(5,'0')}.png`,frames[i])}}
 async function cleanupFFmpeg(ff,prefix,names=[]){try{const list=await ff.listDir('/');for(const entry of list){if((prefix&&entry.name.startsWith(prefix))||names.includes(entry.name)){try{await ff.deleteFile(entry.name)}catch(e){}}}}catch(e){}}
-async function readFrames(ff,prefix,max=500){const list=await ff.listDir('/');const names=list.filter(x=>x.name.startsWith(prefix)&&x.name.endsWith('.png')).map(x=>x.name).sort();if(names.length>max)throw new Error('Too many frames for SVGA packaging. Reduce duration or FPS.');const frames=[];for(const name of names)frames.push(await ff.readFile(name));return frames}
-async function renderSvgaFrames(item,s,progress,maxOutputFrames=500){if(!item.videoItem)throw new Error('SVGA file is not parsed.');const srcFps=item.fps||15;const sourceDuration=item.duration||((item.frames||1)/srcFps);const clipDuration=s.duration>0?s.duration:Math.max(.1,sourceDuration-s.start);const frameIndices=[];const wanted=Math.min(maxOutputFrames,Math.ceil(clipDuration*s.fps));for(let i=0;i<wanted;i++){const sourceTime=s.start+(i/s.fps)*s.speed;if(sourceTime>=sourceDuration)break;frameIndices.push(Math.min((item.frames||1)-1,Math.max(0,Math.floor(sourceTime*srcFps))))}if(!frameIndices.length)frameIndices.push(0);const holder=document.createElement('div');holder.style.cssText='position:fixed;left:-10000px;top:0;width:1px;height:1px;overflow:hidden';document.body.appendChild(holder);const p=new SVGA.Player(holder);p.setVideoItem(item.videoItem);p.setContentMode('AspectFit');const sourceCanvas=document.createElement('canvas');sourceCanvas.width=item.width;sourceCanvas.height=item.height;const sourceCtx=sourceCanvas.getContext('2d');const canvas=document.createElement('canvas');canvas.width=s.width;canvas.height=s.height;const ctx=canvas.getContext('2d');const frames=[];for(let i=0;i<frameIndices.length;i++){p.stepToFrame(frameIndices[i],false);await new Promise(r=>requestAnimationFrame(()=>r()));sourceCtx.clearRect(0,0,item.width,item.height);p.drawOnContext(sourceCtx,0,0,item.width,item.height);drawFrameFit(ctx,sourceCanvas,s);const blob=await new Promise(resolve=>canvas.toBlob(resolve,'image/png'));if(!blob)throw new Error('Could not render SVGA frame.');frames.push(new Uint8Array(await blob.arrayBuffer()));progress(Math.round((i+1)/frameIndices.length*45))}try{p.stopAnimation()}catch(e){}holder.remove();return frames}
-function buildSvga(frames,s){if(frames.length>180)throw new Error('SVGA export is limited to 180 frames in this prototype. Reduce duration or FPS.');if(!window.JSZip)throw new Error('ZIP library is unavailable.');const zip=new JSZip();const count=frames.length;const images={};const sprites=[];const identity={a:1,b:0,c:0,d:1,tx:0,ty:0};for(let i=0;i<count;i++){const key='f'+String(i).padStart(5,'0');const path=key+'.png';images[key]=path;zip.file(path,frames[i]);const frameList=[];for(let j=0;j<count;j++)frameList.push({alpha:i===j?1:0,layout:{x:0,y:0,width:s.width,height:s.height},transform:identity,clipPath:'',shapes:[]});sprites.push({imageKey:key,frames:frameList})}const spec={ver:'1.1.0',movie:{viewBox:{width:s.width,height:s.height},fps:s.fps,frames:count},images,sprites};zip.file('movie.spec',JSON.stringify(spec));return zip.generateAsync({type:'blob',compression:'DEFLATE',compressionOptions:{level:6}})}
-async function extractToFrames(ff,item,s,prefix,progress){const ext=item.ext;const input='input_'+item.id.replace(/-/g,'')+'.'+ext;await ff.writeFile(input,new Uint8Array(await item.file.arrayBuffer()));const still=['png','jpg','jpeg','bmp'].includes(ext);const alphaOut=true;const vf=scaleFilter({...s,fit:s.fit},alphaOut)+`,fps=${s.fps},setpts=PTS/${s.speed}`;let args=[];if(still)args=['-loop','1','-framerate',String(s.fps),'-t',String(s.duration||2),'-i',input];else{args=['-ss',String(s.start)];if(s.duration>0)args.push('-t',String(s.duration));args.push('-i',input)}args.push('-vf',vf,'-vsync','0','-start_number','0',`${prefix}%05d.png`);const code=await ff.exec(args);if(code!==0)throw new Error('Frame extraction failed. The source codec may not be supported.');let frames=await readFrames(ff,prefix,s.format==='svga'?180:s.format==='lottie'?240:500);if(!frames.length)throw new Error('No frames were decoded.');if(['webp','apng','gif'].includes(ext)&&frames.length===1){const hold=Math.min(500,Math.ceil((s.duration>0?s.duration:2)*s.fps));frames=Array.from({length:Math.max(1,hold)},()=>frames[0]);await writeFrames(ff,frames,prefix)}progress(65);return {frames,input}}
-async function renderLottieFrames(item,s,progress,maxFrames=500){if(!item.lottieData)throw new Error('Lottie animation is not parsed.');const lottie=await ensureLottie();const data=item.lottieData;const sourceDuration=item.duration||((Number(data.op)-Number(data.ip||0))/(Number(data.fr)||30));const clipDuration=s.duration>0?s.duration:Math.max(.1,sourceDuration-s.start);const count=Math.min(maxFrames,Math.max(1,Math.ceil(clipDuration*s.fps)));const holder=document.createElement('div');holder.style.cssText='position:fixed;left:-10000px;top:0;width:'+item.width+'px;height:'+item.height+'px;overflow:hidden;pointer-events:none';document.body.appendChild(holder);const anim=lottie.loadAnimation({container:holder,renderer:'canvas',loop:false,autoplay:false,animationData:JSON.parse(JSON.stringify(data)),rendererSettings:{preserveAspectRatio:'xMidYMid meet',clearCanvas:true}});await new Promise((resolve,reject)=>{const t=setTimeout(()=>reject(new Error('Lottie renderer timed out.')),12000);anim.addEventListener('DOMLoaded',()=>{clearTimeout(t);resolve()});anim.addEventListener('data_failed',()=>{clearTimeout(t);reject(new Error('Lottie assets could not be loaded.'))})});await new Promise(r=>requestAnimationFrame(()=>r()));const sourceCanvas=holder.querySelector('canvas')||anim.renderer?.canvas;if(!sourceCanvas)throw new Error('Lottie canvas renderer did not create a canvas.');const out=document.createElement('canvas');out.width=s.width;out.height=s.height;const ctx=out.getContext('2d');const frames=[];for(let i=0;i<count;i++){const time=s.start+(i/s.fps)*s.speed;if(time>=sourceDuration)break;const frame=Math.min(Number(data.op)-1,Number(data.ip||0)+time*(Number(data.fr)||30));anim.goToAndStop(frame,true);await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));drawFrameFit(ctx,sourceCanvas,s);const blob=await new Promise(resolve=>out.toBlob(resolve,'image/png'));if(!blob)throw new Error('Could not capture Lottie frame.');frames.push(new Uint8Array(await blob.arrayBuffer()));progress(Math.round((i+1)/count*45))}anim.destroy();holder.remove();if(!frames.length)throw new Error('No Lottie frames were rendered.');return frames}
-async function renderPagFrames(item,s,progress,maxFrames=500){if(!item.pagFile)throw new Error('PAG file is not parsed.');const PAG=await ensurePAG();const sourceDuration=item.duration||((item.frames||1)/(item.fps||30));const clipDuration=s.duration>0?s.duration:Math.max(.1,sourceDuration-s.start);const count=Math.min(maxFrames,Math.max(1,Math.ceil(clipDuration*s.fps)));const sourceCanvas=document.createElement('canvas');sourceCanvas.width=item.width;sourceCanvas.height=item.height;const view=await PAG.PAGView.init(item.pagFile,sourceCanvas,{firstFrame:true,useScale:false});const out=document.createElement('canvas');out.width=s.width;out.height=s.height;const ctx=out.getContext('2d');const frames=[];try{for(let i=0;i<count;i++){const time=s.start+(i/s.fps)*s.speed;if(time>=sourceDuration)break;await view.setProgress(Math.min(1,time/sourceDuration));await view.flush();const snap=await view.makeSnapshot();if(!snap)throw new Error('PAG frame snapshot failed.');drawFrameFit(ctx,snap,s);if(snap.close)snap.close();const blob=await new Promise(resolve=>out.toBlob(resolve,'image/png'));if(!blob)throw new Error('Could not capture PAG frame.');frames.push(new Uint8Array(await blob.arrayBuffer()));progress(Math.round((i+1)/count*45))}}finally{view.destroy()}if(!frames.length)throw new Error('No PAG frames were rendered.');return frames}
-async function renderVapFrames(item,s,progress,maxFrames=500){if(!item.vapConfig)throw new Error('VAP metadata is missing.');const Vap=await ensureVAP();const sourceDuration=item.duration||((item.frames||1)/(item.fps||20));const clipDuration=s.duration>0?s.duration:Math.max(.1,sourceDuration-s.start);const count=Math.min(maxFrames,Math.max(1,Math.ceil(clipDuration*s.fps)));const holder=document.createElement('div');holder.style.cssText='position:fixed;left:-10000px;top:0;width:'+item.width+'px;height:'+item.height+'px;overflow:hidden;pointer-events:none';document.body.appendChild(holder);const player=new Vap({container:holder,src:item.url,config:item.vapConfig,width:item.width,height:item.height,fps:item.fps||s.fps,mute:true,loop:false,accurate:true,precache:true});const out=document.createElement('canvas');out.width=s.width;out.height=s.height;const ctx=out.getContext('2d');const frames=[];try{await new Promise(r=>setTimeout(r,250));for(let i=0;i<count;i++){const time=s.start+(i/s.fps)*s.speed;if(time>=sourceDuration)break;player.setTime(time);await new Promise(r=>setTimeout(r,Math.max(40,1000/s.fps)));const canvas=holder.querySelector('canvas');if(!canvas)throw new Error('VAP player did not expose a render canvas.');drawFrameFit(ctx,canvas,s);const blob=await new Promise(resolve=>out.toBlob(resolve,'image/png'));if(!blob)throw new Error('VAP WebGL canvas cannot be captured in this browser.');frames.push(new Uint8Array(await blob.arrayBuffer()));progress(Math.round((i+1)/count*45))}}finally{try{player.destroy()}catch(e){}holder.remove()}if(!frames.length)throw new Error('No VAP frames were captured.');return frames}
+async function readFrames(ff,prefix,max=500){const list=await ff.listDir('/');const names=list.filter(x=>x.name.startsWith(prefix)&&x.name.endsWith('.png')).map(x=>x.name).sort();if(names.length>max)throw new Error('动画帧数过多，请缩短时长或降低帧率后再导出。');const frames=[];for(const name of names)frames.push(await ff.readFile(name));return frames}
+async function renderSvgaFrames(item,s,progress,maxOutputFrames=500){
+  if(!item.videoItem)throw new Error('\u0053\u0056\u0047\u0041 \u6587\u4ef6\u5c1a\u672a\u89e3\u6790\u5b8c\u6210\u3002');
+  const srcFps=item.fps||15;const sourceDuration=item.duration||((item.frames||1)/srcFps);
+  const available=Math.max(0,sourceDuration-s.start);if(available<=0)throw new Error('\u8d77\u59cb\u65f6\u95f4\u5df2\u8d85\u51fa SVGA \u7d20\u6750\u65f6\u957f\u3002');
+  const sourceClipDuration=Math.min(available,s.duration>0?s.duration:available);
+  const clipDuration=sourceClipDuration/Math.max(.1,s.speed);
+  const wanted=Math.min(maxOutputFrames,Math.max(1,Math.ceil(clipDuration*s.fps)));
+  const frameIndices=[];
+  for(let i=0;i<wanted;i++){const sourceTime=s.start+(i/s.fps)*s.speed;if(sourceTime>=s.start+sourceClipDuration)break;frameIndices.push(Math.min((item.frames||1)-1,Math.max(0,Math.floor(sourceTime*srcFps))))}
+  if(!frameIndices.length)frameIndices.push(0);
+  const holder=document.createElement('div');holder.style.cssText='position:fixed;left:-12000px;top:0;width:'+item.width+'px;height:'+item.height+'px;overflow:hidden;pointer-events:none;opacity:0.01';document.body.appendChild(holder);
+  const player=new SVGA.Player(holder);player.setVideoItem(item.videoItem);player.setContentMode('AspectFit');player.loops=0;
+  const sourceCanvas=document.createElement('canvas');sourceCanvas.width=item.width;sourceCanvas.height=item.height;const sourceCtx=sourceCanvas.getContext('2d',{willReadFrequently:true});
+  const outputCanvas=document.createElement('canvas');outputCanvas.width=s.width;outputCanvas.height=s.height;const outputCtx=outputCanvas.getContext('2d');const frames=[];
+  const paint=()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(()=>setTimeout(resolve,0))));
+  let expectedFrame=-1,frameWaiter=null;
+  player.onFrame(frame=>{if(frameWaiter&&frame===expectedFrame){const done=frameWaiter;frameWaiter=null;done(true)}});
+  try{
+    player.startAnimation();player.pauseAnimation();await paint();
+    let previousFrame=-1;
+    for(let i=0;i<frameIndices.length;i++){
+      const target=frameIndices[i];
+      if(target!==previousFrame){
+        await new Promise(resolve=>{let settled=false;let timer;const finish=value=>{if(settled)return;settled=true;clearTimeout(timer);frameWaiter=null;resolve(value)};expectedFrame=target;frameWaiter=()=>finish(true);timer=setTimeout(()=>finish(false),500);player.stepToFrame(target,true)});
+        player.pauseAnimation();
+      }
+      await paint();previousFrame=target;
+      sourceCtx.clearRect(0,0,item.width,item.height);let drawn=false;
+      if(typeof player.drawOnContext==='function'){try{player.drawOnContext(sourceCtx,0,0,item.width,item.height);drawn=true}catch(e){drawn=false}}
+      let visible=false;
+      if(drawn){try{const px=sourceCtx.getImageData(0,0,item.width,item.height).data;for(let k=3;k<px.length;k+=64){if(px[k]>0){visible=true;break}}}catch(e){visible=true}}
+      if(!drawn||!visible){const rendered=holder.querySelector('canvas');if(!rendered)throw new Error('\u0053\u0056\u0047\u0041 \u64ad\u653e\u5668\u6ca1\u6709\u751f\u6210\u753b\u5e03\uff0c\u65e0\u6cd5\u63d0\u53d6\u52a8\u753b\u5e27\u3002\u8bf7\u68c0\u67e5\u64ad\u653e\u5668\u811a\u672c\u662f\u5426\u52a0\u8f7d\u6210\u529f\u3002');sourceCtx.clearRect(0,0,item.width,item.height);sourceCtx.drawImage(rendered,0,0,item.width,item.height)}
+      drawFrameFit(outputCtx,sourceCanvas,s);const blob=await new Promise(resolve=>outputCanvas.toBlob(resolve,'image/png'));
+      if(!blob||blob.size<64)throw new Error('SVGA \u7b2c '+(i+1)+' \u5e27\u5bfc\u51fa\u4e3a\u7a7a\u3002\u8bf7\u68c0\u67e5\u52a8\u753b\u5e27\u6e32\u67d3\u7ed3\u679c\u3002');
+      frames.push(new Uint8Array(await blob.arrayBuffer()));progress(Math.round((i+1)/frameIndices.length*38));
+    }
+  }finally{try{player.stopAnimation()}catch(e){}try{player.clear()}catch(e){}holder.remove()}
+  if(!frames.length)throw new Error('\u6ca1\u6709\u4ece SVGA \u52a8\u753b\u4e2d\u63d0\u53d6\u5230\u4efb\u4f55\u5e27\u3002');return frames;
+}
+function tasklessNoop(error){return error}
+async function buildSvga(frames,s){if(frames.length>180)throw new Error('SVGA 导出最多支持 180 帧，请缩短时长或降低帧率。');await ensureJSZip();const zip=new JSZip();const count=frames.length;const images={};const sprites=[];const identity={a:1,b:0,c:0,d:1,tx:0,ty:0};for(let i=0;i<count;i++){const key='f'+String(i).padStart(5,'0');const path=key+'.png';images[key]=path;zip.file(path,frames[i]);const frameList=[];for(let j=0;j<count;j++)frameList.push({alpha:i===j?1:0,layout:{x:0,y:0,width:s.width,height:s.height},transform:identity,clipPath:'',shapes:[]});sprites.push({imageKey:key,frames:frameList})}const spec={ver:'1.1.0',movie:{viewBox:{width:s.width,height:s.height},fps:s.fps,frames:count},images,sprites};zip.file('movie.spec',JSON.stringify(spec));return zip.generateAsync({type:'blob',compression:'DEFLATE',compressionOptions:{level:6}})}
+async function extractToFrames(ff,item,s,prefix,progress){
+  const ext=item.ext;const input='input_'+item.id.replace(/-/g,'')+'.'+ext;
+  await ff.writeFile(input,new Uint8Array(await item.file.arrayBuffer()));
+  const still=['png','jpg','jpeg','bmp'].includes(ext)||(ext==='webp'&&!item.animated);
+  const rawVF=scaleFilter({...s,transparent:true,fit:s.fit},true)+`,fps=${s.fps},setpts=PTS/${s.speed}`;
+  let args=[];
+  if(still)args=['-loop','1','-framerate',String(s.fps),'-t',String(s.duration||2),'-i',input];
+  else{args=['-ss',String(s.start),'-i',input];if(s.duration>0)args.push('-t',String(s.duration))}
+  if(s.transparent)args.push('-vf',rawVF);
+  else{
+    const bg='0x'+String(s.bg||'#10182a').replace('#','');
+    args.push('-filter_complex',`color=c=${bg}:s=${s.width}x${s.height}:r=${s.fps}[bg];[0:v]${rawVF}[fg];[bg][fg]overlay=shortest=1:format=auto,format=rgba[v]`,'-map','[v]');
+  }
+  args.push('-fps_mode','passthrough','-start_number','0',`${prefix}%05d.png`);
+  let code=-1;try{code=await ff.exec(args,180000)}catch(e){throw new Error('\u52a8\u753b\u5e27\u63d0\u53d6\u5931\u8d25\uff1a'+(e?.message||e))}
+  if(code!==0)throw new Error('\u52a8\u753b\u5e27\u63d0\u53d6\u5931\u8d25\uff08FFmpeg \u9000\u51fa\u7801 '+code+'\uff09\u3002\u8bf7\u68c0\u67e5\u6e90\u6587\u4ef6\u7f16\u7801\u662f\u5426\u53d7\u652f\u6301\u3002'+((state.currentTask?.lastLog)?' \u6700\u8fd1\u65e5\u5fd7\uff1a'+state.currentTask.lastLog:''));
+  const limit=s.format==='svga'?180:s.format==='lottie'?240:500;const frames=await readFrames(ff,prefix,limit);
+  if(!frames.length)throw new Error('\u6ca1\u6709\u63d0\u53d6\u5230\u52a8\u753b\u5e27\u3002\u8bf7\u68c0\u67e5\u7d20\u6750\u662f\u5426\u5305\u542b\u53ef\u89e3\u7801\u7684\u89c6\u9891\u6216\u52a8\u753b\u5185\u5bb9\u3002');
+  progress(40);return {frames,input};
+}
+async function renderWebPFrames(item,s,progress,maxOutputFrames=500){
+  if(!('ImageDecoder' in window))throw new Error('\u5f53\u524d\u6d4f\u89c8\u5668\u4e0d\u652f\u6301\u52a8\u6001 WEBP \u9010\u5e27\u89e3\u7801\u3002\u8bf7\u4f7f\u7528\u6700\u65b0\u7248 Edge \u6216 Chrome\uff0c\u5e76\u901a\u8fc7 HTTPS \u8bbf\u95ee\u7f51\u7ad9\u3002');
+  let decoder=null;
+  try{
+    const bytes=await item.file.arrayBuffer();
+    if(ImageDecoder.isTypeSupported&&!await ImageDecoder.isTypeSupported('image/webp'))throw new Error('\u5f53\u524d\u6d4f\u89c8\u5668\u7684 ImageDecoder \u4e0d\u652f\u6301 WEBP \u683c\u5f0f\u3002');
+    decoder=new ImageDecoder({data:bytes,type:'image/webp',preferAnimation:true});await decoder.tracks.ready;if(decoder.completed)await decoder.completed;
+    const track=decoder.tracks.selectedTrack;const frameCount=Math.max(1,Number(track?.frameCount)||1);
+    if(frameCount<=1){item.animated=false;item.frames=1;item.duration=0;item.fps=0;return null}
+    const durations=new Float64Array(frameCount);const starts=new Float64Array(frameCount+1);
+    for(let i=0;i<frameCount;i++){
+      const decoded=await decoder.decode({frameIndex:i});const durationUs=Number(decoded.image.duration)||Math.round(1000000/(item.fps||15));
+      durations[i]=Math.max(.001,durationUs/1000000);starts[i+1]=starts[i]+durations[i];try{decoded.image.close()}catch(e){}
+      if(i%8===0)progress(Math.round((i+1)/frameCount*4),'\u6b63\u5728\u8bfb\u53d6 WEBP \u5e27\u65f6\u957f');
+    }
+    const totalDuration=starts[frameCount];item.frames=frameCount;item.duration=totalDuration;item.fps=frameCount/totalDuration;item.animated=true;item.status='\u5df2\u5c31\u7eea';
+    const available=totalDuration-s.start;if(available<=0)throw new Error('\u8d77\u59cb\u65f6\u95f4\u5df2\u8d85\u51fa WEBP \u52a8\u753b\u65f6\u957f\u3002');
+    const sourceClipDuration=Math.min(available,s.duration>0?s.duration:available);
+    const clipDuration=sourceClipDuration/Math.max(.1,s.speed);
+    const outputCount=Math.min(maxOutputFrames,Math.max(1,Math.ceil(clipDuration*s.fps)));
+    const canvas=document.createElement('canvas');canvas.width=s.width;canvas.height=s.height;const ctx=canvas.getContext('2d');const frames=[];let cursor=0;
+    for(let i=0;i<outputCount;i++){
+      const sourceTime=s.start+(i/s.fps)*s.speed;if(sourceTime>=s.start+sourceClipDuration)break;
+      while(cursor<frameCount-1&&starts[cursor+1]<=sourceTime)cursor++;
+      const decoded=await decoder.decode({frameIndex:cursor});
+      try{drawFrameFit(ctx,decoded.image,s);const blob=await new Promise(resolve=>canvas.toBlob(resolve,'image/png'));if(!blob||blob.size<64)throw new Error('\u0057\u0045\u0042\u0050 \u7b2c '+(cursor+1)+' \u5e27\u5bfc\u51fa\u4e3a\u7a7a\u3002');frames.push(new Uint8Array(await blob.arrayBuffer()))}
+      finally{try{decoded.image.close()}catch(e){}}
+      progress(4+Math.round((i+1)/outputCount*34),'\u6b63\u5728\u9010\u5e27\u89e3\u7801 WEBP \u52a8\u753b');
+    }
+    if(!frames.length)throw new Error('\u6ca1\u6709\u4ece WEBP \u52a8\u753b\u4e2d\u63d0\u53d6\u5230\u5e27\u3002');
+    return frames;
+  }catch(e){throw new Error('\u52a8\u6001 WEBP \u9010\u5e27\u89e3\u7801\u5931\u8d25\uff1a'+(e?.message||e))}
+  finally{try{decoder?.close()}catch(e){}}
+}
+async function renderLottieFrames(item,s,progress,maxFrames=500){if(!item.lottieData)throw new Error('Lottie 动画尚未解析完成。');const lottie=await ensureLottie();const data=item.lottieData;const sourceDuration=item.duration||((Number(data.op)-Number(data.ip||0))/(Number(data.fr)||30));const available=sourceDuration-s.start;if(available<=0)throw new Error('起始时间已超出 Lottie 素材时长。');const sourceClipDuration=s.duration>0?Math.min(s.duration,available):available;const clipDuration=sourceClipDuration/Math.max(.1,s.speed);const count=Math.min(maxFrames,Math.max(1,Math.ceil(clipDuration*s.fps)));const holder=document.createElement('div');holder.style.cssText='position:fixed;left:-10000px;top:0;width:'+item.width+'px;height:'+item.height+'px;overflow:hidden;pointer-events:none';document.body.appendChild(holder);const anim=lottie.loadAnimation({container:holder,renderer:'canvas',loop:false,autoplay:false,animationData:JSON.parse(JSON.stringify(data)),rendererSettings:{preserveAspectRatio:'xMidYMid meet',clearCanvas:true}});await new Promise((resolve,reject)=>{const t=setTimeout(()=>reject(new Error('Lottie 渲染超时。')),12000);anim.addEventListener('DOMLoaded',()=>{clearTimeout(t);resolve()});anim.addEventListener('data_failed',()=>{clearTimeout(t);reject(new Error('Lottie 动画引用的图片资源加载失败。'))})});await new Promise(r=>requestAnimationFrame(()=>r()));const sourceCanvas=holder.querySelector('canvas')||anim.renderer?.canvas;if(!sourceCanvas)throw new Error('Lottie 画布渲染器未能创建画布。');const out=document.createElement('canvas');out.width=s.width;out.height=s.height;const ctx=out.getContext('2d');const frames=[];for(let i=0;i<count;i++){const time=s.start+(i/s.fps)*s.speed;if(time>=s.start+sourceClipDuration)break;const frame=Math.min(Number(data.op)-1,Number(data.ip||0)+time*(Number(data.fr)||30));anim.goToAndStop(frame,true);await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));drawFrameFit(ctx,sourceCanvas,s);const blob=await new Promise(resolve=>out.toBlob(resolve,'image/png'));if(!blob)throw new Error('无法捕获 Lottie 动画帧。');frames.push(new Uint8Array(await blob.arrayBuffer()));progress(Math.round((i+1)/count*45))}anim.destroy();holder.remove();if(!frames.length)throw new Error('没有成功渲染任何 Lottie 动画帧。');return frames}
 function bytesToBase64(bytes){let binary='';const chunk=0x8000;for(let i=0;i<bytes.length;i+=chunk)binary+=String.fromCharCode(...bytes.subarray(i,i+chunk));return btoa(binary)}
-function buildLottie(frames,s){if(frames.length>240)throw new Error('Lottie JSON export is limited to 240 raster frames to avoid an oversized JSON file. Reduce duration or FPS.');const assets=frames.map((data,i)=>({id:'image_'+i,w:s.width,h:s.height,u:'',p:'data:image/png;base64,'+bytesToBase64(data),e:1}));const layers=frames.map((data,i)=>({ddd:0,ind:i+1,ty:2,nm:'Frame '+(i+1),refId:'image_'+i,sr:1,ks:{o:{a:0,k:100},r:{a:0,k:0},p:{a:0,k:[s.width/2,s.height/2,0]},a:{a:0,k:[s.width/2,s.height/2,0]},s:{a:0,k:[100,100,100]}},ao:0,ip:i,op:i+1,st:i,bm:0}));return new Blob([JSON.stringify({v:'5.7.4',fr:s.fps,ip:0,op:frames.length,w:s.width,h:s.height,nm:'MOTION LAB raster animation',ddd:0,assets,layers})],{type:'application/json'})}
-async function buildVapProject(frames,s){const zip=new JSZip();frames.forEach((data,i)=>zip.file('frames/'+String(i).padStart(3,'0')+'.png',data));zip.file('README.txt','MOTION LAB VAP frame project\n\nThis is an intermediate PNG frame package, not a native VAP MP4.\nExtract the frames folder and select it in Tencent VapTool.\nRecommended settings: H.264, '+s.fps+' FPS, '+s.width+'x'+s.height+', bitrate '+s.bitrate+' kbps.\nVapTool creates the final MP4 with the vapc metadata box.\n');zip.file('settings.json',JSON.stringify({width:s.width,height:s.height,fps:s.fps,bitrate:s.bitrate,codec:'h264',alphaScale:0.5,frameCount:frames.length},null,2));return zip.generateAsync({type:'blob',compression:'DEFLATE',compressionOptions:{level:4}})}
+function buildLottie(frames,s){if(frames.length>240)throw new Error('Lottie JSON 导出最多支持 240 帧，请缩短时长或降低帧率。');const assets=frames.map((data,i)=>({id:'image_'+i,w:s.width,h:s.height,u:'',p:'data:image/png;base64,'+bytesToBase64(data),e:1}));const layers=frames.map((data,i)=>({ddd:0,ind:i+1,ty:2,nm:'第 '+(i+1)+' 帧',refId:'image_'+i,sr:1,ks:{o:{a:0,k:100},r:{a:0,k:0},p:{a:0,k:[s.width/2,s.height/2,0]},a:{a:0,k:[s.width/2,s.height/2,0]},s:{a:0,k:[100,100,100]}},ao:0,ip:i,op:i+1,st:i,bm:0}));return new Blob([JSON.stringify({v:'5.7.4',fr:s.fps,ip:0,op:frames.length,w:s.width,h:s.height,nm:'MOTION LAB 逐帧动画',ddd:0,assets,layers})],{type:'application/json'})}
+async function runFFmpegWithFallback(ff,args,s,task,prefix,names){
+  task.stage='正在编码输出文件';task.progress=Math.max(task.progress,45);renderQueue();
+  let code=-1,caught=null;
+  try{code=await ff.exec(args,180000)}catch(e){caught=e}
+  if(code===0)return;
+  const logText=(task.logs||[]).slice(-16).join('\n');
+  const diagnostic=(caught?.message||'')+'\n'+logText;
+  const missing=/unknown encoder|encoder .* not found|not find encoder|no such encoder/i.test(diagnostic);
+  const outputName=names[names.length-1];
+  const removeOutput=async()=>{if(outputName){try{await ff.deleteFile(outputName)}catch(_){}}};
+  const attempt=async(retry,stage,codec)=>{
+    await removeOutput();task.stage=stage;renderQueue();
+    try{const result=await ff.exec(retry,180000);if(result===0){task.fallbackCodec=codec;return true}code=result;return false}catch(e){caught=e;return false}
+  };
+  if(missing&&s.format==='mp4'&&args.includes('libx264')){
+    const retry=args.slice();const ci=retry.indexOf('libx264');if(ci>=0)retry[ci]='mpeg4';
+    for(const flag of ['-preset','-crf']){const ix=retry.indexOf(flag);if(ix>=0)retry.splice(ix,2)}
+    const enc=retry.indexOf('mpeg4');if(enc>=0)retry.splice(enc+1,0,'-q:v','4');
+    if(await attempt(retry,'正在使用兼容视频编码器重试','mpeg4'))return;
+  }
+  if(missing&&s.format==='webm'&&args.includes('libvpx-vp9')){
+    const retry=args.slice();const ci=retry.indexOf('libvpx-vp9');if(ci>=0)retry[ci]='libvpx';
+    if(await attempt(retry,'正在使用 VP8 兼容编码器重试','libvpx'))return;
+  }
+  if(missing&&s.format==='webp'&&args.includes('libwebp_anim')){
+    const retry=args.slice();const ci=retry.indexOf('libwebp_anim');if(ci>=0)retry[ci]='libwebp';
+    if(await attempt(retry,'正在使用兼容 WEBP 动画编码器重试','libwebp'))return;
+  }
+  await cleanupFFmpeg(ff,prefix,names);
+  throw new Error('动画编码失败（退出码 '+code+'）。'+(caught?.message||'')+'\n'+(logText||'没有捕获到 FFmpeg 日志。'));
+}
 async function convertWithFFmpeg(item,s,task){
-const prefix='f_'+item.id.replace(/-/g,'')+'_';let ff=null;const getFF=async()=>{if(!ff)ff=await ensureFFmpeg();return ff};let frames=null,inputName=null,sourceIsFrames=false,sourceIsSvga=item.ext==='svga';const maxFrames=s.format==='svga'?180:s.format==='lottie'?240:500;const report=p=>{task.progress=Math.max(task.progress,p);renderQueue()};
-if(item.ext==='pag'){frames=await renderPagFrames(item,s,report,maxFrames);sourceIsFrames=true}
-else if(item.ext==='lottie'||item.ext==='json'){frames=await renderLottieFrames(item,s,report,maxFrames);sourceIsFrames=true}
-else if(item.ext==='vap'){frames=await renderVapFrames(item,s,report,maxFrames);sourceIsFrames=true}
-else if(sourceIsSvga){frames=await renderSvgaFrames(item,s,report,maxFrames);sourceIsFrames=true}
-else if(s.format==='svga'||s.format==='pngseq'||s.format==='lottie'||s.format==='vapProject'||['webp','apng','gif'].includes(item.ext)){ff=await getFF();const result=await extractToFrames(ff,item,s,prefix,p=>{task.progress=p;renderQueue()});frames=result.frames;inputName=result.input;sourceIsFrames=true}
-if(s.format==='svga'){if(!frames)throw new Error('Could not render source frames for SVGA export.');const blob=await buildSvga(frames,s);if(ff)await cleanupFFmpeg(ff,prefix,[inputName].filter(Boolean));return {blob,ext:'svga',mime:'application/octet-stream',size:blob.size}}
-if(s.format==='lottie'){if(!frames)throw new Error('Could not render source frames for Lottie export.');const blob=buildLottie(frames,s);if(ff)await cleanupFFmpeg(ff,prefix,[inputName].filter(Boolean));return {blob,ext:'json',mime:'application/json',size:blob.size}}
-if(s.format==='vapProject'){if(!frames)throw new Error('Could not render source frames for VAP project export.');const blob=await buildVapProject(frames,s);if(ff)await cleanupFFmpeg(ff,prefix,[inputName].filter(Boolean));return {blob,ext:'zip',mime:'application/zip',size:blob.size}}
-if(s.format==='pngseq'){if(!frames)throw new Error('Could not render source frames for PNG sequence export.');const zip=new JSZip();frames.forEach((data,i)=>zip.file('frame_'+String(i).padStart(5,'0')+'.png',data));const blob=await zip.generateAsync({type:'blob',compression:'DEFLATE',compressionOptions:{level:4}});if(ff)await cleanupFFmpeg(ff,prefix,[inputName].filter(Boolean));return {blob,ext:'zip',mime:'application/zip',size:blob.size}}
-ff=await getFF();if(sourceIsFrames&&frames)await writeFrames(ff,frames,prefix);
-let args=[];let srcName=inputName;if(sourceIsFrames){srcName=''}else if(!inputName){srcName='input_'+item.id.replace(/-/g,'')+'.'+item.ext;await ff.writeFile(srcName,new Uint8Array(await item.file.arrayBuffer()))}
-if(sourceIsFrames){args=['-framerate',String(s.fps),'-i',prefix+'%05d.png']}else{const still=['png','jpg','jpeg','bmp'].includes(item.ext);if(still)args=['-loop','1','-framerate',String(s.fps),'-t',String(s.duration||2),'-i',srcName];else{args=['-ss',String(s.start)];if(s.duration>0)args.push('-t',String(s.duration));args.push('-i',srcName)}}
-let audioInput=null;if(s.replaceAudio){audioInput='audio_'+item.id.replace(/-/g,'')+'.'+extOf(s.replaceAudio.name);await ff.writeFile(audioInput,new Uint8Array(await s.replaceAudio.arrayBuffer()));args.push('-i',audioInput)}
-const transparentTarget=['webp','apng','webm'].includes(s.format);const vf=scaleFilter(s,transparentTarget)+`,fps=${s.fps}`+(sourceIsFrames?'':`,setpts=PTS/${s.speed}`);const q=s.compression==='quality'?Math.min(100,s.quality+10):s.compression==='small'?Math.max(10,s.quality-15):s.compression==='lossless'?100:s.quality;const crf=Math.round(40-(q/100)*32);const output='out_'+item.id.replace(/-/g,'')+'.'+s.format;
-if(s.format==='mp4'){args.push('-vf',vf,'-c:v','libx264','-preset','veryfast','-crf',String(crf),'-pix_fmt','yuv420p','-b:v',String(s.bitrate)+'k');if(s.webOptimize)args.push('-movflags','+faststart');if(s.replaceAudio){args.push('-map','0:v:0','-map','1:a:0','-c:a','aac','-b:a',String(s.audioBitrate)+'k','-filter:a',`atempo=${s.speed}`,'-shortest')}else if(s.keepAudio&&!sourceIsFrames&&!['png','jpg','jpeg','bmp','gif','webp','apng'].includes(item.ext)){args.push('-map','0:v:0','-map','0:a?','-c:a','aac','-b:a',String(s.audioBitrate)+'k','-filter:a',`atempo=${s.speed}`)}else args.push('-an')}
-else if(s.format==='webm'){args.push('-vf',vf,'-c:v','libvpx-vp9','-crf',String(Math.max(4,Math.min(63,Math.round(63-q*.58)))),'-b:v',String(s.bitrate)+'k');if(s.transparent)args.push('-pix_fmt','yuva420p');if(s.replaceAudio){args.push('-map','0:v:0','-map','1:a:0','-c:a','libopus','-b:a',String(s.audioBitrate)+'k','-filter:a',`atempo=${s.speed}`,'-shortest')}else if(s.keepAudio&&!sourceIsFrames&&!['png','jpg','jpeg','bmp','gif','webp','apng'].includes(item.ext)){args.push('-map','0:v:0','-map','0:a?','-c:a','libopus','-b:a',String(s.audioBitrate)+'k','-filter:a',`atempo=${s.speed}`)}else args.push('-an')}
-else if(s.format==='gif'){const gifFilter=scaleFilter(s,false)+`,fps=${s.fps}`+(sourceIsFrames?'':`,setpts=PTS/${s.speed}`);const colors=Math.max(16,Math.min(256,Math.round(q*2.56)));args.push('-filter_complex',`[0:v]${gifFilter},split[a][b];[a]palettegen=max_colors=${colors}:stats_mode=diff[p];[b][p]paletteuse=dither=sierra2_4a[v]`,'-map','[v]','-loop',s.loop?'0':'-1','-gifflags','-offsetting','-an')}
-else if(s.format==='webp'){args.push('-vf',vf,'-c:v','libwebp','-lossless',s.compression==='lossless'?'1':'0','-q:v',String(q),'-loop',s.loop?'0':'-1','-an')}
-else if(s.format==='apng'){args.push('-vf',vf,'-f','apng','-plays',s.loop?'0':'1','-compression_level','6','-an')}
-else if(s.format==='png'){args.push('-vf',scaleFilter(s,true),'-frames:v','1','-an')}
-else if(s.format==='jpg'){args.push('-vf',scaleFilter({...s,transparent:false},false),'-frames:v','1','-q:v',String(Math.max(2,Math.round(31-q*.29))),'-an')}
-else throw new Error('Unsupported output format: '+s.format);
-if(s.stripMeta)args.push('-map_metadata','-1');args.push(output);const code=await ff.exec(args);if(code!==0)throw new Error('Encoding failed. This FFmpeg build may not include the selected encoder.');const data=await ff.readFile(output);const mime={mp4:'video/mp4',webm:'video/webm',gif:'image/gif',webp:'image/webp',apng:'image/apng',png:'image/png',jpg:'image/jpeg'}[s.format]||'application/octet-stream';const blob=new Blob([data],{type:mime});await cleanupFFmpeg(ff,prefix,[srcName,audioInput,output].filter(Boolean));return {blob,ext:s.format,mime,size:blob.size}}
-function convertStaticCanvas(item,s){return new Promise((resolve,reject)=>{const img=new Image();img.onload=()=>{const c=document.createElement('canvas');c.width=s.width;c.height=s.height;const ctx=c.getContext('2d');if(s.format==='jpg'||!s.transparent){ctx.fillStyle=s.bg;ctx.fillRect(0,0,c.width,c.height)}let dw=s.width,dh=s.height,dx=0,dy=0;if(s.fit==='contain'){const k=Math.min(s.width/img.width,s.height/img.height);dw=img.width*k;dh=img.height*k;dx=(s.width-dw)/2;dy=(s.height-dh)/2}else if(s.fit==='cover'){const k=Math.max(s.width/img.width,s.height/img.height);dw=img.width*k;dh=img.height*k;dx=(s.width-dw)/2;dy=(s.height-dh)/2}else{dw=s.width;dh=s.height}ctx.drawImage(img,dx,dy,dw,dh);c.toBlob(blob=>blob?resolve(blob):reject(new Error('Canvas export failed')),s.format==='jpg'?'image/jpeg':'image/png',s.quality/100)};img.onerror=()=>reject(new Error('Image decode failed'));img.src=item.url})}
+  const prefix='f_'+item.id.replace(/-/g,'')+'_';let ff=null;
+  const getFF=async()=>{if(!ff)ff=await ensureFFmpeg();return ff};
+  let frames=null,inputName=null,sourceIsFrames=false;const sourceIsSvga=item.ext==='svga';
+  const maxFrames=s.format==='svga'?180:s.format==='lottie'?240:500;
+  const report=(p,stage)=>{task.progress=Math.max(task.progress,p);task.stage=stage||(sourceIsSvga?'正在渲染 SVGA 动画帧':'正在提取动画帧');renderQueue()};
+  try{
+    if(sourceIsSvga){frames=await renderSvgaFrames(item,s,p=>report(p,'正在渲染 SVGA 动画帧'),maxFrames);sourceIsFrames=true}
+    else if(item.ext==='webp'&&item.animated){
+      const frameExport=['svga','pngseq','lottie'].includes(s.format);
+      try{frames=await renderWebPFrames(item,s,report,maxFrames);sourceIsFrames=!!frames}
+      catch(webpDecodeError){
+        if(frameExport){task.stage='正在使用备用解码器读取 WEBP 动画';renderQueue();ff=await getFF();const result=await extractToFrames(ff,item,s,prefix,p=>{task.progress=Math.max(task.progress,p);task.stage='正在提取 WEBP 动画帧';renderQueue()});frames=result.frames;inputName=result.input;sourceIsFrames=true}
+        else{task.webpDecoderFallback=webpDecodeError?.message||String(webpDecodeError);task.stage='正在由 FFmpeg 直接读取 WEBP 动画';sourceIsFrames=false;}
+      }
+      if(!frames&&frameExport){task.stage='正在使用备用解码器读取 WEBP 帧';renderQueue();ff=await getFF();const result=await extractToFrames(ff,item,s,prefix,p=>{task.progress=Math.max(task.progress,p);task.stage='正在提取 WEBP 动画帧';renderQueue()});frames=result.frames;inputName=result.input;sourceIsFrames=true}
+    }
+    else if(item.ext==='lottie'||item.ext==='json'){frames=await renderLottieFrames(item,s,p=>report(p,'正在渲染 Lottie 动画帧'),maxFrames);sourceIsFrames=true}
+    else if(s.format==='svga'||s.format==='pngseq'||s.format==='lottie'||['apng','gif'].includes(item.ext)){
+      task.stage='正在加载动画解码器';task.progress=Math.max(task.progress,3);renderQueue();ff=await getFF();
+      const result=await extractToFrames(ff,item,s,prefix,p=>{task.progress=Math.max(task.progress,p);task.stage='正在提取动画帧';renderQueue()});
+      frames=result.frames;inputName=result.input;sourceIsFrames=true;
+    }
+    if(s.format==='svga'){
+      if(!frames)throw new Error('没有可用于 SVGA 导出的动画帧。');
+      task.stage='正在生成 SVGA 1.x 文件';renderQueue();const blob=await buildSvga(frames,s);
+      if(ff)await cleanupFFmpeg(ff,prefix,[inputName].filter(Boolean));return {blob,ext:'svga',mime:'application/octet-stream',size:blob.size};
+    }
+    if(s.format==='lottie'){
+      if(!frames)throw new Error('没有可用于 Lottie 导出的动画帧。');
+      const blob=buildLottie(frames,s);if(ff)await cleanupFFmpeg(ff,prefix,[inputName].filter(Boolean));return {blob,ext:'json',mime:'application/json',size:blob.size};
+    }
+    if(s.format==='pngseq'){
+      if(!frames)throw new Error('没有可用于 PNG 序列导出的动画帧。');
+      await ensureJSZip();const zip=new JSZip();frames.forEach((data,i)=>zip.file('帧_'+String(i).padStart(5,'0')+'.png',data));
+      const blob=await zip.generateAsync({type:'blob',compression:'DEFLATE',compressionOptions:{level:4}});
+      if(ff)await cleanupFFmpeg(ff,prefix,[inputName].filter(Boolean));return {blob,ext:'zip',mime:'application/zip',size:blob.size};
+    }
+    task.stage='正在准备转换引擎';task.progress=Math.max(task.progress,42);renderQueue();ff=await getFF();
+    if(sourceIsFrames&&frames){task.stage='正在写入动画帧';await writeFrames(ff,frames,prefix);renderQueue()}
+    let args=[],srcName=inputName;
+    if(sourceIsFrames){srcName='';args=['-framerate',String(s.fps),'-start_number','0','-i',prefix+'%05d.png']}
+    else if(!inputName){srcName='input_'+item.id.replace(/-/g,'')+'.'+item.ext;await ff.writeFile(srcName,new Uint8Array(await item.file.arrayBuffer()));const still=['png','jpg','jpeg','bmp'].includes(item.ext)||(item.ext==='webp'&&!item.animated);if(still)args=['-loop','1','-framerate',String(s.fps),'-t',String(s.duration||2),'-i',srcName];else{args=['-ss',String(s.start),'-i',srcName];if(s.duration>0)args.push('-t',String(s.duration))}}
+    let audioInput=null;
+    if(s.replaceAudio){audioInput='audio_'+item.id.replace(/-/g,'')+'.'+extOf(s.replaceAudio.name);await ff.writeFile(audioInput,new Uint8Array(await s.replaceAudio.arrayBuffer()));args.push('-i',audioInput)}
+    const alphaAllowed=s.transparent&&['webm','gif','webp','apng','png'].includes(s.format);
+    const rawVF=scaleFilter({...s,transparent:true},true)+`,fps=${s.fps}`+(sourceIsFrames?'':`,setpts=PTS/${s.speed}`);
+    const bg='0x'+String(s.bg||'#10182a').replace('#','');
+    const flattenGraph=`color=c=${bg}:s=${s.width}x${s.height}:r=${s.fps}[bg];[0:v]${rawVF}[fg];[bg][fg]overlay=shortest=1:format=auto[v]`;
+    const q=s.compression==='quality'?Math.min(100,s.quality+10):s.compression==='small'?Math.max(10,s.quality-15):s.compression==='lossless'?100:s.quality;
+    const crf=Math.round(40-(q/100)*32);const output='out_'+item.id.replace(/-/g,'')+'.'+s.format;
+    const addVideoFilter=()=>{if(alphaAllowed)args.push('-vf',rawVF);else args.push('-filter_complex',flattenGraph,'-map','[v]')};
+    if(s.format==='mp4'){
+      addVideoFilter();args.push('-c:v','libx264','-preset','veryfast','-crf',String(crf),'-pix_fmt','yuv420p','-b:v',String(s.bitrate)+'k');
+      if(s.webOptimize)args.push('-movflags','+faststart');
+      if(s.replaceAudio)args.push('-map','1:a:0','-c:a','aac','-b:a',String(s.audioBitrate)+'k','-filter:a',`atempo=${s.speed}`,'-shortest');
+      else if(s.keepAudio&&!sourceIsFrames&&!['png','jpg','jpeg','bmp','gif','webp','apng'].includes(item.ext))args.push('-map','0:a?','-c:a','aac','-b:a',String(s.audioBitrate)+'k','-filter:a',`atempo=${s.speed}`);
+      else args.push('-an');
+    }else if(s.format==='webm'){
+      addVideoFilter();args.push('-c:v','libvpx-vp9','-crf',String(Math.max(4,Math.min(63,Math.round(63-q*.58)))),'-b:v',String(s.bitrate)+'k');
+      if(alphaAllowed)args.push('-pix_fmt','yuva420p','-auto-alt-ref','0');
+      if(s.replaceAudio)args.push('-map','1:a:0','-c:a','libopus','-b:a',String(s.audioBitrate)+'k','-filter:a',`atempo=${s.speed}`,'-shortest');
+      else if(s.keepAudio&&!sourceIsFrames&&!['png','jpg','jpeg','bmp','gif','webp','apng'].includes(item.ext))args.push('-map','0:a?','-c:a','libopus','-b:a',String(s.audioBitrate)+'k','-filter:a',`atempo=${s.speed}`);
+      else args.push('-an');
+    }else if(s.format==='gif'){
+      const colors=Math.max(16,Math.min(256,Math.round(q*2.56)));
+      const graph=alphaAllowed?`[0:v]${rawVF},split[a][b];[a]palettegen=max_colors=${colors}:reserve_transparent=1:stats_mode=diff[p];[b][p]paletteuse=alpha_threshold=128:dither=sierra2_4a[v]`:`color=c=${bg}:s=${s.width}x${s.height}:r=${s.fps}[bg];[0:v]${rawVF}[fg];[bg][fg]overlay=shortest=1:format=auto,split[a][b];[a]palettegen=max_colors=${colors}:reserve_transparent=0:stats_mode=diff[p];[b][p]paletteuse=dither=sierra2_4a[v]`;
+      args.push('-filter_complex',graph,'-map','[v]','-loop',s.loop?'0':'-1','-an');
+    }else if(s.format==='webp'){
+      addVideoFilter();args.push('-c:v','libwebp_anim','-lossless',s.compression==='lossless'?'1':'0','-quality',String(q),'-loop',s.loop?'0':'-1','-an','-f','webp');
+    }else if(s.format==='apng'){
+      addVideoFilter();args.push('-pix_fmt','rgba','-f','apng','-plays',s.loop?'0':'1','-pred','mixed','-compression_level','6','-an');
+    }else if(s.format==='png'){
+      addVideoFilter();args.push('-frames:v','1','-an');
+    }else if(s.format==='jpg'){
+      addVideoFilter();args.push('-frames:v','1','-q:v',String(Math.max(2,Math.round(31-q*.29))),'-an');
+    }else throw new Error('不支持的输出格式：'+s.format);
+    if(s.stripMeta)args.push('-map_metadata','-1');args.push(output);
+    const cleanupNames=[srcName,audioInput,output].filter(Boolean);
+    await runFFmpegWithFallback(ff,args,s,task,prefix,cleanupNames);
+    const data=await ff.readFile(output);if(!data||!data.length)throw new Error('转换引擎已结束，但没有生成有效文件。请检查输出格式和输入帧。');
+    if(['mp4','webm','gif','webp','apng'].includes(s.format))validateAnimationOutput(data,s.format);
+    const mime={mp4:'video/mp4',webm:'video/webm',gif:'image/gif',webp:'image/webp',apng:'image/apng',png:'image/png',jpg:'image/jpeg'}[s.format]||'application/octet-stream';
+    const blob=new Blob([data],{type:mime});await cleanupFFmpeg(ff,prefix,cleanupNames);return {blob,ext:s.format,mime,size:blob.size};
+  }catch(e){if(ff)await cleanupFFmpeg(ff,prefix,[inputName].filter(Boolean));throw e}
+}
+function asciiAt(bytes,start,length){return String.fromCharCode(...bytes.subarray(start,start+length))}
+function validateAnimationOutput(data,format){
+  const b=data instanceof Uint8Array?data:new Uint8Array(data||[]);
+  if(!b.length)throw new Error('输出文件为空，未生成有效内容。');
+  if(format==='mp4'&&(b.length<12||asciiAt(b,4,4)!=='ftyp'))throw new Error('MP4 容器校验失败：缺少 ftyp 文件标识。');
+  if(format==='webm'&&(b.length<4||b[0]!==0x1A||b[1]!==0x45||b[2]!==0xDF||b[3]!==0xA3))throw new Error('WEBM 容器校验失败：缺少 EBML 文件标识。');
+  if(format==='gif'&&!(asciiAt(b,0,6)==='GIF87a'||asciiAt(b,0,6)==='GIF89a'))throw new Error('GIF 文件头校验失败。');
+  if(format==='webp'){
+    if(b.length<16||asciiAt(b,0,4)!=='RIFF'||asciiAt(b,8,4)!=='WEBP')throw new Error('WEBP 文件头校验失败。');
+    let offset=12,animated=false;while(offset+8<=b.length){const name=asciiAt(b,offset,4);const size=(b[offset+4]|(b[offset+5]<<8)|(b[offset+6]<<16)|(b[offset+7]<<24))>>>0;if(name==='ANIM'||name==='ANMF')animated=true;if(size>b.length-offset-8)break;offset+=8+size+(size&1)}
+    if(!animated)throw new Error('WEBP 输出没有动画帧（缺少 ANIM / ANMF 数据块），已阻止下载静态文件。');
+  }
+  if(format==='apng'){
+    if(b.length<20||b[0]!==0x89||asciiAt(b,1,3)!=='PNG')throw new Error('APNG 文件头校验失败。');
+    let offset=8,animated=false;while(offset+12<=b.length){const size=((b[offset]<<24)|(b[offset+1]<<16)|(b[offset+2]<<8)|b[offset+3])>>>0;const name=asciiAt(b,offset+4,4);if(name==='acTL')animated=true;if(size>b.length-offset-12)break;offset+=12+size}
+    if(!animated)throw new Error('APNG 输出没有动画控制块 acTL，已阻止下载静态 PNG。');
+  }
+  return true;
+}
+function convertStaticCanvas(item,s){return new Promise((resolve,reject)=>{const img=new Image();img.onload=()=>{const c=document.createElement('canvas');c.width=s.width;c.height=s.height;const ctx=c.getContext('2d');if(s.format==='jpg'||!s.transparent){ctx.fillStyle=s.bg;ctx.fillRect(0,0,c.width,c.height)}let dw=s.width,dh=s.height,dx=0,dy=0;if(s.fit==='contain'){const k=Math.min(s.width/img.width,s.height/img.height);dw=img.width*k;dh=img.height*k;dx=(s.width-dw)/2;dy=(s.height-dh)/2}else if(s.fit==='cover'){const k=Math.max(s.width/img.width,s.height/img.height);dw=img.width*k;dh=img.height*k;dx=(s.width-dw)/2;dy=(s.height-dh)/2}else{dw=s.width;dh=s.height}ctx.drawImage(img,dx,dy,dw,dh);c.toBlob(blob=>blob?resolve(blob):reject(new Error('画布导出失败。')),s.format==='jpg'?'image/jpeg':'image/png',s.quality/100)};img.onerror=()=>reject(new Error('图片解码失败。'));img.src=item.url})}
 async function convertItem(item,s,task){if(s.format==='png'||s.format==='jpg'){if(['png','jpg','jpeg','bmp'].includes(item.ext)){const blob=await convertStaticCanvas(item,s);return {blob,ext:s.format,mime:blob.type,size:blob.size}}}return convertWithFFmpeg(item,s,task)}
 function setTaskStatus(task,status,label){task.status=status;task.statusLabel=label;renderQueue()}
-async function startProcessing(){if(state.processing)return;if(!state.items.length){toast('Import at least one file first.');return}const s=getSettings();const targets=state.items.slice();state.processing=true;$('convertBtn').disabled=true;$('convertBtn').textContent='Processing...';for(const item of targets){const task={id:crypto.randomUUID(),name:(safeBase($('nameInput').value||item.name))+'_'+safeBase(item.name),sourceExt:item.ext,format:s.format,status:'running',statusLabel:'Processing',progress:0,size:0,blob:null,error:null};state.outputs.push(task);state.currentTask=task;renderQueue();try{const itemSettings={...s};if(s.fullDuration){if(item.ext==='svga'||['mp4','mov','m4v','webm','mkv','avi','vap','pag','lottie','json'].includes(item.ext))itemSettings.duration=Math.max(.1,(item.duration||s.duration)-s.start);else if(item.animated)itemSettings.duration=0;}const result=await convertItem(item,itemSettings,task);task.blob=result.blob;task.ext=result.ext;task.mime=result.mime;task.size=result.size;task.progress=100;task.status='done';task.statusLabel='Completed';task.name=task.name.replace(/_+$/,'')+'.'+result.ext; }catch(err){task.status='error';task.statusLabel='Failed';task.error=err?.message||String(err);console.error(err)}renderQueue()}state.currentTask=null;state.processing=false;$('convertBtn').disabled=false;$('convertBtn').innerHTML='&#9654; &nbsp; 开始处理';$('convertNote').textContent='Processing finished · '+state.outputs.filter(x=>x.status==='done').length+' completed';toast('Batch processing finished');}
-function downloadTask(task){if(!task.blob)return;const url=URL.createObjectURL(task.blob);const a=document.createElement('a');a.href=url;a.download=task.name;a.click();setTimeout(()=>URL.revokeObjectURL(url),2000)}
-async function downloadAll(){const done=state.outputs.filter(x=>x.status==='done'&&x.blob);if(!done.length)return;const zip=new JSZip();done.forEach((t,i)=>zip.file(t.name||('output_'+i+'.'+t.ext),t.blob));const blob=await zip.generateAsync({type:'blob',compression:'DEFLATE',compressionOptions:{level:4}});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='motion-lab-exports.zip';a.click();setTimeout(()=>URL.revokeObjectURL(url),2000)}
-function clearAll(){if(state.processing){toast('Wait for current processing to finish.');return}state.items.forEach(x=>URL.revokeObjectURL(x.url));state.items=[];state.outputs=[];state.selectedId=null;destroyPreview();$('stage').classList.add('empty');$('stage').innerHTML='<div class="empty-state"><div class="big">&#10022;</div><strong>导入素材开始处理</strong><span>实时预览动画，查看素材参数并调整导出设置。</span></div>';$('previewFormat').textContent='NO FILE';$('previewStatus').textContent='Waiting';$('infoRow').innerHTML='';$('fileList').innerHTML='';$('fileStat').textContent='0 files loaded';$('timeLabel').textContent='00:00 / 00:00';$('timelineFill').style.width='0%';renderQueue()}
+async function startProcessing(){
+  if(state.processing)return;
+  if(!state.items.length){toast('请先导入至少一个素材。');return}
+  const pending=state.items.filter(x=>x.status==='正在读取');if(pending.length){toast('部分素材仍在解析，请等待解析完成。');return}
+  const failed=state.items.filter(x=>x.status!=='已就绪');if(failed.length){toast('有素材未能成功读取，请点击素材查看错误信息。');return}
+  const s=getSettings();const targets=state.items.slice();state.processing=true;$('convertBtn').disabled=true;$('convertBtn').textContent='正在处理…';
+  let completed=0;
+  for(const item of targets){
+    const task={id:crypto.randomUUID(),name:(safeBase($('nameInput').value||item.name))+'_'+safeBase(item.name),sourceExt:item.ext,format:s.format,status:'running',statusLabel:'处理中',stage:'正在准备素材',progress:0,size:0,blob:null,error:null,logs:[]};
+    state.outputs.push(task);state.currentTask=task;renderQueue();
+    try{
+      const itemSettings={...s};
+      if(s.fullDuration){if(item.ext==='svga'||['mp4','mov','m4v','webm','mkv','avi','lottie','json'].includes(item.ext))itemSettings.duration=Math.max(.1,(item.duration||s.duration)-s.start);else if(item.animated)itemSettings.duration=0;}
+      const result=await convertItem(item,itemSettings,task);task.blob=result.blob;task.ext=result.ext;task.mime=result.mime;task.size=result.size;task.progress=100;task.stage='处理完成';task.status='done';task.statusLabel='已完成';task.name=task.name.replace(/_+$/,'')+'.'+result.ext;completed++;
+    }catch(err){task.status='error';task.statusLabel='失败';task.stage=task.stage||'转换失败';task.error=err?.message||String(err);console.error('MOTION LAB 转换错误',item.name,task.error,task.logs)}
+    renderQueue();
+  }
+  state.currentTask=null;state.processing=false;$('convertBtn').disabled=false;$('convertBtn').innerHTML='&#9654; &nbsp; 开始处理';$('convertNote').textContent='处理结束 · '+completed+' / '+targets.length+' 个任务成功';
+  toast(completed+' / '+targets.length+' 个任务转换成功');
+}
+function triggerDownload(blob,name){const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=name;a.style.display='none';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),5000)}
+function downloadTask(task){if(!task.blob)return toast('没有可下载的完成文件。');triggerDownload(task.blob,task.name);toast('正在下载：'+task.name)}
+async function downloadAll(){const done=state.outputs.filter(x=>x.status==='done'&&x.blob);if(!done.length)return toast('没有已完成的文件可以打包。');try{await ensureJSZip();const zip=new JSZip();done.forEach((t,i)=>zip.file(t.name||('导出文件_'+i+'.'+t.ext),t.blob));const blob=await zip.generateAsync({type:'blob',compression:'DEFLATE',compressionOptions:{level:4}});triggerDownload(blob,'motion-lab-导出文件.zip');toast('ZIP 压缩包已生成，正在下载。')}catch(e){toast('ZIP 打包失败：'+(e?.message||e));console.error(e)}}
+function clearAll(){
+  if(state.processing){toast('请等待当前任务处理完成。');return}
+  state.items.forEach(x=>URL.revokeObjectURL(x.url));state.items=[];state.outputs=[];state.selectedId=null;destroyPreview();
+  $('stage').classList.add('empty');$('stage').innerHTML='<div class="empty-state"><div class="big">&#10022;</div><strong>导入素材开始处理</strong><span>实时预览动画、查看素材参数并调整导出设置。</span></div>';
+  $('previewFormat').textContent='暂无素材';$('previewStatus').textContent='等待导入';$('infoRow').innerHTML='';$('fileList').innerHTML='';$('fileStat').textContent='0 个素材';$('timeLabel').textContent='00:00 / 00:00';$('timelineFill').style.width='0%';renderQueue();
+}
 $('chooseFiles').onclick=()=>$('fileInput').click();$('topUpload').onclick=()=>$('fileInput').click();$('fileInput').onchange=e=>{addFiles(e.target.files);e.target.value=''};$('dropzone').addEventListener('dragover',e=>{e.preventDefault();$('dropzone').classList.add('drag')});$('dropzone').addEventListener('dragleave',()=>$('dropzone').classList.remove('drag'));$('dropzone').addEventListener('drop',e=>{e.preventDefault();$('dropzone').classList.remove('drag');addFiles(e.dataTransfer.files)});
-$('convertBtn').onclick=startProcessing;$('downloadAll').onclick=downloadAll;$('clearQueue').onclick=()=>{if(state.processing)return toast('Wait for processing to finish.');state.outputs=[];renderQueue()};$('helpBtn').onclick=()=>$('sampleInfo').click();$('sampleInfo').onclick=()=>toast('Input: SVGA, VAP MP4, PAG, Lottie JSON/dotLottie, MP4, MOV, WEBM, GIF, WEBP, APNG, PNG, JPG. Output: MP4, WEBM, GIF, WEBP, APNG, SVGA 1.x, raster Lottie JSON, VAP frame project ZIP, PNG sequence ZIP, PNG, JPG. Native VAP/PAG export requires official tools.');
-$('playBtn').onclick=()=>{if(state.previewVideo){if(state.previewVideo.paused)state.previewVideo.play();else state.previewVideo.pause()}else if(state.previewPlayer){try{state.previewPlayer.pauseAnimation()}catch(e){}}else if(state.previewLottie){if(state.previewLottie.isPaused)state.previewLottie.play();else state.previewLottie.pause()}else if(state.previewPagView){if(state.previewPagView.isPlaying)state.previewPagView.pause();else state.previewPagView.play()}else if(state.previewVap){try{if(state.previewPaused){state.previewVap.play();state.previewPaused=false}else{state.previewVap.pause();state.previewPaused=true}}catch(e){}}else toast('Animated image preview follows the browser playback.');};$('restartBtn').onclick=()=>{if(state.previewVideo){state.previewVideo.currentTime=0;state.previewVideo.play()}else if(state.previewPlayer){const item=selected();state.previewPaused=false;state.previewFrame=0;try{state.previewPlayer.startAnimation()}catch(e){if(item)renderPreview(item)}}else if(state.previewLottie){state.previewLottie.goToAndPlay(0,true)}else if(state.previewPagView){state.previewPagView.setProgress(0);state.previewPagView.play()}else if(state.previewVap){state.previewVap.setTime(0);state.previewVap.play()}};$('timeline').onclick=e=>{const r=e.currentTarget.getBoundingClientRect();const progress=Math.max(0,Math.min(1,(e.clientX-r.left)/r.width));if(state.previewVideo)state.previewVideo.currentTime=progress*state.previewVideo.duration;else if(state.previewPagView){state.previewPagView.setProgress(progress);state.previewPagView.flush()}else if(state.previewLottie){const item=selected();state.previewLottie.goToAndStop((item?.lottieData?.ip||0)+progress*(item?.frames||1),true)}else if(state.previewVap){const item=selected();state.previewVap.setTime(progress*(item?.duration||0))}};
-document.querySelectorAll('.swatch').forEach(el=>el.onclick=()=>{document.querySelectorAll('.swatch').forEach(x=>x.classList.remove('selected'));el.classList.add('selected');$('bgColor').value=el.dataset.bg;updatePreviewCanvas()});document.querySelectorAll('.tab').forEach(el=>el.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));el.classList.add('active');document.querySelectorAll('.tab-content').forEach(x=>x.classList.toggle('hidden',x.dataset.content!==el.dataset.tab))});document.querySelectorAll('#fitMode button').forEach(el=>el.onclick=()=>{document.querySelectorAll('#fitMode button').forEach(x=>x.classList.remove('active'));el.classList.add('active');state.fit=el.dataset.fit;const item=selected();if(item)renderPreview(item);else updatePreviewCanvas()});
-$('widthInput').oninput=()=>syncCanvasDimensions('width',false);$('widthInput').onchange=()=>syncCanvasDimensions('width',true);$('heightInput').oninput=()=>syncCanvasDimensions('height',false);$('heightInput').onchange=()=>syncCanvasDimensions('height',true);$('ratioLock').onchange=()=>{if($('ratioLock').checked){const w=Number($('widthInput').value),h=Number($('heightInput').value);if(w>0&&h>0)state.ratio=w/h}syncCanvasDimensions('width',true)};$('ratioPreset').onchange=()=>{const v=$('ratioPreset').value;const ratios={'1:1':1,'4:3':4/3,'3:4':3/4,'16:9':16/9,'9:16':9/16,'21:9':21/9};if(v==='source'){const item=selected();if(item?.width&&item?.height)state.ratio=item.width/item.height}else state.ratio=ratios[v];$('ratioLock').checked=true;syncCanvasDimensions('width',true)};$('qualityInput').oninput=()=>$('qualityLabel').textContent=$('qualityInput').value+'%';$('speedInput').oninput=()=>$('speedLabel').textContent=Number($('speedInput').value).toFixed(1)+'x';$('audioInput').onchange=e=>{state.audioFile=e.target.files[0]||null;toast(state.audioFile?'Replacement audio selected: '+state.audioFile.name:'Audio replacement cleared')};$('bgColor').oninput=e=>{document.querySelectorAll('.swatch').forEach(x=>x.classList.remove('selected'));updatePreviewCanvas()};$('transparentBg').onchange=updatePreviewCanvas;$('muteAudio').onchange=e=>{if(e.target.checked)$('keepAudio').checked=false};
+document.querySelectorAll('.nav[data-nav]').forEach(el=>el.addEventListener('click',()=>{const target=el.dataset.nav;document.querySelectorAll('.nav[data-nav]').forEach(n=>n.classList.toggle('active',n===el));if(target==='queue'){$('queueList').scrollIntoView({behavior:'smooth',block:'center'});return}if(target==='preview'){$('stage').scrollIntoView({behavior:'smooth',block:'center'});return}const tab=target==='canvas'?'canvas':target==='quality'?'quality':target==='audio'?'audio':'output';document.querySelectorAll('.tab').forEach(t=>{const active=t.dataset.tab===tab;t.classList.toggle('active',active)});document.querySelectorAll('.tab-content').forEach(c=>c.classList.toggle('hidden',c.dataset.content!==tab));$('formatSelect').closest('.settings').scrollIntoView({behavior:'smooth',block:'nearest'})}));
+document.querySelectorAll('.tab').forEach(tab=>tab.addEventListener('click',()=>{
+  const target=tab.dataset.tab;document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t===tab));document.querySelectorAll('.tab-content').forEach(c=>c.classList.toggle('hidden',c.dataset.content!==target));
+}));
+document.querySelectorAll('#fitMode [data-fit]').forEach(button=>button.addEventListener('click',()=>{
+  state.fit=button.dataset.fit;document.querySelectorAll('#fitMode [data-fit]').forEach(b=>b.classList.toggle('active',b===button));updatePreviewCanvas();const item=selected();if(item)renderPreview(item);
+}));
+document.querySelectorAll('.swatch[data-bg]').forEach(swatch=>swatch.addEventListener('click',()=>{
+  $('bgColor').value=swatch.dataset.bg;document.querySelectorAll('.swatch').forEach(x=>x.classList.toggle('selected',x===swatch));updatePreviewCanvas();
+}));
+$('convertBtn').onclick=startProcessing;$('downloadAll').onclick=downloadAll;$('clearQueue').onclick=()=>{if(state.processing)return toast('请等待当前处理完成。');state.outputs=[];renderQueue()};$('clearAllBtn').onclick=clearAll;$('helpBtn').onclick=showHelp;$('sampleInfo').onclick=showHelp;
+$('diagnosticClose').onclick=closeDiagnostic;$('diagnosticOk').onclick=closeDiagnostic;$('diagnosticModal').onclick=e=>{if(e.target===$('diagnosticModal'))closeDiagnostic()};$('diagnosticCopy').onclick=async()=>{const task=state.activeDiagnostic;if(!task)return;const text=['文件：'+task.name,'输入格式：'+task.sourceExt,'输出格式：'+task.format,'失败阶段：'+(task.stage||''),'进度：'+(task.progress||0)+'%','错误：'+(task.error||''),(task.logs||[]).join('\n')].join('\n');try{await navigator.clipboard.writeText(text);toast('诊断信息已复制')}catch(e){toast('无法访问剪贴板，请在诊断窗口中手动复制。')}};$('helpClose').onclick=()=>$('helpModal').classList.add('hidden');$('helpOk').onclick=()=>$('helpModal').classList.add('hidden');$('helpModal').onclick=e=>{if(e.target===$('helpModal'))$('helpModal').classList.add('hidden')};
+$('playBtn').onclick=()=>{
+  const item=selected();if(!item){toast('请先导入动画素材。');return}
+  if(state.previewVideo){if(state.previewVideo.paused){state.previewVideo.play().catch(e=>toast('视频无法播放：'+e.message));state.previewPaused=false;$('playBtn').textContent='Ⅱ'}else{state.previewVideo.pause();state.previewPaused=true;$('playBtn').textContent='▶'}return}
+  if(state.previewPlayer){if(state.previewPaused){state.previewPlayer.stepToFrame(Math.max(0,state.previewFrame),true);state.previewPaused=false;$('playBtn').textContent='Ⅱ'}else{state.previewPlayer.pauseAnimation();state.previewPaused=true;$('playBtn').textContent='▶'}return}
+  if(state.previewLottie){if(state.previewLottie.isPaused){state.previewLottie.play();$('playBtn').textContent='Ⅱ'}else{state.previewLottie.pause();$('playBtn').textContent='▶'}return}
+  if(state.previewImage&&item.animated){if(!state.previewPaused){try{const img=state.previewImage;const c=document.createElement('canvas');c.width=img.naturalWidth||item.width;c.height=img.naturalHeight||item.height;c.className='preview-image-freeze';c.getContext('2d').drawImage(img,0,0,c.width,c.height);img.replaceWith(c);state.previewImageCanvas=c;state.previewImage=null;state.previewPaused=true;$('playBtn').textContent='▶'}catch(e){toast('当前浏览器无法暂停该动态图片。')}}else renderPreview(item);return}
+  toast('这是静态图片，没有播放时间轴。');
+};
+$('restartBtn').onclick=()=>{
+  const item=selected();if(!item){toast('请先导入动画素材。');return}
+  if(state.previewVideo){state.previewVideo.currentTime=0;state.previewVideo.play().catch(()=>{});state.previewPaused=false}
+  else if(state.previewPlayer){state.previewFrame=0;state.previewPaused=false;state.previewPlayer.stepToFrame(0,true);$('playBtn').textContent='Ⅱ'}
+  else if(state.previewLottie){state.previewLottie.goToAndPlay(0,true)}
+  else if(item.animated)renderPreview(item);
+};
+$('timeline').onclick=e=>{
+  const item=selected();if(!item)return;const r=e.currentTarget.getBoundingClientRect();const progress=Math.max(0,Math.min(1,(e.clientX-r.left)/r.width));
+  if(state.previewVideo&&Number.isFinite(state.previewVideo.duration)){state.previewVideo.currentTime=progress*state.previewVideo.duration}
+  else if(state.previewPlayer){state.previewPlayer.stepToPercentage(progress,false);state.previewFrame=Math.round(progress*Math.max(0,(item.frames||1)-1));state.previewPaused=true;$('playBtn').textContent='▶';updateTime(progress*(item.duration||0),item.duration||0)}
+  else if(state.previewLottie){state.previewLottie.goToAndStop((item?.lottieData?.ip||0)+progress*(item?.frames||1),true)}
+  else if(item.animated){toast('当前动态图片格式不支持拖动时间轴，请使用重新播放按钮。')}
+  else toast('静态图片没有时间轴。');
+};
+$('downloadAll').title='下载所有已完成任务的 ZIP 压缩包';$('clearQueue').title='清空已完成和失败的任务';
+
+$('widthInput').oninput=()=>syncCanvasDimensions('width',false);$('widthInput').onchange=()=>syncCanvasDimensions('width',true);$('heightInput').oninput=()=>syncCanvasDimensions('height',false);$('heightInput').onchange=()=>syncCanvasDimensions('height',true);$('ratioLock').onchange=()=>{if($('ratioLock').checked){const w=Number($('widthInput').value),h=Number($('heightInput').value);if(w>0&&h>0)state.ratio=w/h}syncCanvasDimensions('width',true)};$('ratioPreset').onchange=()=>{const v=$('ratioPreset').value;const ratios={'1:1':1,'4:3':4/3,'3:4':3/4,'16:9':16/9,'9:16':9/16,'21:9':21/9};if(v==='source'){const item=selected();if(item?.width&&item?.height)state.ratio=item.width/item.height}else state.ratio=ratios[v];$('ratioLock').checked=true;syncCanvasDimensions('width',true)};$('qualityInput').oninput=()=>$('qualityLabel').textContent=$('qualityInput').value+'%';$('speedInput').oninput=()=>$('speedLabel').textContent=Number($('speedInput').value).toFixed(1)+' 倍';$('audioInput').onchange=e=>{state.audioFile=e.target.files[0]||null;toast(state.audioFile?'已选择替换音频：'+state.audioFile.name:'已取消替换音频')};$('bgColor').oninput=e=>{document.querySelectorAll('.swatch').forEach(x=>x.classList.remove('selected'));updatePreviewCanvas()};$('transparentBg').onchange=updatePreviewCanvas;$('muteAudio').onchange=e=>{if(e.target.checked)$('keepAudio').checked=false};
 window.addEventListener('resize',updatePreviewCanvas);window.addEventListener('beforeunload',()=>state.items.forEach(x=>URL.revokeObjectURL(x.url)));
 </script>
 </body>

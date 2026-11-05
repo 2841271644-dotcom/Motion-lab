@@ -1,0 +1,14 @@
+{
+  "name": "motion-lab",
+  "version": "2.7.0",
+  "private": true,
+  "description": "MOTION LAB browser-based animation converter",
+  "dependencies": {
+    "@ffmpeg/ffmpeg": "0.12.10",
+    "@ffmpeg/core": "0.12.6",
+    "jszip": "3.10.1",
+    "jszip-utils": "0.1.0",
+    "svgaplayerweb": "2.3.2",
+    "lottie-web": "5.13.0"
+  }
+}

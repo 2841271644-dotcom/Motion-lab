@@ -1,0 +1,27 @@
+MOTION LAB V2.7 GitHub Pages 部署步骤
+
+A. 复制文件
+把 ZIP 解压后的全部内容复制到本地仓库 motion-lab 根目录：
+- index.html（替换旧文件）
+- ffmpeg-worker.js（新增/替换）
+- package.json（新增）
+- .github/workflows/deploy-pages.yml（新增隐藏目录及工作流）
+- README.txt、测试报告.txt、部署步骤.txt（可选）
+
+不要只复制 index.html。package.json 和 .github/workflows/deploy-pages.yml 是自动把 FFmpeg 依赖放到网站本地的关键。
+
+B. 提交推送
+GitHub Desktop -> Changes -> Summary：
+Deploy MOTION LAB V2.7 with local conversion engine
+点击 Commit to main，再点击 Push origin。
+
+C. 切换 Pages 来源
+GitHub 网页仓库 -> Settings -> Pages -> Build and deployment -> Source -> GitHub Actions。
+
+D. 检查构建
+仓库 -> Actions -> “部署 MOTION LAB 到 GitHub Pages”。
+等待绿色勾号。若失败，打开失败步骤，把日志发给我。
+
+E. 在线验收
+打开 https://2841271644-dotcom.github.io/Motion-lab/ ，按 Ctrl+F5。
+先导入 000(2).svga，输出 MP4；再测 WEBP -> MP4 和 MP4 -> WEBP。

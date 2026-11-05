@@ -1,0 +1,41 @@
+MOTION LAB V2.7 检查报告
+
+一、针对卡在 42% 的根因
+- V2.6 在主线程直接 await import(jsDelivr ESM)，没有给该动态导入设置超时；CDN 请求挂起时，任务会一直停在“正在连接转换资源”。
+- FFmpeg Worker 入口也通过动态 import 远程 worker 模块，旧版本没有对该导入设置超时。
+- V2.7 为模块导入、核心文件下载、本地 Worker 检查和 FFmpeg.load 设置超时，并在失败后切换备用线路。
+- 新增 GitHub Actions 构建：部署时通过 npm 安装依赖，并把 FFmpeg ESM、FFmpeg Core WASM、SVGA Player、Lottie、JSZip、JSZipUtils 复制到 Pages 同源目录。
+
+二、用户提供的 SVGA 样本
+- 文件：000(2).svga
+- 版本：SVGA 2.1.0（zlib + Protobuf）
+- 画布：300 x 300
+- 帧率：15 FPS
+- 时长：2 秒
+- 帧数：30
+- 30 个嵌入 PNG 均可完整解码。
+- 从样本提取的 30 张 PNG 帧均为 300 x 300，图像完整性检查通过。
+
+三、本机 FFmpeg 编码验证（基于该 SVGA 样本的 30 帧）
+- SVGA 帧序列 -> MP4：通过，H.264，300 x 300，15 FPS，30 帧。
+- SVGA 帧序列 -> WEBM：通过，VP9，300 x 300，15 FPS。
+- SVGA 帧序列 -> 动态 WEBP：通过，Pillow 验证 300 x 300、30 帧。
+- SVGA 帧序列 -> GIF：通过，Pillow 验证 300 x 300、30 帧。
+- SVGA 帧序列 -> APNG：通过，Pillow 验证 300 x 300、30 帧。
+- MP4 -> 动态 WEBP：通过，Pillow 验证 300 x 300、30 帧。
+- 动态 WEBP -> MP4：通过，H.264，300 x 300，15 FPS，30 帧。
+- MP4 帧序列 -> SVGA 1.x ZIP/JSON：ZIP 根目录包含 movie.spec 和 30 张 PNG，结构检查通过。
+
+说明：FFprobe 对部分动画 WEBP 文件的流信息识别不完整，因此动态 WEBP 使用 Pillow 检查帧数和尺寸，不以 FFprobe 单独作为通过标准。
+
+四、代码检查
+- JavaScript 模块语法检查：通过。
+- FFmpeg Worker 模块语法检查：通过。
+- HTML 中 64 个 ID、59 个脚本 ID 引用：无缺失。
+- VAP / PAG 相关代码和入口：未发现。
+- GitHub Actions 工作流 YAML 结构：解析通过。
+
+五、尚待真实线上验证
+- 当前执行环境无法访问 npm/CDN 外网，无法在此处下载约 30 MB 的 FFmpeg Core 并完成真实浏览器 WebAssembly 启动。
+- V2.7 的 GitHub Actions 会在 GitHub 云端安装依赖并构建同源资源。必须等 Actions 绿色成功后，才能确认线上本地依赖文件齐全。
+- 发布后仍需在用户的 Edge 浏览器中测试 000(2).svga -> MP4、WEBP，以及 MP4 <-> WEBP。

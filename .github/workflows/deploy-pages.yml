@@ -1,0 +1,71 @@
+name: 部署 MOTION LAB 到 GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: 获取仓库代码
+        uses: actions/checkout@v4
+
+      - name: 设置 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 安装本地转换依赖
+        run: npm install --no-audit --no-fund
+
+      - name: 构建网站与本地依赖
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p dist/vendor/npm/@ffmpeg/ffmpeg@0.12.10/dist
+          mkdir -p dist/vendor/npm/@ffmpeg/core@0.12.6/dist
+          mkdir -p dist/vendor
+          cp index.html dist/index.html
+          cp ffmpeg-worker.js dist/ffmpeg-worker.js
+          cp -R node_modules/@ffmpeg/ffmpeg/dist/esm dist/vendor/npm/@ffmpeg/ffmpeg@0.12.10/dist/esm
+          cp -R node_modules/@ffmpeg/core/dist/umd dist/vendor/npm/@ffmpeg/core@0.12.6/dist/umd
+          cp node_modules/jszip/dist/jszip.min.js dist/vendor/jszip.min.js
+          cp node_modules/jszip-utils/dist/jszip-utils.min.js dist/vendor/jszip-utils.min.js
+          cp node_modules/svgaplayerweb/build/svga.min.js dist/vendor/svga.min.js
+          cp node_modules/lottie-web/build/player/lottie.min.js dist/vendor/lottie.min.js
+          touch dist/.nojekyll
+          test -s dist/index.html
+          test -s dist/ffmpeg-worker.js
+          test -s dist/vendor/npm/@ffmpeg/ffmpeg@0.12.10/dist/esm/index.js
+          test -s dist/vendor/npm/@ffmpeg/ffmpeg@0.12.10/dist/esm/worker.js
+          test -s dist/vendor/npm/@ffmpeg/core@0.12.6/dist/umd/ffmpeg-core.js
+          test -s dist/vendor/npm/@ffmpeg/core@0.12.6/dist/umd/ffmpeg-core.wasm
+          test -s dist/vendor/jszip.min.js
+          test -s dist/vendor/svga.min.js
+          test -s dist/vendor/lottie.min.js
+
+      - name: 配置 GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: 上传网站构建产物
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: 发布网站
+        id: deployment
+        uses: actions/deploy-pages@v4
