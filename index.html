@@ -20,6 +20,7 @@
 .canvas-size{position:absolute;right:7px;bottom:7px;z-index:8;padding:4px 7px;border-radius:6px;background:rgba(5,12,24,.78);border:1px solid rgba(122,165,220,.42);color:#d7eaff;font-size:9px;letter-spacing:.02em;pointer-events:none}
 
 .layout{grid-template-columns:minmax(0,1fr)}.main{max-width:1440px}.brand-name{letter-spacing:.05em}.file-toolbar{display:flex;align-items:center;gap:12px}.file-toolbar .file-list{flex:1}.preview-bottom .timeline{appearance:auto;height:auto}.field label:has(+input:disabled),.field label:has(+select:disabled){opacity:.55}input:disabled,select:disabled{opacity:.45;cursor:not-allowed}.settings-note{font-size:11px;color:#9bb2d1;line-height:1.6}dialog{max-width:640px;width:calc(100% - 32px);background:#111e34;color:#edf4ff;border:1px solid #395478;border-radius:16px;padding:26px;line-height:1.8}dialog::backdrop{background:#0009}dialog h2{margin-top:0}.file-remove{padding:4px 8px;border:0;border-radius:5px;background:#2d1e2c;color:#ff9ba8}.file-entry{display:flex;align-items:center;gap:4px}.file-chip{margin:0}.preview-bottom[hidden],#audioFileField[hidden]{display:none!important}.tab:focus-visible,.btn:focus-visible,button:focus-visible{outline:2px solid #73d9ff;outline-offset:3px}.checkrow input{flex-shrink:0}
+@media(max-width:600px){.topbar{gap:8px}.topbar .top-btn{padding:8px 10px;font-size:12px}}
 </style>
 </head>
 <body>
@@ -29,6 +30,7 @@
   <div class="top-divider"></div><div class="crumb">工作空间&nbsp; / &nbsp;<b>动画格式转换</b></div>
   <div class="top-spacer"></div>
   <div class="privacy"><span class="dot"></span> 本地处理 &nbsp;|&nbsp; 文件不上传</div>
+  <a class="top-btn" href="./svga-compress/" style="text-decoration:none">SVGA 压缩</a>
   <button class="top-btn" id="helpBtn">使用说明</button>
 </header>
 <div class="layout">

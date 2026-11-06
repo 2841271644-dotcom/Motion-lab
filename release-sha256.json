@@ -1,5 +1,5 @@
 {
-  "index.html": "caca14c674a32e925ecc4009ecb2fb164f9282799e1e8ce255c0bbb429e86989",
+  "index.html": "bcf404cf41012b0e904691228ffdba6a82fbc587201104085d48c459e97386c3",
   "motion-lab.js": "a9f347e6100b4744c1c8a538691aa74c18cd38d5de0585f77da5e453049a8c5c",
   "README.txt": "b542e13dca9e25651f673c94046371702fb772b91494e05239f0d6132a3092c2",
   "测试报告.txt": "a309b4056d4cb4f52dfe240977c27046bf2fb13b7d6f109a95a52f5d18a62e33",
@@ -59,5 +59,14 @@
   "tests/index.html": "106c94bb2e251ae63ba31a055a490f205d2a012f451fe13c9fa25171b36097a2",
   "tests/interface.html": "bcff914a6b3b9f4591ab99d4a77b8cf7f3cc96abe891a7a2bd57e392129ebe7f",
   "tests/interface.js": "0537acb91cfbf958aab291fe5f7c4d9097f49e7d6b0db2893dd0a40fc6f1be78",
-  "tests/run.js": "4575e705a69d4bec8c7906c176cdbc79edf709344c6d0217b5d8f7bccf71411a"
+  "tests/run.js": "4575e705a69d4bec8c7906c176cdbc79edf709344c6d0217b5d8f7bccf71411a",
+  ".github/workflows/deploy-pages.yml": "b7a52af300451f1727fd389e8988486ce721782ab2148f5ce24adbccf6f4bb9f",
+  "SVGA压缩升级说明.txt": "8186cc58b536df95085d79af58a2bbb9204c3e5b209a2f441a49b93d9508bc5b",
+  "tests/svga-compress.mjs": "91ff8610aa94b50d8586034c5dc9e7a1d1a5de1f18c0d62fa9e801d4494a26c4",
+  "tests/svga-compress-browser.html": "3fc287942afad60071fcd108ff1defeb7e1593945888774c4157b5fd3f84ba08",
+  "svga-compress/style.css": "71e93f585b69ee77535deb05295f90e696b5fecd0602600372b0b4eed8059f04",
+  "svga-compress/index.html": "4ad982640b0f00a1b1a85feccc05468fcf5dc80ebc4af7d9cb618b6a80a83cad",
+  "svga-compress/core.mjs": "54d818f30b7ace714738b66640e4859f83a08315ce93db53c2f695800bd9e5d1",
+  "svga-compress/app.mjs": "41ff67c2822b5a01345b4d7f771dd4476d1c9d47f654bc3ee826c668a863c679",
+  "svga-compress-sha256.json": "d6698d47b2eb726cf23bff6b20c0d42aa5f66cad9d6a0811a1a6f874409d3e22"
 }

@@ -31,6 +31,11 @@ jobs:
           mkdir -p _site
           cp index.html motion-lab.js _site/
           cp -R vendor _site/vendor
+          cp -R svga-compress _site/svga-compress
+          test -s _site/svga-compress/index.html
+          test -s _site/svga-compress/core.mjs
+          test -s _site/svga-compress/app.mjs
+          test -s _site/svga-compress/style.css
           touch _site/.nojekyll
           if [ -f CNAME ]; then cp CNAME _site/CNAME; fi
           test -s _site/index.html

@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>SVGA 压缩浏览器验证</title><body><pre id="log">检查中…</pre><script src="../vendor/pako.min.js"></script><script src="../vendor/jszip.min.js"></script><script type="module">
+import {openSvga,compressSvga,optimizeBrowserImage,encodePng,inflateSafe,fields} from '../svga-compress/core.mjs';
+const log=document.getElementById('log');let count=0;const lines=[];function ok(v,m){if(!v)throw Error(m);count++;lines.push('通过：'+m);log.textContent=lines.join('\n')}
+async function pixels(bytes){const b=await createImageBitmap(new Blob([bytes]));const c=document.createElement('canvas');c.width=b.width;c.height=b.height;const x=c.getContext('2d');x.drawImage(b,0,0);b.close();return x.getImageData(0,0,c.width,c.height).data}
+try{
+const w=64,h=48,rgba=new Uint8Array(w*h*4);for(let i=0;i<rgba.length;i+=4){rgba[i]=(i*7)%256;rgba[i+1]=(i*13+3)%256;rgba[i+2]=(i*11+7)%256;rgba[i+3]=(i/4)%256}
+const png=encodePng(rgba,w,h),p=await pixels(png);
+for(const mode of ['balanced','strong']){const result=await optimizeBrowserImage(png,mode),q=await pixels(result);ok(q.length===p.length,mode+' 图片尺寸保持');ok(q.every((v,i)=>i%4!==3||v===p[i]),mode+' 所有像素的透明度保持');}
+const c=document.createElement('canvas');c.width=64;c.height=48;const ctx=c.getContext('2d'),id=ctx.createImageData(w,h);id.data.set(rgba);ctx.putImageData(id,0,0);const jpg=new Uint8Array(await (await new Promise(r=>c.toBlob(r,'image/jpeg',1))).arrayBuffer());for(const mode of ['balanced','strong']){const j=await optimizeBrowserImage(jpg,mode);ok(j[0]===255&&j[1]===216,mode+' JPEG 编码有效');ok((await pixels(j)).length===p.length,mode+' JPEG 尺寸保持')}
+const input=new Uint8Array(await (await fetch('./fixtures/official.svga')).arrayBuffer());let s=await openSvga(input),r=await compressSvga(s);s=await openSvga(r.bytes);const fallback=await compressSvga(s);ok(fallback.keptOriginal,'无进一步收益时保留原文件');ok(fallback.bytes===s.bytes,'保留原文件的字节与对象');
+const legacy=await openSvga(new Uint8Array(await (await fetch('./fixtures/extended/legacy.svga')).arrayBuffer()));for(const mode of ['lossless','balanced','strong']){const out=await compressSvga(legacy,{mode,optimizeImage:optimizeBrowserImage});ok(out.bytes.length<=legacy.bytes.length,mode+' 1.x 输出不变大');ok((await openSvga(out.bytes)).info.frames===legacy.info.frames,mode+' 1.x 帧数保持')}
+log.textContent+='\nPASS '+count+' 项浏览器验证';document.body.dataset.result='pass';
+}catch(e){log.textContent+='\nFAIL '+e.stack;document.body.dataset.result='fail'}
+</script></body></html>

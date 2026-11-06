@@ -1,0 +1,22 @@
+import assert from 'node:assert/strict';
+import {createRequire} from 'node:module';
+import {readFileSync,writeFileSync} from 'node:fs';
+import {openSvga,compressSvga,fields,join,lengthField,vint,inflateSafe,encodePng} from '../svga-compress/core.mjs';
+const require=createRequire(import.meta.url);globalThis.pako=require('../vendor/pako.min.js');globalThis.JSZip=require('../vendor/jszip.min.js');
+let checks=0;const ok=(x,m)=>{assert.ok(x,m);checks++};
+for(const path of ['tests/fixtures/official.svga','tests/fixtures/extended/legacy.svga']){
+ const b=new Uint8Array(readFileSync(path)),s=await openSvga(b),r=await compressSvga(s);ok(r.bytes.length<=b.length,'result never larger');assert.deepEqual((await openSvga(r.bytes)).info,s.info);checks++;
+ if(s.kind==='zlib'){assert.deepEqual(inflateSafe(r.bytes),s.raw);checks++}else{const out=await JSZip.loadAsync(r.bytes);for(const e of s.entries){assert.deepEqual(await out.file(e.name).async('uint8array'),await e.async('uint8array'));checks++}}
+ console.log(path, s.info, b.length,'->',r.bytes.length);
+}
+// Deliberately include future protobuf and audio fields; preserve them byte for byte.
+const original=await openSvga(new Uint8Array(readFileSync('tests/fixtures/official.svga')));
+const raw=join([original.raw,lengthField(90,new TextEncoder().encode('future-field')),lengthField(5,Uint8Array.of(8,1,16,2))]);
+const source=await openSvga(pako.deflate(raw,{level:1}));const before=fields(raw);
+const r=await compressSvga(source,{mode:'balanced',optimizeImage:async b=>b});const after=fields(inflateSafe(r.bytes));
+assert.deepEqual(after.map(x=>x.raw),before.map(x=>x.raw));checks++;
+for(const b of [new Uint8Array(),Uint8Array.of(1,2,3),pako.deflate(Uint8Array.of(10,255,255))]){await assert.rejects(()=>openSvga(b));checks++}
+await assert.rejects(()=>compressSvga(original,{mode:'invalid'}));checks++;
+const rgba=Uint8Array.from({length:16*16*4},(_,i)=>i%256);const png=encodePng(rgba,16,16);writeFileSync('/tmp/compress-test.png',png);writeFileSync('/tmp/compress-test.rgba',rgba);
+ok(png[0]===137,'png signature');
+console.log('PASS',checks,'checks');
