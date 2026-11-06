@@ -1,4 +1,4 @@
-name: 部署 MOTION LAB 到 GitHub Pages
+name: 部署动效工坊到 GitHub Pages
 
 on:
   push:
@@ -12,59 +12,47 @@ permissions:
 
 concurrency:
   group: github-pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
-  build-and-deploy:
+  deploy:
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
     steps:
-      - name: 获取仓库代码
-        uses: actions/checkout@v4
+      - name: 获取网站代码
+        uses: actions/checkout@v6
 
-      - name: 设置 Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - name: 安装本地转换依赖
-        run: npm install --no-audit --no-fund
-
-      - name: 构建网站与本地依赖
+      - name: 准备并检查静态文件
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p dist/vendor/npm/@ffmpeg/ffmpeg@0.12.10/dist
-          mkdir -p dist/vendor/npm/@ffmpeg/core@0.12.6/dist
-          mkdir -p dist/vendor
-          cp index.html dist/index.html
-          cp ffmpeg-worker.js dist/ffmpeg-worker.js
-          cp -R node_modules/@ffmpeg/ffmpeg/dist/esm dist/vendor/npm/@ffmpeg/ffmpeg@0.12.10/dist/esm
-          cp -R node_modules/@ffmpeg/core/dist/umd dist/vendor/npm/@ffmpeg/core@0.12.6/dist/umd
-          cp node_modules/jszip/dist/jszip.min.js dist/vendor/jszip.min.js
-          cp node_modules/jszip-utils/dist/jszip-utils.min.js dist/vendor/jszip-utils.min.js
-          cp node_modules/svgaplayerweb/build/svga.min.js dist/vendor/svga.min.js
-          cp node_modules/lottie-web/build/player/lottie.min.js dist/vendor/lottie.min.js
-          touch dist/.nojekyll
-          test -s dist/index.html
-          test -s dist/ffmpeg-worker.js
-          test -s dist/vendor/npm/@ffmpeg/ffmpeg@0.12.10/dist/esm/index.js
-          test -s dist/vendor/npm/@ffmpeg/ffmpeg@0.12.10/dist/esm/worker.js
-          test -s dist/vendor/npm/@ffmpeg/core@0.12.6/dist/umd/ffmpeg-core.js
-          test -s dist/vendor/npm/@ffmpeg/core@0.12.6/dist/umd/ffmpeg-core.wasm
-          test -s dist/vendor/jszip.min.js
-          test -s dist/vendor/svga.min.js
-          test -s dist/vendor/lottie.min.js
+          mkdir -p _site
+          cp index.html motion-lab.js _site/
+          cp -R vendor _site/vendor
+          touch _site/.nojekyll
+          if [ -f CNAME ]; then cp CNAME _site/CNAME; fi
+          test -s _site/index.html
+          test -s _site/motion-lab.js
+          test -s _site/vendor/ffmpeg/index.js
+          test -s _site/vendor/ffmpeg/worker.js
+          test -s _site/vendor/core/ffmpeg-core.js
+          test -s _site/vendor/core/ffmpeg-core.wasm
+          test -s _site/vendor/jszip.min.js
+          test -s _site/vendor/jszip-utils.min.js
+          test -s _site/vendor/svga.min.js
+          test -s _site/vendor/lottie.min.js
+          test -s _site/vendor/pako.min.js
+          test -s _site/vendor/protobuf.min.js
 
       - name: 配置 GitHub Pages
         uses: actions/configure-pages@v5
 
-      - name: 上传网站构建产物
-        uses: actions/upload-pages-artifact@v3
+      - name: 上传网站静态文件
+        uses: actions/upload-pages-artifact@v4
         with:
-          path: dist
+          path: _site
 
       - name: 发布网站
         id: deployment
