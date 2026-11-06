@@ -1,0 +1,282 @@
+本轮实际执行的复查结果
+
+正在检查浏览器内实际转换…
+通过：同源转换引擎正常启动
+通过：导入：still.png
+通过：导入：motion.mp4
+通过：导入：motion.webm
+通过：导入：motion.gif
+通过：导入：motion.webp
+通过：导入：motion.png
+通过：导入：official.svga
+通过：导入带非零入点的 Lottie
+通过：still.png → mp4
+通过：still.png → webm
+通过：still.png → gif
+通过：still.png → webp
+通过：still.png → apng
+通过：still.png → svga
+通过：still.png → lottie
+通过：still.png → pngseq
+通过：still.png → png
+通过：still.png → jpg
+通过：motion.mp4 → mp4
+通过：motion.mp4 → webm
+通过：motion.mp4 → gif
+通过：motion.mp4 → webp
+通过：motion.mp4 → apng
+通过：motion.mp4 → svga
+通过：motion.mp4 → lottie
+通过：motion.mp4 → pngseq
+通过：motion.mp4 → png
+通过：motion.mp4 → jpg
+通过：motion.webm → mp4
+通过：motion.webm → webm
+通过：motion.webm → gif
+通过：motion.webm → webp
+通过：motion.webm → apng
+通过：motion.webm → svga
+通过：motion.webm → lottie
+通过：motion.webm → pngseq
+通过：motion.webm → png
+通过：motion.webm → jpg
+通过：motion.gif → mp4
+通过：motion.gif → webm
+通过：motion.gif → gif
+通过：motion.gif → webp
+通过：motion.gif → apng
+通过：motion.gif → svga
+通过：motion.gif → lottie
+通过：motion.gif → pngseq
+通过：motion.gif → png
+通过：motion.gif → jpg
+通过：motion.webp → mp4
+通过：motion.webp → webm
+通过：motion.webp → gif
+通过：motion.webp → webp
+通过：motion.webp → apng
+通过：motion.webp → svga
+通过：motion.webp → lottie
+通过：motion.webp → pngseq
+通过：motion.webp → png
+通过：motion.webp → jpg
+通过：motion.png → mp4
+通过：motion.png → webm
+通过：motion.png → gif
+通过：motion.png → webp
+通过：motion.png → apng
+通过：motion.png → svga
+通过：motion.png → lottie
+通过：motion.png → pngseq
+通过：motion.png → png
+通过：motion.png → jpg
+通过：official.svga → mp4
+通过：official.svga → webm
+通过：official.svga → gif
+通过：official.svga → webp
+通过：official.svga → apng
+通过：official.svga → svga
+通过：official.svga → lottie
+通过：official.svga → pngseq
+通过：official.svga → png
+通过：official.svga → jpg
+通过：vector.json → mp4
+通过：vector.json → webm
+通过：vector.json → gif
+通过：vector.json → webp
+通过：vector.json → apng
+通过：vector.json → svga
+通过：vector.json → lottie
+通过：vector.json → pngseq
+通过：vector.json → png
+通过：vector.json → jpg
+通过：WebP 裁剪与二倍速的抽帧结果正确
+通过：视频裁剪与半速的时长正确
+通过：未知扩展名 SVGA 按文件头识别
+通过：超出帧预算时明确报错
+通过：转换临时文件清理完成
+检查完成：94 项通过，0 项失败
+
+正在检查实际控件和导出结果…
+通过：输出菜单移除指定格式，单一导入入口，无装饰侧栏
+通过：不再接收已移除格式的文件
+通过：说明窗口可以打开与关闭
+通过：四个选项卡切换真实设置面板
+通过：不适用的设置随格式禁用，音频模式没有重复开关
+通过：导入图片后禁用不适用的播放控件
+通过：宽高锁定、解锁与比例预设实际改变尺寸
+通过：三个缩放按钮产生不同的导出像素
+通过：背景颜色实际应用到 PNG 透明区域
+通过：背景颜色实际应用到 MP4 透明区域
+通过：完整时长开关控制手动时长，倍速与画质进入导出设置
+通过：SVGA 暂停、继续、进度定位与从头播放
+通过：Lottie 暂停、定位与从头播放
+通过：视频暂停、进度定位与从头播放
+通过：替换音频按钮读取所选文件并传入编码
+通过：质量滑块影响实际 JPG 编码结果
+通过：网页播放优化实际移动 MP4 索引到前部
+通过：清空素材保留已完成记录，清空记录不清空素材
+通过：批量转换完成，逐个下载可用，多结果才显示打包下载
+通过：still.png 的 PNG/JPG 首帧导出
+通过：motion.mp4 的 PNG/JPG 首帧导出
+通过：motion.webm 的 PNG/JPG 首帧导出
+通过：motion.gif 的 PNG/JPG 首帧导出
+通过：motion.webp 的 PNG/JPG 首帧导出
+通过：motion.png 的 PNG/JPG 首帧导出
+通过：official.svga 的 PNG/JPG 首帧导出
+通过：vector.json 的 PNG/JPG 首帧导出
+检查完成：27 项通过，0 项失败
+
+
+通过：补充导入：extended/motion.mov
+通过：补充导入：extended/motion.m4v
+通过：补充导入：extended/motion.mkv
+通过：补充导入：extended/motion.avi
+通过：补充导入：extended/still.bmp
+通过：补充导入：still.jpg
+通过：补充导入：still.webp
+通过：补充导入：lossy.webp
+通过：补充导入：extended/legacy.svga
+通过：补充导入：extended/vector.lottie
+通过：extended/motion.mov → mp4
+通过：extended/motion.mov → webm
+通过：extended/motion.mov → gif
+通过：extended/motion.mov → webp
+通过：extended/motion.mov → apng
+通过：extended/motion.mov → svga
+通过：extended/motion.mov → lottie
+通过：extended/motion.mov → pngseq
+通过：extended/motion.mov → png
+通过：extended/motion.mov → jpg
+通过：extended/motion.m4v → mp4
+通过：extended/motion.m4v → webm
+通过：extended/motion.m4v → gif
+通过：extended/motion.m4v → webp
+通过：extended/motion.m4v → apng
+通过：extended/motion.m4v → svga
+通过：extended/motion.m4v → lottie
+通过：extended/motion.m4v → pngseq
+通过：extended/motion.m4v → png
+通过：extended/motion.m4v → jpg
+通过：extended/motion.mkv → mp4
+通过：extended/motion.mkv → webm
+通过：extended/motion.mkv → gif
+通过：extended/motion.mkv → webp
+通过：extended/motion.mkv → apng
+通过：extended/motion.mkv → svga
+通过：extended/motion.mkv → lottie
+通过：extended/motion.mkv → pngseq
+通过：extended/motion.mkv → png
+通过：extended/motion.mkv → jpg
+通过：extended/motion.avi → mp4
+通过：extended/motion.avi → webm
+通过：extended/motion.avi → gif
+通过：extended/motion.avi → webp
+通过：extended/motion.avi → apng
+通过：extended/motion.avi → svga
+通过：extended/motion.avi → lottie
+通过：extended/motion.avi → pngseq
+通过：extended/motion.avi → png
+通过：extended/motion.avi → jpg
+通过：extended/still.bmp → mp4
+通过：extended/still.bmp → webm
+通过：extended/still.bmp → gif
+通过：extended/still.bmp → webp
+通过：extended/still.bmp → apng
+通过：extended/still.bmp → svga
+通过：extended/still.bmp → lottie
+通过：extended/still.bmp → pngseq
+通过：extended/still.bmp → png
+通过：extended/still.bmp → jpg
+通过：still.jpg → mp4
+通过：still.jpg → webm
+通过：still.jpg → gif
+通过：still.jpg → webp
+通过：still.jpg → apng
+通过：still.jpg → svga
+通过：still.jpg → lottie
+通过：still.jpg → pngseq
+通过：still.jpg → png
+通过：still.jpg → jpg
+通过：still.webp → mp4
+通过：still.webp → webm
+通过：still.webp → gif
+通过：still.webp → webp
+通过：still.webp → apng
+通过：still.webp → svga
+通过：still.webp → lottie
+通过：still.webp → pngseq
+通过：still.webp → png
+通过：still.webp → jpg
+通过：lossy.webp → mp4
+通过：lossy.webp → webm
+通过：lossy.webp → gif
+通过：lossy.webp → webp
+通过：lossy.webp → apng
+通过：lossy.webp → svga
+通过：lossy.webp → lottie
+通过：lossy.webp → pngseq
+通过：lossy.webp → png
+通过：lossy.webp → jpg
+通过：extended/legacy.svga → mp4
+通过：extended/legacy.svga → webm
+通过：extended/legacy.svga → gif
+通过：extended/legacy.svga → webp
+通过：extended/legacy.svga → apng
+通过：extended/legacy.svga → svga
+通过：extended/legacy.svga → lottie
+通过：extended/legacy.svga → pngseq
+通过：extended/legacy.svga → png
+通过：extended/legacy.svga → jpg
+通过：extended/vector.lottie → mp4
+通过：extended/vector.lottie → webm
+通过：extended/vector.lottie → gif
+通过：extended/vector.lottie → webp
+通过：extended/vector.lottie → apng
+通过：extended/vector.lottie → svga
+通过：extended/vector.lottie → lottie
+通过：extended/vector.lottie → pngseq
+通过：extended/vector.lottie → png
+通过：extended/vector.lottie → jpg
+原文件参数：300×300，40 帧，20 帧/秒
+通过：之前无常规扩展名的 SVGA 原文件可解析
+通过：实际 SVGA 原文件 → mp4
+通过：实际 SVGA 原文件 → webm
+通过：实际 SVGA 原文件 → gif
+通过：实际 SVGA 原文件 → webp
+通过：实际 SVGA 原文件 → apng
+通过：实际 SVGA 原文件 → svga
+通过：实际 SVGA 原文件 → lottie
+通过：实际 SVGA 原文件 → pngseq
+通过：实际 SVGA 原文件 → png
+通过：实际 SVGA 原文件 → jpg
+通过：替换短音频不截短 mp4 动画
+通过：替换短音频不截短 webm 动画
+通过：小数尺寸和异常参数被规范化
+通过：损坏文件失败后可以继续处理
+通过：连续转换第 1 次
+通过：连续转换第 2 次
+通过：连续转换第 3 次
+通过：连续转换第 4 次
+通过：连续转换第 5 次
+通过：连续转换第 6 次
+通过：连续转换第 7 次
+通过：连续转换第 8 次
+通过：连续转换第 9 次
+通过：连续转换第 10 次
+通过：连续转换第 11 次
+通过：连续转换第 12 次
+通过：连续转换第 13 次
+通过：连续转换第 14 次
+通过：连续转换第 15 次
+通过：连续转换第 16 次
+通过：连续转换第 17 次
+通过：连续转换第 18 次
+通过：连续转换第 19 次
+通过：连续转换第 20 次
+通过：FFmpeg 临时文件全部清理
+同名输出：动效导出_同名素材.png，动效导出_同名素材_2.png，动效导出_同名素材_3.png
+通过：同名素材的结果不会互相覆盖
+加强复查完成：147 项通过，0 项失败
+
+实际下载包检查：3 个同名输入均生成独立 PNG 文件，ZIP 完整性正常。

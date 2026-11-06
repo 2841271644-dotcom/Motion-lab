@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><base href="../">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b1020">
+<title>动效工坊 · 动画格式转换</title>
+<style>
+:root{--bg:#090e1b;--panel:#111a2d;--panel2:#151f35;--panel3:#0d1527;--line:#25324b;--muted:#8795ad;--text:#edf4ff;--blue:#39a5ff;--cyan:#5ee7f4;--green:#49d6a1;--red:#ff6f83;--gold:#f4c76b;--radius:16px;--shadow:0 18px 50px rgba(0,0,0,.24)}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:radial-gradient(circle at 65% -20%,#17294b 0,transparent 38%),var(--bg);color:var(--text);font:14px/1.45 Inter,"Segoe UI",Arial,sans-serif}button,input,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.42;cursor:not-allowed}.app{min-height:100vh;display:grid;grid-template-rows:68px 1fr}.topbar{height:68px;border-bottom:1px solid rgba(139,164,205,.14);display:flex;align-items:center;padding:0 24px;gap:22px;background:rgba(8,14,27,.84);backdrop-filter:blur(18px);position:sticky;top:0;z-index:20}.brand{display:flex;align-items:center;gap:12px;min-width:215px}.brand-mark{width:34px;height:34px;border-radius:11px;background:linear-gradient(145deg,#4ac4ff,#5268ff 65%,#9b72ff);display:grid;place-items:center;box-shadow:0 7px 22px #2d8dff55;color:white;font-weight:900;font-size:18px}.brand-name{font-weight:800;letter-spacing:.13em;font-size:13px}.brand-sub{font-size:9px;color:#7f91b0;letter-spacing:.2em;margin-top:1px}.top-divider{height:26px;width:1px;background:var(--line)}.crumb{color:#aab7ce;font-size:12px}.crumb b{color:#f2f7ff;font-weight:650}.top-spacer{flex:1}.privacy{display:flex;align-items:center;gap:8px;color:#a8bad3;font-size:11px;padding:8px 12px;border:1px solid #263853;border-radius:30px;background:#101b2f}.dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 12px #49d6a1}.top-btn{border:1px solid #30415f;background:#17243a;color:#dceaff;border-radius:10px;padding:9px 14px;font-weight:650}.top-btn.primary{background:linear-gradient(110deg,#1989f7,#3dbeef);border:0;color:white;box-shadow:0 8px 20px #1b8fff33}.layout{display:grid;grid-template-columns:218px minmax(500px,1fr);min-height:calc(100vh - 68px)}.sidebar{border-right:1px solid rgba(139,164,205,.12);padding:22px 14px;background:rgba(9,16,31,.48)}.side-label{font-size:10px;color:#657794;letter-spacing:.16em;font-weight:800;padding:10px 12px 8px}.main{min-width:0;padding:22px 24px 30px;max-width:1800px;width:100%;margin:0 auto}.page-head{display:flex;align-items:center;gap:14px;margin-bottom:18px}.page-title{font-size:21px;font-weight:760;letter-spacing:-.03em}.page-title small{display:block;color:#8494ae;font-size:11px;font-weight:450;letter-spacing:.02em;margin-top:3px}.head-spacer{flex:1}.head-stat{font-size:11px;color:#8fa0bb;padding:7px 10px;border:1px solid #263650;border-radius:9px;background:#10192b}.dropzone{border:1px dashed #3b5b83;background:linear-gradient(100deg,rgba(25,58,96,.44),rgba(19,35,61,.32));border-radius:14px;min-height:78px;display:flex;align-items:center;padding:14px 18px;gap:15px;margin-bottom:17px;transition:.2s}.dropzone.drag{border-color:#5de1ef;background:#173454}.upload-icon{width:42px;height:42px;border-radius:12px;background:#1b4774;color:#7edaff;display:grid;place-items:center;font-size:20px}.drop-copy{flex:1}.drop-copy strong{display:block;font-size:13px}.drop-copy span{display:block;color:#8fa1be;font-size:11px;margin-top:3px}.drop-actions{display:flex;gap:8px}.btn{border:1px solid #30415e;border-radius:10px;background:#17243a;color:#dceaff;padding:9px 13px;font-size:12px;font-weight:650}.btn:hover{border-color:#4b81bd}.btn.blue{border:0;background:linear-gradient(110deg,#178af7,#39b6f0);color:#fff;box-shadow:0 7px 20px #148df333}.btn.ghost{background:transparent}.workgrid{display:grid;grid-template-columns:minmax(350px,1fr) 350px;gap:16px;align-items:stretch}.panel{border:1px solid rgba(117,145,188,.2);background:linear-gradient(160deg,rgba(20,31,52,.96),rgba(15,24,42,.98));border-radius:var(--radius);box-shadow:var(--shadow);min-width:0}.preview-panel{display:flex;flex-direction:column;min-height:555px}.panel-head{height:52px;display:flex;align-items:center;padding:0 16px;border-bottom:1px solid rgba(133,158,197,.13);gap:10px}.panel-head strong{font-size:12px}.panel-head .sub{font-size:10px;color:#7e91af}.panel-head .spacer{flex:1}.file-tag{font-size:10px;color:#a9c7ed;border:1px solid #2a4264;background:#152b48;border-radius:6px;padding:4px 7px}.stage-wrap{padding:14px;flex:1;min-height:390px;display:flex;flex-direction:column}.stage{position:relative;flex:1;min-height:360px;border-radius:12px;overflow:hidden;border:1px solid #2d3b55;background-color:#10182a;background-image:linear-gradient(45deg,#1a2639 25%,transparent 25%),linear-gradient(-45deg,#1a2639 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#1a2639 75%),linear-gradient(-45deg,transparent 75%,#1a2639 75%);background-size:22px 22px;background-position:0 0,0 11px,11px -11px,-11px 0;display:grid;place-items:center}.stage.empty{background-image:radial-gradient(circle at center,#1a2c48 0,transparent 56%),linear-gradient(45deg,#111d31 25%,transparent 25%),linear-gradient(-45deg,#111d31 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#111d31 75%),linear-gradient(-45deg,transparent 75%,#111d31 75%);background-size:auto,22px 22px,22px 22px,22px 22px,22px 22px;background-position:center,0 0,0 11px,11px -11px,-11px 0}.empty-state{text-align:center;color:#8296b6;padding:30px}.empty-state .big{font-size:36px;opacity:.8;margin-bottom:10px}.empty-state strong{display:block;color:#dbe9fb;font-size:14px}.empty-state span{font-size:11px}.stage img,.stage video{max-width:100%;max-height:100%;object-fit:contain;display:block}.stage video{width:100%;height:100%}.svga-holder{width:100%;height:100%;display:grid;place-items:center}.svga-holder canvas{max-width:100%;max-height:100%;object-fit:contain}.stage-overlay{position:absolute;left:12px;top:12px;display:flex;gap:6px}.overlay-chip{font-size:10px;padding:5px 8px;border-radius:6px;background:#0a1222cc;border:1px solid #42536e;color:#d7e6fa;backdrop-filter:blur(8px)}.preview-bottom{display:flex;align-items:center;gap:10px;padding:12px 3px 0}.icon-btn{width:31px;height:31px;border-radius:9px;background:#1a2942;border:1px solid #30415e;color:#dceaff}.timeline{height:5px;border-radius:9px;background:#2a3b57;flex:1;position:relative;cursor:pointer}.timeline-fill{height:100%;width:0;background:linear-gradient(90deg,#2f98ff,#5ce4ee);border-radius:9px}.time{font-size:10px;color:#8fa1bc;font-variant-numeric:tabular-nums;min-width:70px;text-align:right}.swatch{width:17px;height:17px;border-radius:6px;border:2px solid #65738a;cursor:pointer}.swatch.selected{outline:2px solid #7edaff;outline-offset:2px}.info-row{display:flex;gap:8px;flex-wrap:wrap;padding:0 17px 14px}.info-pill{background:#17243a;border:1px solid #263a59;color:#a9bddb;border-radius:7px;padding:5px 8px;font-size:10px}.info-pill b{color:#eff6ff;font-weight:650;margin-left:4px}.settings{display:flex;flex-direction:column;min-height:555px}.tabs{display:flex;gap:4px;padding:8px;border-bottom:1px solid rgba(133,158,197,.13)}.tab{flex:1;border:0;background:transparent;color:#8295b3;padding:9px 5px;border-radius:8px;font-size:11px}.tab.active{background:#1b3557;color:#e7f5ff;box-shadow:inset 0 0 0 1px #31547b}.settings-body{padding:14px 15px;overflow:auto;flex:1}.setting-section{margin-bottom:18px}.section-title{display:flex;align-items:center;gap:7px;font-size:10px;color:#7e91af;font-weight:800;letter-spacing:.12em;margin:0 0 10px}.section-title:after{content:"";height:1px;background:#293851;flex:1}.field{margin-bottom:12px}.field label{display:flex;align-items:center;justify-content:space-between;color:#d7e4f7;font-size:11px;margin-bottom:6px}.hint{color:#7286a4;font-size:10px}.select,.number,.text-input{width:100%;background:#0b1425;border:1px solid #2b3d59;color:#e8f2ff;border-radius:8px;padding:9px 10px;outline:none}.select:focus,.number:focus,.text-input:focus{border-color:#45aaf4;box-shadow:0 0 0 2px #248ff522}.row2{display:grid;grid-template-columns:1fr 1fr;gap:9px}.unit-input{display:flex;align-items:center;gap:7px}.unit-input .number{min-width:0}.unit{font-size:10px;color:#7f93b1}.checkrow{display:flex;align-items:center;justify-content:space-between;padding:7px 0;color:#c8d8ed;font-size:11px}.switch{appearance:none;width:34px;height:19px;border-radius:20px;background:#2a3953;position:relative;outline:none;cursor:pointer;transition:.2s}.switch:before{content:"";position:absolute;width:13px;height:13px;top:3px;left:3px;border-radius:50%;background:#d8e6f7;transition:.2s}.switch:checked{background:#168de9}.switch:checked:before{left:18px;background:white}.range{width:100%;accent-color:#42b5f4}.range-row{display:flex;align-items:center;gap:10px}.range-value{width:44px;text-align:right;color:#8edcff;font-size:11px;font-variant-numeric:tabular-nums}.seg{display:flex;background:#0b1425;border:1px solid #293c58;border-radius:9px;padding:3px;gap:3px}.seg button{flex:1;border:0;background:transparent;color:#8396b4;padding:7px 4px;border-radius:6px;font-size:10px}.seg button.active{background:#1e4772;color:#eff8ff}.action-area{padding:14px 15px;border-top:1px solid rgba(133,158,197,.13)}.convert-btn{width:100%;padding:13px;border:0;border-radius:11px;color:white;font-weight:800;font-size:13px;background:linear-gradient(100deg,#1689f8,#38b9ed);box-shadow:0 9px 24px #148df333}.convert-note{text-align:center;color:#7589a8;font-size:10px;margin-top:8px}.queue-panel{margin-top:16px}.queue-head{display:flex;align-items:center;padding:14px 16px;border-bottom:1px solid rgba(133,158,197,.13);gap:10px}.queue-head strong{font-size:12px}.queue-head .spacer{flex:1}.queue-count{font-size:10px;color:#9cb1ce;background:#1b2b45;border-radius:6px;padding:4px 7px}.queue-list{padding:8px 14px}.queue-empty{padding:20px;text-align:center;color:#788ba8;font-size:11px}.queue-item{display:grid;grid-template-columns:minmax(150px,1.2fr) 90px 1fr 92px 70px;gap:12px;align-items:center;padding:10px 2px;border-bottom:1px solid rgba(133,158,197,.1);font-size:11px}.queue-item:last-child{border:0}.q-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#dce9fb}.q-meta{font-size:10px;color:#7186a5}.status{font-size:10px;color:#94a8c6}.status.done{color:#5cdbab}.status.error{color:#ff8496}.progress{height:5px;background:#273851;border-radius:8px;overflow:hidden}.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,#2c95f5,#54d9e7);transition:width .2s}.q-actions{display:flex;gap:5px;justify-content:flex-end}.q-actions button{font-size:10px;padding:5px 7px;border-radius:6px;border:1px solid #2d405e;background:#15233a;color:#d9e8fb}.toast{position:fixed;bottom:22px;right:24px;padding:12px 16px;border:1px solid #365174;border-radius:11px;background:#14233b;color:#e7f4ff;box-shadow:var(--shadow);z-index:99;opacity:0;transform:translateY(10px);pointer-events:none;transition:.25s;max-width:360px;font-size:12px}.toast.show{opacity:1;transform:translateY(0)}.hidden{display:none!important}.file-list{margin-top:9px;display:flex;gap:7px;flex-wrap:wrap}.file-chip{font-size:10px;color:#c3d8f5;border:1px solid #2d4668;background:#142641;border-radius:7px;padding:5px 8px;max-width:190px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.file-chip.active{border-color:#49baff;background:#18385d}.small-note{font-size:10px;color:#7186a4;line-height:1.5}.footer-note{font-size:10px;color:#667b9b;margin-top:12px;text-align:center}
+@media(max-width:1150px){.workgrid{grid-template-columns:minmax(300px,1fr) 320px}.layout{grid-template-columns:190px minmax(0,1fr)}.sidebar{padding-left:10px;padding-right:10px}.main{padding:18px}}
+@media(max-width:900px){.layout{grid-template-columns:1fr}.sidebar{display:none}.workgrid{grid-template-columns:1fr}.settings{min-height:0}.settings-body{display:grid;grid-template-columns:1fr 1fr;gap:12px}.setting-section{margin:0}.preview-panel{min-height:490px}.stage{min-height:300px}.queue-item{grid-template-columns:minmax(120px,1fr) 70px 1fr 70px}.queue-item .q-meta{display:none}}
+@media(max-width:600px){.topbar{padding:0 12px}.brand{min-width:auto}.brand-sub,.top-divider,.crumb,.privacy{display:none}.main{padding:14px 10px}.page-head{flex-wrap:wrap}.head-stat{display:none}.dropzone{align-items:flex-start;flex-wrap:wrap}.drop-copy{min-width:180px}.drop-actions{width:100%;padding-left:57px}.settings-body{grid-template-columns:1fr}.stage{min-height:270px}.preview-panel{min-height:420px}.queue-item{grid-template-columns:1fr 65px}.queue-item .progress{display:none}.q-actions{grid-column:2;grid-row:1}.queue-head{padding:12px}.panel-head{padding:0 12px}}
+
+.preview-canvas{position:relative;flex:0 0 auto;overflow:hidden;border:1px solid #5b83b6;border-radius:3px;box-shadow:0 12px 34px rgba(0,0,0,.32),0 0 0 1px rgba(100,165,255,.12);transition:width .16s ease,height .16s ease;max-width:calc(100% - 36px);max-height:calc(100% - 36px)}
+.preview-content{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;display:grid;place-items:center}
+.preview-content img,.preview-content video,.preview-content canvas{display:block!important;width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;object-fit:var(--media-fit,contain)!important}
+.preview-content .svga-holder{width:100%;height:100%;min-height:0;overflow:hidden;display:grid;place-items:center}
+.preview-content .svga-holder canvas{width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;object-fit:var(--media-fit,contain)!important}
+.canvas-size{position:absolute;right:7px;bottom:7px;z-index:8;padding:4px 7px;border-radius:6px;background:rgba(5,12,24,.78);border:1px solid rgba(122,165,220,.42);color:#d7eaff;font-size:9px;letter-spacing:.02em;pointer-events:none}
+
+.layout{grid-template-columns:minmax(0,1fr)}.main{max-width:1440px}.brand-name{letter-spacing:.05em}.file-toolbar{display:flex;align-items:center;gap:12px}.file-toolbar .file-list{flex:1}.preview-bottom .timeline{appearance:auto;height:auto}.field label:has(+input:disabled),.field label:has(+select:disabled){opacity:.55}input:disabled,select:disabled{opacity:.45;cursor:not-allowed}.settings-note{font-size:11px;color:#9bb2d1;line-height:1.6}dialog{max-width:640px;width:calc(100% - 32px);background:#111e34;color:#edf4ff;border:1px solid #395478;border-radius:16px;padding:26px;line-height:1.8}dialog::backdrop{background:#0009}dialog h2{margin-top:0}.file-remove{padding:4px 8px;border:0;border-radius:5px;background:#2d1e2c;color:#ff9ba8}.file-entry{display:flex;align-items:center;gap:4px}.file-chip{margin:0}.preview-bottom[hidden],#audioFileField[hidden]{display:none!important}.tab:focus-visible,.btn:focus-visible,button:focus-visible{outline:2px solid #73d9ff;outline-offset:3px}.checkrow input{flex-shrink:0}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="topbar">
+  <div class="brand"><div class="brand-mark">动</div><div><div class="brand-name">动效工坊</div><div class="brand-sub">动画处理工作台</div></div></div>
+  <div class="top-divider"></div><div class="crumb">工作空间&nbsp; / &nbsp;<b>动画格式转换</b></div>
+  <div class="top-spacer"></div>
+  <div class="privacy"><span class="dot"></span> 本地处理 &nbsp;|&nbsp; 文件不上传</div>
+  <button class="top-btn" id="helpBtn">使用说明</button>
+</header>
+<div class="layout">
+
+  <main class="main">
+    <div class="page-head">
+      <div class="page-title">&#21160;&#30011;&#26684;&#24335;&#36716;&#25442;<small>多格式互转、画布调整、压缩优化与批量导出。</small></div>
+      <div class="head-spacer"></div>
+      <div class="head-stat" id="fileStat">已导入 0 个素材</div>
+      <div class="head-stat" id="engineStat">转换引擎尚未加载</div>
+    </div>
+    <section class="dropzone" id="dropzone">
+      <div class="upload-icon">&#8593;</div>
+      <div class="drop-copy"><strong>将动画或图片素材拖到这里</strong><span>支持 SVGA / Lottie / MP4 / MOV / WEBM / GIF / WEBP / APNG / PNG / JPG · 支持批量导入</span></div>
+      <div class="drop-actions"><button class="btn blue" id="chooseFiles">导入素材</button></div>
+      <input id="fileInput" type="file" multiple class="hidden">
+    </section>
+    <div class="file-toolbar"><div class="file-list" id="fileList"></div><button class="btn ghost" id="clearInputs" disabled>清空素材</button></div>
+    <div class="workgrid" style="margin-top:14px">
+      <section class="panel preview-panel">
+        <div class="panel-head"><strong>实时预览</strong><div class="spacer"></div><span class="file-tag" id="previewFormat">暂无素材</span><span class="file-tag" id="previewStatus">等待导入</span></div>
+        <div class="stage-wrap">
+          <div class="stage empty" id="stage"><div class="empty-state"><div class="big">&#10022;</div><strong>导入素材开始处理</strong><span>实时预览动画，查看素材参数并调整导出设置。</span></div></div>
+          <div class="preview-bottom">
+            <button class="btn" id="playBtn" title="播放预览" disabled>播放</button>
+            <button class="btn" id="restartBtn" title="从头播放预览" disabled>从头播放</button>
+            <input class="range timeline" id="timeline" type="range" min="0" max="1000" value="0" aria-label="预览进度" disabled><span id="timelineFill" hidden></span>
+            <div class="time" id="timeLabel">00:00 / 00:00</div>
+
+          </div><p class="small-note" id="previewHint">导入素材后显示预览。动画图片由浏览器自动播放。</p>
+        </div>
+        <div class="info-row" id="infoRow"><span class="info-pill">格式 <b>-</b></span><span class="info-pill">文件大小 <b>-</b></span><span class="info-pill">画布 <b>-</b></span><span class="info-pill">时长 <b>-</b></span><span class="info-pill">帧/秒 <b>-</b></span></div>
+      </section>
+      <aside class="panel settings">
+        <div class="tabs" role="tablist" aria-label="导出设置"><button class="tab active" role="tab" aria-selected="true" data-tab="output">输出</button><button class="tab" role="tab" aria-selected="false" data-tab="canvas">画布</button><button class="tab" role="tab" aria-selected="false" data-tab="quality">画质</button><button class="tab" role="tab" aria-selected="false" data-tab="audio">音频</button></div>
+        <div class="settings-body">
+          <div class="tab-content" data-content="output">
+            <div class="setting-section">
+              <div class="section-title">输出格式</div>
+              <div class="field"><label>目标格式 <span class="hint">选择导出类型</span></label><select class="select" id="formatSelect" aria-label="目标格式"><option value="mp4">MP4 - H.264 视频</option><option value="webm">WEBM - VP8 视频</option><option value="gif">GIF - 动画图片</option><option value="webp">WEBP - 动画图片</option><option value="apng">APNG - PNG 动画</option><option value="svga">SVGA - 标准 2.x 动画</option><option value="lottie">Lottie JSON - 逐帧位图动画</option><option value="pngseq">PNG 序列 - ZIP 压缩包</option><option value="png">PNG - 首帧图片</option><option value="jpg">JPG - 首帧图片</option></select></div>
+              <p class="small-note" id="formatHint"></p><div class="field"><label>输出文件名</label><input class="text-input" id="nameInput" aria-label="输出文件名" value="动效导出" placeholder="请输入输出文件名"></div><p class="small-note">Lottie JSON 和 SVGA 导出为逐帧位图动画；PNG、JPG 仅导出起始位置的一帧。</p>
+            </div>
+            <div class="setting-section">
+              <div class="section-title">时间与速度</div>
+              <div class="row2"><div class="field"><label>起始时间 <span class="unit">秒</span></label><input class="number" id="startInput" aria-label="起始时间" type="number" min="0" step="0.1" value="0"></div><div class="field"><label>处理时长 <span class="unit">秒</span></label><input class="number" id="durationInput" aria-label="处理时长" type="number" min="0.1" max="120" step="0.1" value="2"></div></div>
+              <div class="checkrow"><label for="fullDuration">使用完整素材时长</label><input class="switch" id="fullDuration" aria-label="使用完整素材时长" type="checkbox" checked></div>
+              <div class="field"><label>播放速度 <span class="unit" id="speedLabel">1.0 倍</span></label><input class="range" id="speedInput" aria-label="播放速度" type="range" min="0.5" max="2" step="0.1" value="1"></div>
+            </div>
+          </div>
+          <div class="tab-content hidden" data-content="canvas">
+            <div class="setting-section">
+              <div class="section-title">画布尺寸</div>
+              <div class="row2"><div class="field"><label>宽度 <span class="unit">像素</span></label><input class="number" id="widthInput" aria-label="宽度" type="number" min="16" max="4096" value="300"></div><div class="field"><label>高度 <span class="unit">像素</span></label><input class="number" id="heightInput" aria-label="高度" type="number" min="16" max="4096" value="300"></div></div>
+              <div class="checkrow"><label for="ratioLock">锁定宽高比例</label><input class="switch" id="ratioLock" aria-label="锁定宽高比例" type="checkbox" checked></div>
+              <div class="field"><label>比例预设</label><select class="select" id="ratioPreset" aria-label="比例预设"><option value="source">原始比例</option><option value="1:1">1:1 正方形</option><option value="4:3">4:3 横版</option><option value="3:4">3:4 竖版</option><option value="16:9">16:9 宽屏</option><option value="9:16">9:16 竖屏</option><option value="21:9">21:9 超宽屏</option></select></div>
+            </div>
+            <div class="setting-section">
+              <div class="section-title">内容缩放</div>
+              <div class="field"><label>缩放模式</label><div class="seg" id="fitMode"><button class="active" data-fit="contain">完整等比</button><button data-fit="cover">等比填满</button><button data-fit="stretch">自由拉伸</button></div></div>
+              <div class="checkrow"><label for="transparentBg">透明背景</label><input class="switch" id="transparentBg" aria-label="透明背景" type="checkbox" checked></div>
+              <div class="field"><label>背景颜色</label><input class="text-input" id="bgColor" aria-label="背景颜色" type="color" value="#10182a" style="height:38px;padding:4px"></div>
+              <p class="small-note">锁定宽高比例后，修改任一边会同步计算另一边。预览中的输出画布与素材会按同一比例联动缩放；完整等比不会裁切或拉伸素材。</p>
+            </div>
+          </div>
+          <div class="tab-content hidden" data-content="quality">
+            <div class="setting-section">
+              <div class="section-title">编码质量</div>
+              <div class="field"><label>画质 <span class="range-value" id="qualityLabel">80%</span></label><input class="range" id="qualityInput" aria-label="画质" type="range" min="10" max="100" value="80"></div>
+              <div class="field"><label>视频码率 <span class="unit">千比特/秒</span></label><input class="number" id="bitrateInput" aria-label="视频码率" type="number" min="250" max="50000" step="250" value="2500"></div>
+              <div class="field"><label>输出帧率 <span class="unit">帧/秒</span></label><select class="select" id="fpsInput" aria-label="输出帧率"><option>8</option><option>10</option><option>12</option><option selected>15</option><option>20</option><option>24</option><option>25</option><option>30</option><option>50</option><option>60</option></select></div>
+            </div>
+            <div class="setting-section"><div class="section-title">优化选项</div><div class="checkrow"><label for="webOptimize">优化网页播放</label><input class="switch" id="webOptimize" aria-label="优化网页播放" type="checkbox" checked></div><div class="checkrow"><label for="stripMeta">清除元数据</label><input class="switch" id="stripMeta" aria-label="清除元数据" type="checkbox" checked></div><div class="checkrow"><label for="loopInput">导出动画循环播放</label><input class="switch" id="loopInput" aria-label="循环播放" type="checkbox" checked></div><p class="small-note">画质与帧率越高，处理耗时和输出体积也会增加。</p></div>
+          </div>
+          <div class="tab-content hidden" data-content="audio">
+            <div class="setting-section">
+              <div class="section-title">音频设置</div>
+              <div class="field"><label for="audioMode">音频模式</label><select class="select" id="audioMode" aria-label="音频模式"><option value="keep">保留原音频</option><option value="mute">静音输出</option><option value="replace">使用替换音频</option></select></div>
+              <div class="field"><label>音频码率 <span class="unit">千比特/秒</span></label><select class="select" id="audioBitrate" aria-label="音频码率"><option>64</option><option>96</option><option selected>128</option><option>160</option><option>192</option><option>256</option><option>320</option></select></div>
+              <div class="field" id="audioFileField" hidden><button class="btn" id="chooseAudio">选择替换音频</button><input type="file" id="audioInput" accept=".mp3,.wav,.m4a,.aac,.ogg,.opus" hidden><p id="audioFileName" class="small-note">尚未选择音频文件</p></div>
+              <div class="small-note">只有 MP4 和 WEBM 支持音频。其他输出格式会自动导出为无声素材。</div>
+            </div>
+          </div>
+        </div>
+        <div class="action-area"><button class="convert-btn" id="convertBtn">&#9654; &nbsp; 开始处理</button><div class="convert-note" id="convertNote">批量转换 · 本地处理 · 不上传素材</div></div>
+      </aside>
+    </div>
+    <section class="panel queue-panel">
+      <div class="queue-head"><strong>处理队列</strong><span class="queue-count" id="queueCount">0 个任务</span><div class="spacer"></div><button class="btn ghost" id="clearQueue">清空处理记录</button><button class="btn" id="downloadAll" disabled>打包下载</button></div>
+      <div class="queue-list" id="queueList"><div class="queue-empty">暂无任务。导入素材、设置导出参数后，即可开始处理。</div></div>
+    </section>
+    <div class="footer-note">动效工坊 · 浏览器本地处理 · 素材不会上传到服务器</div>
+  </main>
+</div>
+</div>
+<dialog id="helpDialog" aria-labelledby="helpTitle"><h2 id="helpTitle">使用说明</h2><ol><li>通过“导入素材”或拖放添加文件，点击文件名切换预览。</li><li>在“输出、画布、画质、音频”四个选项卡设置参数。不适用的设置会自动禁用。</li><li>点击“开始处理”，对全部已导入素材进行转换；完成后逐个下载，或打包下载多个结果。</li></ol><p>支持导入：SVGA、Lottie JSON、dotLottie、MP4、MOV、M4V、WEBM、MKV、AVI、GIF、WEBP、APNG、PNG、JPG、BMP。能否解码视频还取决于内部编码。</p><p>支持导出：MP4、WEBM、GIF、WEBP、APNG、SVGA、Lottie JSON、PNG 序列、PNG、JPG。</p><p>单文件上限 150 MB。逐帧处理最多 500 帧，并按画布尺寸限制内存；超出时请降低尺寸、帧率或时长。首次使用转换引擎需要加载约 32 MB。</p><p>MP4、JPG 不保留透明背景。其他格式是否有声、是否支持循环，以可用设置为准。</p><button class="btn blue" id="closeHelp">关闭说明</button></dialog><div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="./vendor/jszip.min.js"></script>
+<script src="./vendor/svga.min.js"></script>
+<script src="./vendor/jszip-utils.min.js"></script>
+<script src="./vendor/pako.min.js"></script>
+<script src="./vendor/protobuf.min.js"></script>
+<script type="module" src="./motion-lab.js"></script>
+<script type="module" src="./tests/extended.js"></script></body>
+</html>

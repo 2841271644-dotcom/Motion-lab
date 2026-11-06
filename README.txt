@@ -1,26 +1,59 @@
-MOTION LAB V2.7 中文稳定部署版
+动效工坊 · 中文精简版
+更新日期：2026-11-06
 
-本版本重点解决转换引擎停在 42% 的问题：
-1. FFmpeg、FFmpeg Core、SVGA Player、Lottie、JSZip、JSZipUtils 优先由 GitHub Pages 同源提供，不再依赖浏览器首次访问第三方 CDN。
-2. 为模块加载、依赖下载、工作线程启动设置超时；单条线路失败会自动切换备用线路，不再无限停留在 42%。
-3. 增加阶段提示和具体错误记录，区分模块连接、核心文件下载、工作线程启动、动画帧提取和输出编码。
-4. 保留 SVGA 1.x / 2.x、MP4、MOV、WEBM、GIF、WEBP、APNG、PNG、JPG、Lottie JSON / .lottie。
-5. 移除 VAP、PAG。
-6. 网站界面、按钮、提示、任务状态和帮助说明均为中文；格式缩写、文件名和品牌名保留原文。
-7. 保留尺寸、等比例缩放、画质、帧率、码率、透明背景、音频、时长、批量处理、ZIP 下载。
+本次更新
+1. 删除 PAG、VAP 的导入、导出、预览、项目打包和处理代码，移除相关依赖。
+2. 网站名称、菜单、提示、按钮、状态、说明、默认导出文件名均改为中文。
+   保留 SVGA、MP4、WEBP、Lottie、H.264 等格式/编码名称，以及原始文件名。
+3. 只保留一个“导入素材”按钮，删除没有功能的侧栏和重复的支持格式入口。
+4. 音频改为“保留原音频 / 静音输出 / 使用替换音频”一个模式选择。
+5. “清空素材”只清空输入，“清空处理记录”只清空输出记录，两个操作互不影响。
+6. 单个结果提供“下载文件”；两个及以上完成结果才显示“打包下载”。
+7. 修复 SVGA 的暂停、继续播放和进度定位；视频、Lottie 同样支持播放控制。
+   静态图片、由浏览器直接播放的动画图片会禁用不适用的播放控件并说明原因。
+8. 当前格式不使用的设置会禁用：
+   - PNG、JPG：禁用倍速、帧率、动画时长、循环和音频；起始时间仍可用于截取动画帧。
+   - 只有静态图片的任务：禁用没有意义的起始时间和完整时长开关，允许设置生成动画的时长。
+   - 透明背景开启时：禁用背景色选择；MP4、JPG 自动使用不透明背景。
+   - 视频码率、音轨和音频码率：仅对视频格式开放。
+   - 网页播放优化：仅对 MP4 开放；循环开关仅对 GIF、WEBP、APNG 开放。
+9. 背景色真正合成到透明区域；PNG/JPG 截帧只处理起始位置一帧。
+10. WEBP 使用浏览器编码各帧并生成标准动画容器，避免连续调用 WASM 动画编码器的异常。
+    严重 WASM 异常会重置引擎并自动重试一次；损坏或不支持的文件仍会明确报错。
 
-重要：本版本改用 GitHub Actions 构建并发布 Pages，自动把 FFmpeg 等依赖下载并放到网站本地目录。
+更新原网站（GitHub Desktop）
+1. 解压本文件包，把包内全部文件复制到电脑上的 Motion-lab 仓库根目录，覆盖同名文件。
+2. index.html、motion-lab.js、vendor 文件夹必须同时更新，不要只覆盖 HTML。
+3. 如果已使用上一版，可删除旧 vendor/libpag/、tests/final.html、tests/final.js，
+   以及 tests/fixtures/ 中旧的 sample.pag、sample.vap、packed.mp4。新版不再引用这些文件。
+4. 在 GitHub Desktop 填写提交说明，点击 Commit to main，再点击 Push origin。
+5. 等待 GitHub Pages 部署完成，打开原网址并 Ctrl+F5 强制刷新。
 
-部署步骤：
-1. 解压 ZIP。
-2. 将 ZIP 内全部内容复制到本地 motion-lab 仓库根目录，覆盖旧 index.html，并新增 ffmpeg-worker.js、package.json、.github/workflows/deploy-pages.yml。
-3. 打开 GitHub Desktop，确认 index.html、ffmpeg-worker.js、package.json、.github/workflows/deploy-pages.yml 等文件出现在 Changes。
-4. Summary 填写：Deploy MOTION LAB V2.7 with local conversion engine
-5. 点击 Commit to main，再点击 Push origin。
-6. 打开 GitHub 仓库 Settings -> Pages -> Build and deployment -> Source，选择 GitHub Actions。
-7. 打开仓库 Actions 页面，等待“部署 MOTION LAB 到 GitHub Pages”工作流绿色成功。
-8. 打开网站并按 Ctrl+F5 强制刷新。
+本包尚未推送到你的原 GitHub 仓库，下载文件本身不会自动更新线上网站。
 
-部署完成后，网站会从自身域名加载 FFmpeg 和播放器文件。第一次转换仍需浏览器下载约 30 MB 的 FFmpeg Core；下载完成后浏览器会缓存资源。
+使用方式
+- 通过 HTTP/HTTPS 网站访问，无需安装依赖或配置后端。不要双击 HTML 作为本地文件打开。
+- 导入多个素材后，在四个设置选项卡调整参数，点击“开始处理”批量应用。
+- 点击素材文件名切换预览。视频预览默认静音，导出音轨由“音频”选项卡控制。
+- 只有 MP4、WEBM 导出可以包含音轨；PNG、JPG 为单帧图片。
+- SVGA 和 Lottie 导出是逐帧位图动画，不会还原可编辑矢量图层。
+- 核心组件均随网站提供；首次需要视频解码时按需加载约 32 MB 的引擎。
+- 单文件上限 150 MB。逐帧处理最多 500 帧，并按画布尺寸限制内存。
+- 大文件、加密素材、损坏文件或不支持的内部视频编码仍可能无法处理，界面会显示中文错误。
+- WEBP 编码需要浏览器支持 Canvas WEBP 导出。
 
-如果 Actions 构建失败：打开 Actions -> 最新失败的工作流 -> 展开“构建网站与本地依赖”，复制错误日志发给我。
+自检入口（可选）
+- tests/：检查格式转换、动画重新导入、帧数、透明区域和临时文件清理。
+- tests/interface.html：检查真实控件、缩放、背景、音频、播放定位与批量处理。
+这些文件仅用于开发检查，可以不上传到公开网站。
+
+第三方组件的版本、来源和原始许可证见 vendor/README.txt、vendor/licenses/。
+
+本轮复查修订
+- 请使用本次 Motion-lab-verified.zip 替换上一版文件包。
+- 同名导出结果自动编号，避免打包覆盖。
+- 短替换音频不会再截短原动画。
+- 输出参数统一规范化，避免小数尺寸或非法码率导致编码错误。
+- 已重跑 268 项检查，详见“测试报告.txt”和“复查明细.txt”。
+- tests/extended.html 可复测补充容器、旧版 SVGA、dotLottie 和连续处理。
+- 实际原文件仅用于本轮验证，未放入安装包。
