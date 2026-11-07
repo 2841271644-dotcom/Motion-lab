@@ -61,12 +61,12 @@
   "tests/interface.js": "0537acb91cfbf958aab291fe5f7c4d9097f49e7d6b0db2893dd0a40fc6f1be78",
   "tests/run.js": "4575e705a69d4bec8c7906c176cdbc79edf709344c6d0217b5d8f7bccf71411a",
   ".github/workflows/deploy-pages.yml": "b7a52af300451f1727fd389e8988486ce721782ab2148f5ce24adbccf6f4bb9f",
-  "SVGA压缩升级说明.txt": "8186cc58b536df95085d79af58a2bbb9204c3e5b209a2f441a49b93d9508bc5b",
-  "tests/svga-compress.mjs": "91ff8610aa94b50d8586034c5dc9e7a1d1a5de1f18c0d62fa9e801d4494a26c4",
-  "tests/svga-compress-browser.html": "3fc287942afad60071fcd108ff1defeb7e1593945888774c4157b5fd3f84ba08",
-  "svga-compress/style.css": "71e93f585b69ee77535deb05295f90e696b5fecd0602600372b0b4eed8059f04",
-  "svga-compress/index.html": "4ad982640b0f00a1b1a85feccc05468fcf5dc80ebc4af7d9cb618b6a80a83cad",
-  "svga-compress/core.mjs": "54d818f30b7ace714738b66640e4859f83a08315ce93db53c2f695800bd9e5d1",
-  "svga-compress/app.mjs": "41ff67c2822b5a01345b4d7f771dd4476d1c9d47f654bc3ee826c668a863c679",
-  "svga-compress-sha256.json": "d6698d47b2eb726cf23bff6b20c0d42aa5f66cad9d6a0811a1a6f874409d3e22"
+  "SVGA压缩升级说明.txt": "6cb8da7d8fdf306dde4b62765cc401716eb8038567272d26ffc662d26a723580",
+  "tests/svga-compress.mjs": "64cad3f0248ff69f8c559c64f04551444f10081f46fc7a4cb5e52b9327eddddc",
+  "tests/svga-compress-browser.html": "d869662610c965b0d65a2b36b9ef23e94d79ef18be8a6a52a50c063b21df8b61",
+  "svga-compress/style.css": "fd2fc1ff416b0448d30306f75f4d79836d5e2de193de3fa66614eb96370768f7",
+  "svga-compress/index.html": "240f3578efffc61f8fedbe65e31205039978475fbda780616cf2dc62fa7ce154",
+  "svga-compress/core.mjs": "93060aceccdd5a0b846f88798e5ef6455504b4515b5fc43ca879676251266d76",
+  "svga-compress/app.mjs": "e432f46d176f8651638c5c6e60fa1287b98348e0d198ee80b39ff82932b660c1",
+  "svga-compress-sha256.json": "2ef94c9bf75299eecb4a00c9ca778d96ed434ce5f81f7dc1fe81678cfec4f27e"
 }

@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import {createRequire} from 'node:module';
 import {readFileSync,writeFileSync} from 'node:fs';
-import {openSvga,compressSvga,fields,join,lengthField,vint,inflateSafe,encodePng} from '../svga-compress/core.mjs';
+import {openSvga,compressSvga,fields,join,lengthField,vint,inflateSafe,encodePng,compressionSettings} from '../svga-compress/core.mjs';
 const require=createRequire(import.meta.url);globalThis.pako=require('../vendor/pako.min.js');globalThis.JSZip=require('../vendor/jszip.min.js');
 let checks=0;const ok=(x,m)=>{assert.ok(x,m);checks++};
 for(const path of ['tests/fixtures/official.svga','tests/fixtures/extended/legacy.svga']){
@@ -20,3 +20,7 @@ await assert.rejects(()=>compressSvga(original,{mode:'invalid'}));checks++;
 const rgba=Uint8Array.from({length:16*16*4},(_,i)=>i%256);const png=encodePng(rgba,16,16);writeFileSync('/tmp/compress-test.png',png);writeFileSync('/tmp/compress-test.rgba',rgba);
 ok(png[0]===137,'png signature');
 console.log('PASS',checks,'checks');
+
+for(const custom of [{colors:7},{colors:257},{scale:0},{scale:101},{jpegQuality:0},{level:10},{colors:12.5},{scale:NaN}]){await assert.rejects(()=>compressSvga(original,{mode:'custom',custom}));checks++}
+for(const level of [1,5,9]){const r=await compressSvga(source,{mode:'custom',custom:{colors:37,scale:55,jpegQuality:47,level},optimizeImage:async (b,m,s)=>{assert.equal(m,'custom');assert.deepEqual(s,{colors:37,scale:55,jpegQuality:47,level});checks++;return b}});assert.deepEqual(inflateSafe(r.bytes),source.raw);checks++}
+console.log('PASS',checks,'including custom validation, settings forwarding and container levels');
