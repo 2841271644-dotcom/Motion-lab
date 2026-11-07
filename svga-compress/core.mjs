@@ -17,17 +17,42 @@ export async function openSvga(bytes){if(!bytes.length)throw Error('文件为空
  if(bytes[0]===80&&bytes[1]===75){const zip=await globalThis.JSZip.loadAsync(bytes,{checkCRC32:false});const entries=Object.values(zip.files).filter(x=>!x.dir);let total=0;for(const e of entries){total+=e._data?.uncompressedSize||0;if(total>MAX_RAW)throw Error('解压后文件过大。')}const specEntry=entries.find(e=>/(^|\/)movie\.spec$/i.test(e.name));if(!specEntry)throw Error('此 ZIP 不是 SVGA：缺少 movie.spec。');const spec=JSON.parse(await specEntry.async('string'));const m=spec.movie;if(!m?.viewBox||!Array.isArray(spec.sprites)||!(m.frames>0&&m.fps>0))throw Error('SVGA 1.x 动画数据不完整。');return {kind:'zip',zip,entries,spec,specName:specEntry.name,bytes,info:{width:m.viewBox.width,height:m.viewBox.height,fps:m.fps,frames:m.frames,version:'1.x'}}}
  if((bytes[0]&15)!==8||((bytes[0]<<8|bytes[1])%31)!==0)throw Error('无法识别 SVGA 文件头，不支持加密或损坏文件。');const raw=inflateSafe(bytes);return {kind:'zlib',raw,bytes,info:metadata(raw)};}
 export function imageKind(b){return b[0]===137&&b[1]===80&&b[2]===78&&b[3]===71?'png':b[0]===255&&b[1]===216?'jpeg':b[0]===82&&b[1]===73&&b[8]===87&&b[9]===69?'webp':null}
+// Read intrinsic image dimensions without changing or decoding animation data.
+export function imageDimensions(bytes){
+ const kind=imageKind(bytes),b=bytes,view=new DataView(b.buffer,b.byteOffset,b.byteLength);
+ if(kind==='png'&&b.length>=24)return {width:view.getUint32(16),height:view.getUint32(20)};
+ if(kind==='jpeg'){
+  let at=2;
+  while(at<b.length){
+   if(b[at++]!==255)break;while(at<b.length&&b[at]===255)at++;
+   const marker=b[at++];if(marker===217||marker===218)break;
+   if(marker===1||(marker>=208&&marker<=215))continue;
+   if(at+2>b.length)break;const length=view.getUint16(at);if(length<2||at+length>b.length)break;
+   if([192,193,194,195,197,198,199,201,202,203,205,206,207].includes(marker)&&length>=7)return {width:view.getUint16(at+5),height:view.getUint16(at+3)};
+   at+=length;
+  }
+ }
+ if(kind==='webp'&&b.length>=25){
+  const type=String.fromCharCode(...b.subarray(12,16));
+  if(type==='VP8X'&&b.length>=30)return {width:1+b[24]+(b[25]<<8)+(b[26]<<16),height:1+b[27]+(b[28]<<8)+(b[29]<<16)};
+  if(type==='VP8 '&&b.length>=30&&b[23]===157&&b[24]===1&&b[25]===42)return {width:view.getUint16(26,true)&16383,height:view.getUint16(28,true)&16383};
+  if(type==='VP8L'&&b[20]===47){const n=view.getUint32(21,true);return {width:1+(n&16383),height:1+((n>>>14)&16383)}}
+ }
+ throw Error('无法校验图片尺寸，已停止压缩以保留原素材。');
+}
+function verifyImageSize(before,after){const a=imageDimensions(before),b=imageDimensions(after);if(a.width!==b.width||a.height!==b.height)throw Error('压缩校验失败：素材像素尺寸发生变化，已阻止导出。')}
 export function compressionSettings(mode='lossless',custom={}){
- const presets={lossless:{colors:256,scale:100,jpegQuality:100,level:9},balanced:{colors:256,scale:100,jpegQuality:85,level:9},strong:{colors:64,scale:100,jpegQuality:65,level:9}};
+ const presets={lossless:{colors:256,jpegQuality:100,level:9},balanced:{colors:256,jpegQuality:85,level:9},strong:{colors:64,jpegQuality:65,level:9}};
  if(mode!=='custom'){if(!presets[mode])throw Error('压缩模式无效。');return {...presets[mode]}}
- const settings={colors:128,scale:100,jpegQuality:80,level:9,...custom};
- for(const [key,min,max,label] of [['colors',8,256,'颜色数'],['scale',10,100,'素材分辨率'],['jpegQuality',1,100,'JPEG 质量'],['level',1,9,'容器压缩等级']]){
+ // Ignore removed options, including scale values saved by older versions.
+ const settings={colors:custom.colors??128,jpegQuality:custom.jpegQuality??80,level:custom.level??9};
+ for(const [key,min,max,label] of [['colors',8,256,'颜色数'],['jpegQuality',1,100,'JPEG 质量'],['level',1,9,'容器压缩等级']]){
   if(!Number.isInteger(settings[key])||settings[key]<min||settings[key]>max)throw Error(`${label}请输入 ${min}–${max} 的整数。`);
  }
  return settings;
 }
 export async function compressSvga(source,{mode='lossless',custom={},optimizeImage=async b=>b,onProgress=()=>{}}={}){const settings=compressionSettings(mode,custom);let changed=0,images=0,candidate;
- const optimize=async b=>{if(!imageKind(b))return b;images++;const next=mode==='lossless'?b:await optimizeImage(b,mode,settings);if(next.length<b.length){changed++;return next}return b};
+ const optimize=async b=>{if(!imageKind(b))return b;images++;const next=mode==='lossless'?b:await optimizeImage(b,mode,settings);if(next!==b)verifyImageSize(b,next);if(next.length<b.length){changed++;return next}return b};
  if(source.kind==='zlib'){const f=fields(source.raw),out=[];for(let i=0;i<f.length;i++){const x=f[i];if(x.id===3&&x.wire===2){const entry=fields(x.data),parts=[];for(const v of entry){if(v.id===2&&v.wire===2){const next=await optimize(v.data);parts.push(next===v.data?v.raw:lengthField(2,next))}else parts.push(v.raw)}out.push(lengthField(3,join(parts)))}else out.push(x.raw);onProgress((i+1)/f.length*.9);await new Promise(r=>setTimeout(r,0))}candidate=globalThis.pako.deflate(join(out),{level:settings.level})}
  else {const zip=new globalThis.JSZip();let total=0;for(let i=0;i<source.entries.length;i++){const e=source.entries[i];let b=await e.async('uint8array');total+=b.length;if(total>MAX_RAW)throw Error('解压后文件过大。');b=await optimize(b);zip.file(e.name,b,{date:e.date,comment:e.comment});onProgress((i+1)/source.entries.length*.8)}candidate=await zip.generateAsync({type:'uint8array',compression:'DEFLATE',compressionOptions:{level:settings.level}},m=>onProgress(.8+m.percent/100*.1))}
  // Never deliver a larger file under the name of compression.
@@ -38,7 +63,7 @@ function u32(n){return Uint8Array.of(n>>>24,n>>>16,n>>>8,n)}
 function chunk(type,data){const b=join([new TextEncoder().encode(type),data]);return join([u32(data.length),b,u32(crc32(b))])}
 // Encode RGBA PNG with per-row adaptive filters; do not flatten alpha.
 export function encodePng(rgba,width,height){const stride=width*4,filtered=new Uint8Array((stride+1)*height);for(let y=0;y<height;y++){let best,score=Infinity;for(const type of [0,1,2,3,4]){const row=new Uint8Array(stride);let s=0;for(let x=0;x<stride;x++){const p=y*stride+x,a=x>=4?rgba[p-4]:0,b=y?rgba[p-stride]:0,c=y&&x>=4?rgba[p-stride-4]:0;let predictor=0;if(type===1)predictor=a;if(type===2)predictor=b;if(type===3)predictor=(a+b)>>1;if(type===4){const k=a+b-c,pa=Math.abs(k-a),pb=Math.abs(k-b),pc=Math.abs(k-c);predictor=pa<=pb&&pa<=pc?a:pb<=pc?b:c}row[x]=(rgba[p]-predictor)&255;s+=Math.min(row[x],256-row[x])}if(s<score){score=s;best=join([Uint8Array.of(type),row])}}filtered.set(best,y*(stride+1))}const header=join([u32(width),u32(height),Uint8Array.of(8,6,0,0,0)]);return join([Uint8Array.of(137,80,78,71,13,10,26,10),chunk('IHDR',header),chunk('IDAT',globalThis.pako.deflate(filtered,{level:9})),chunk('IEND',new Uint8Array())]);}
-export async function optimizeBrowserImage(bytes,mode,custom={}){const settings=compressionSettings(mode,custom);if(mode==='lossless')return bytes;const blob=new Blob([bytes],{type:imageKind(bytes)==='jpeg'?'image/jpeg':'image/png'});const bitmap=await createImageBitmap(blob);try{const w=Math.max(1,Math.round(bitmap.width*settings.scale/100)),h=Math.max(1,Math.round(bitmap.height*settings.scale/100));if(w*h>4_000_000){if(mode==='custom')throw Error('素材图片过大，请降低素材分辨率后重试。');return bytes;}const canvas=document.createElement('canvas');canvas.width=w;canvas.height=h;const ctx=canvas.getContext('2d',{willReadFrequently:true});if(!ctx)throw Error('当前浏览器不支持图片压缩。');ctx.imageSmoothingQuality='high';ctx.drawImage(bitmap,0,0,w,h);if(imageKind(bytes)==='jpeg'){const encoded=await new Promise(resolve=>canvas.toBlob(resolve,'image/jpeg',settings.jpegQuality/100));return encoded?new Uint8Array(await encoded.arrayBuffer()):bytes}const data=ctx.getImageData(0,0,w,h).data,levels=255;for(let i=0;i<data.length;i+=4){for(let j=0;j<3;j++)data[i+j]=data[i+3]===0?0:Math.round(Math.round(data[i+j]*levels/255)*255/levels)}const indexed=encodePalettePng(data,w,h,settings.colors),rgbaPng=encodePng(data,w,h);return mode==='custom'||indexed.length<rgbaPng.length?indexed:rgbaPng}finally{bitmap.close()}}
+export async function optimizeBrowserImage(bytes,mode,custom={}){const settings=compressionSettings(mode,custom);if(mode==='lossless')return bytes;const blob=new Blob([bytes],{type:imageKind(bytes)==='jpeg'?'image/jpeg':'image/png'});const bitmap=await createImageBitmap(blob);try{const w=bitmap.width,h=bitmap.height;if(w*h>4_000_000)return bytes;const canvas=document.createElement('canvas');canvas.width=w;canvas.height=h;const ctx=canvas.getContext('2d',{willReadFrequently:true});if(!ctx)throw Error('当前浏览器不支持图片压缩。');ctx.drawImage(bitmap,0,0);if(imageKind(bytes)==='jpeg'){const encoded=await new Promise(resolve=>canvas.toBlob(resolve,'image/jpeg',settings.jpegQuality/100));return encoded?new Uint8Array(await encoded.arrayBuffer()):bytes}const data=ctx.getImageData(0,0,w,h).data,levels=255;for(let i=0;i<data.length;i+=4){for(let j=0;j<3;j++)data[i+j]=data[i+3]===0?0:Math.round(Math.round(data[i+j]*levels/255)*255/levels)}const indexed=encodePalettePng(data,w,h,settings.colors),rgbaPng=encodePng(data,w,h);return mode==='custom'||indexed.length<rgbaPng.length?indexed:rgbaPng}finally{bitmap.close()}}
 
 // Median-cut an RGBA histogram, then emit an indexed PNG with a tRNS alpha table.
 // Fully transparent and fully opaque pixels are kept in separate buckets.

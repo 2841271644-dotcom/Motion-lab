@@ -1,5 +1,5 @@
 <!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>SVGA 压缩浏览器验证</title><body><pre id="log">检查中…</pre><script src="../vendor/pako.min.js"></script><script src="../vendor/jszip.min.js"></script><script type="module">
-import {openSvga,compressSvga,optimizeBrowserImage,encodePng,inflateSafe,fields,join,lengthField} from '../svga-compress/core.mjs';
+import {openSvga,compressSvga,optimizeBrowserImage,encodePng,inflateSafe,fields,join,lengthField,imageDimensions} from '../svga-compress/core.mjs';
 const log=document.getElementById('log');let count=0;const lines=[];function ok(v,m){if(!v)throw Error(m);count++;lines.push('通过：'+m);log.textContent=lines.join('\n')}
 async function pixels(bytes){const b=await createImageBitmap(new Blob([bytes]));const c=document.createElement('canvas');c.width=b.width;c.height=b.height;const x=c.getContext('2d');x.drawImage(b,0,0);b.close();return x.getImageData(0,0,c.width,c.height).data}
 try{
@@ -10,13 +10,25 @@ const c=document.createElement('canvas');c.width=64;c.height=48;const ctx=c.getC
 const input=new Uint8Array(await (await fetch('./fixtures/official.svga')).arrayBuffer());let s=await openSvga(input),r=await compressSvga(s);s=await openSvga(r.bytes);const fallback=await compressSvga(s);ok(fallback.keptOriginal,'无进一步收益时保留原文件');ok(fallback.bytes===s.bytes,'保留原文件的字节与对象');
 const legacy=await openSvga(new Uint8Array(await (await fetch('./fixtures/extended/legacy.svga')).arrayBuffer()));for(const mode of ['lossless','balanced','strong']){const out=await compressSvga(legacy,{mode,optimizeImage:optimizeBrowserImage});ok(out.bytes.length<=legacy.bytes.length,mode+' 1.x 输出不变大');ok((await openSvga(out.bytes)).info.frames===legacy.info.frames,mode+' 1.x 帧数保持')}
 
-for(const scale of [10,50,100]){const out=await optimizeBrowserImage(png,'custom',{colors:8,scale,jpegQuality:37,level:3});const bmp=await createImageBitmap(new Blob([out]));ok(bmp.width===Math.max(1,Math.round(w*scale/100))&&bmp.height===Math.max(1,Math.round(h*scale/100)),'自定义分辨率 '+scale+'% 实际生效');bmp.close();const colorCount=(out[33]*16777216+out[34]*65536+out[35]*256+out[36])/3;ok(colorCount<=8,'自定义 PNG 最多 8 色实际生效')}
+for(const scale of [10,50,100]){const out=await optimizeBrowserImage(png,'custom',{colors:8,scale,jpegQuality:37,level:3});const bmp=await createImageBitmap(new Blob([out]));ok(bmp.width===w&&bmp.height===h,'忽略旧缩放值 '+scale+'%，素材尺寸保持');bmp.close();const colorCount=(out[33]*16777216+out[34]*65536+out[35]*256+out[36])/3;ok(colorCount<=8,'自定义 PNG 最多 8 色实际生效')}
 const jpegLow=await optimizeBrowserImage(jpg,'custom',{jpegQuality:10}),jpegHigh=await optimizeBrowserImage(jpg,'custom',{jpegQuality:95});ok(jpegLow.length<jpegHigh.length,'自定义 JPEG 质量影响实际字节数');
 for(const src of [await openSvga(input),legacy])for(const mode of ['lossless','balanced','strong','custom']){const opts={mode,custom:{colors:16,scale:50,jpegQuality:40,level:5},optimizeImage:optimizeBrowserImage};const out=await compressSvga(src,opts);ok(out.bytes.length<=src.bytes.length,mode+' '+src.info.version+' 结果不变大');ok(JSON.stringify((await openSvga(out.bytes)).info)===JSON.stringify(src.info),mode+' '+src.info.version+' 动画参数保持')}
 
 const noisy=new Uint8Array(w*h*4);let seed=12345;for(let i=0;i<noisy.length;i++){seed=(Math.imul(seed,1664525)+1013904223)>>>0;noisy[i]=i%4===3?255:seed>>>24}const noisyPng=encodePng(noisy,w,h);
 const withImage=await openSvga(pako.deflate(join([(await openSvga(input)).raw,lengthField(3,join([lengthField(1,new TextEncoder().encode('test-image')),lengthField(2,noisyPng)])),lengthField(88,new TextEncoder().encode('preserve-me'))]),{level:1}));
-const imageResult=await compressSvga(withImage,{mode:'custom',custom:{colors:8,scale:50},optimizeImage:optimizeBrowserImage});ok(imageResult.changed===1,'SVGA 2.x 内嵌图片实际优化');const imageEntry=fields(inflateSafe(imageResult.bytes)).filter(x=>x.id===3).at(-1);const payload=fields(imageEntry.data).find(x=>x.id===2).data;const imageBitmap=await createImageBitmap(new Blob([payload]));ok(imageBitmap.width===32&&imageBitmap.height===24,'SVGA 2.x 输出内嵌图片分辨率减半');imageBitmap.close();ok(new TextDecoder().decode(fields(inflateSafe(imageResult.bytes)).find(x=>x.id===88).data)==='preserve-me','自定义压缩保留未知数据字段');
+const imageResult=await compressSvga(withImage,{mode:'custom',custom:{colors:8,scale:50},optimizeImage:optimizeBrowserImage});ok(imageResult.changed===1,'SVGA 2.x 内嵌图片实际优化');const imageEntry=fields(inflateSafe(imageResult.bytes)).filter(x=>x.id===3).at(-1);const payload=fields(imageEntry.data).find(x=>x.id===2).data;const imageBitmap=await createImageBitmap(new Blob([payload]));ok(imageBitmap.width===64&&imageBitmap.height===48,'SVGA 2.x 输出内嵌图片尺寸保持原样');imageBitmap.close();ok(new TextDecoder().decode(fields(inflateSafe(imageResult.bytes)).find(x=>x.id===88).data)==='preserve-me','自定义压缩保留未知数据字段');
+
+for(const src of [withImage,legacy])for(const mode of ['lossless','balanced','strong','custom']){
+ const output=await compressSvga(src,{mode,custom:{colors:16,scale:10},optimizeImage:optimizeBrowserImage}),decoded=await openSvga(output.bytes);
+ if(src.kind==='zlib'){
+  const before=fields(src.raw),after=fields(decoded.raw);ok(before.filter(f=>f.id!==3).every((f,i)=>String(f.raw)===String(after.filter(f=>f.id!==3)[i].raw)),mode+' 保留画布、变换、帧数据与未知字段');
+  const originalImage=fields(before.filter(f=>f.id===3).at(-1).data).find(f=>f.id===2).data;
+  const optimizedImage=fields(after.filter(f=>f.id===3).at(-1).data).find(f=>f.id===2).data;
+  ok(JSON.stringify(imageDimensions(originalImage))===JSON.stringify(imageDimensions(optimizedImage)),mode+' 2.x 内嵌素材尺寸逐一一致');
+ }else{
+  for(const e of src.entries){const a=await e.async('uint8array'),b=await decoded.zip.file(e.name).async('uint8array');if(/\.png$/i.test(e.name))ok(JSON.stringify(imageDimensions(a))===JSON.stringify(imageDimensions(b)),mode+' 1.x 素材 '+e.name+' 尺寸一致');else ok(String(a)===String(b),mode+' 1.x 保留 '+e.name)}
+ }
+}
 log.textContent+='\nPASS '+count+' 项浏览器验证';document.body.dataset.result='pass';
 }catch(e){log.textContent+='\nFAIL '+e.stack;document.body.dataset.result='fail'}
 </script></body></html>

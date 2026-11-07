@@ -1,10 +1,10 @@
-import {openSvga,compressSvga,optimizeBrowserImage,compressionSettings} from './core.mjs?v=custom-1';
+import {openSvga,compressSvga,optimizeBrowserImage,compressionSettings} from './core.mjs?v=keep-size-2';
 const $=id=>document.getElementById(id);
 let source=null,filename='',result=null,busy=false,players=[],paused=false,downloadUrl=null;
-const hints={custom:'按输入的具体数值压缩。PNG 保留透明背景，画布、动画时长和音轨保持原样。',lossless:'重新压缩文件容器，图片和动画数据保持不变。已充分压缩的素材可能不会变小。',balanced:'使用最多 256 色的 PNG 调色板压缩，保留透明背景。渐变与半透明边缘可能轻微变化。',strong:'使用最多 64 色的 PNG 调色板压缩。渐变、高光和半透明边缘可能变化，建议对比预览。'};
+const hints={custom:'按输入的具体数值压缩。PNG 保留透明背景，画布、素材像素尺寸、位置、动画时长和音轨保持原样。',lossless:'重新压缩文件容器，图片和动画数据保持不变。已充分压缩的素材可能不会变小。',balanced:'使用最多 256 色的 PNG 调色板压缩，保留透明背景。渐变与半透明边缘可能轻微变化。',strong:'使用最多 64 色的 PNG 调色板压缩。渐变、高光和半透明边缘可能变化，建议对比预览。'};
 const size=n=>n<1024?n+' B':n<1048576?(n/1024).toFixed(1)+' KB':(n/1048576).toFixed(2)+' MB';
 function message(text,error=false){$('status').textContent=text;$('status').classList.toggle('error',error)}
-function controls(){for(const id of ['choose','file','mode','colors','scale','jpegQuality','level','resetCustom'])$(id).disabled=busy;$('compress').disabled=busy||!source||!validSettings();$('clear').disabled=busy||!source;$('play').disabled=busy||!players.some(Boolean);$('download').disabled=busy||!result;}
+function controls(){for(const id of ['choose','file','mode','colors','jpegQuality','level','resetCustom'])$(id).disabled=busy;$('compress').disabled=busy||!source||!validSettings();$('clear').disabled=busy||!source;$('play').disabled=busy||!players.some(Boolean);$('download').disabled=busy||!result;}
 function destroy(index){if(players[index]){players[index].stopAnimation();players[index].clear();players[index]=null}}
 function invalidate(){result=null;$('result').hidden=true;destroy(1);$('after').replaceChildren(Object.assign(document.createElement('span'),{textContent:'压缩完成后显示对比'}));if(downloadUrl){URL.revokeObjectURL(downloadUrl);downloadUrl=null}}
 function base64(b){const a=[];for(let i=0;i<b.length;i+=32768)a.push(String.fromCharCode(...b.subarray(i,i+32768)));return btoa(a.join(''))}
@@ -14,24 +14,24 @@ async function importFile(file){if(busy||!file)return;busy=true;controls();inval
 function reset(){invalidate();destroy(0);source=null;filename='';paused=false;$('play').textContent='暂停预览';$('before').replaceChildren(Object.assign(document.createElement('span'),{textContent:'导入后显示原动画'}));$('filename').textContent='尚未选择文件';$('meta').textContent='等待导入 SVGA 文件';$('progress').hidden=true;$('progress').value=0;controls()}
 $('choose').onclick=()=>$('file').click();$('file').onchange=e=>importFile(e.target.files[0]);
 for(const event of ['dragenter','dragover'])$('dropzone').addEventListener(event,e=>{e.preventDefault();if(!busy)$('dropzone').classList.add('drag')});$('dropzone').ondragleave=()=>$('dropzone').classList.remove('drag');$('dropzone').ondrop=e=>{e.preventDefault();$('dropzone').classList.remove('drag');if(e.dataTransfer.files.length!==1){message('请一次拖入一个 SVGA 文件。',true);return}importFile(e.dataTransfer.files[0])};
-const customIds=['colors','scale','jpegQuality','level'];
-const defaults={colors:128,scale:100,jpegQuality:80,level:9};
+const customIds=['colors','jpegQuality','level'];
+const defaults={colors:128,jpegQuality:80,level:9};
 const customValues=()=>Object.fromEntries(customIds.map(id=>[id,Number($(id).value)]));
 function validSettings(){try{compressionSettings($('mode').value,customValues());return true}catch{return false}}
 function settingsChanged(){
  invalidate();const mode=$('mode').value;$('customSettings').hidden=mode!=='custom';$('modeHint').textContent=hints[mode];
- try{const s=compressionSettings(mode,customValues());$('settingsSummary').textContent=mode==='lossless'?`当前：原始图片资源 · 容器压缩等级 ${s.level}`:`当前：${s.colors} 色 · 素材分辨率 ${s.scale}% · JPEG 质量 ${s.jpegQuality} · 容器等级 ${s.level}`;
+ try{const s=compressionSettings(mode,customValues());$('settingsSummary').textContent=mode==='lossless'?`当前：原始图片资源 · 容器压缩等级 ${s.level}`:`当前：${s.colors} 色 · 原始尺寸 · JPEG 质量 ${s.jpegQuality} · 容器等级 ${s.level}`;
  message(source?'参数已更改，请重新压缩。':'导入文件后即可开始。');
- if(mode==='custom')try{localStorage.setItem('motionLab.svga.custom.v1',JSON.stringify(s))}catch{}
+ if(mode==='custom')try{localStorage.setItem('motionLab.svga.custom.v2',JSON.stringify(s))}catch{}
  }catch(e){$('settingsSummary').textContent='请检查自定义参数的范围。';message(e.message,true)}controls();
 }
 $('mode').onchange=settingsChanged;
 for(const id of customIds)$(id).addEventListener('input',settingsChanged);
 $('resetCustom').onclick=()=>{for(const id of customIds)$(id).value=defaults[id];settingsChanged()};
-try{const saved=JSON.parse(localStorage.getItem('motionLab.svga.custom.v1'));if(saved){compressionSettings('custom',saved);for(const id of customIds)$(id).value=saved[id]}}catch{}
+try{const saved=JSON.parse(localStorage.getItem('motionLab.svga.custom.v2')||localStorage.getItem('motionLab.svga.custom.v1'));if(saved){const clean=compressionSettings('custom',saved);for(const id of customIds)$(id).value=clean[id]}}catch{}
 $('clear').onclick=()=>{if(busy)return;reset();message('已清空，可以导入新文件。')};
 $('play').onclick=()=>{paused=!paused;for(const p of players.filter(Boolean))paused?p.pauseAnimation():p.startAnimation();$('play').textContent=paused?'播放预览':'暂停预览'};
-$('compress').onclick=async()=>{if(busy||!source)return;if(!validSettings()){message('请先修正自定义参数。',true);return}busy=true;invalidate();controls();$('progress').hidden=false;$('progress').value=0;message('正在压缩，请保持页面打开…');try{const r=await compressSvga(source,{mode:$('mode').value,custom:customValues(),optimizeImage:optimizeBrowserImage,onProgress:p=>{$('progress').value=Math.round(p*95)}});message('压缩结束，正在校验结果能否播放…');await preview(await openSvga(r.bytes),1);for(const p of players.filter(Boolean)){p.stopAnimation();if(!paused)p.startAnimation();else p.stepToFrame(0,false)}result=r;$('oldSize').textContent=size(source.bytes.length);$('newSize').textContent=size(r.bytes.length);const saving=(1-r.bytes.length/source.bytes.length)*100;$('saving').textContent=(saving>0&&saving<.1?'<0.1':saving.toFixed(1))+'%';$('resultTitle').textContent=r.keptOriginal?'未获得更小文件，保留原文件':saving<.1?'仅微量缩小，效果有限':'压缩完成';$('resultNote').textContent=r.keptOriginal?'本次设置没有获得更小体积，下载的是原始文件。可尝试强力模式，或降低自定义颜色数与素材分辨率。':`实际减少 ${(source.bytes.length-r.bytes.length).toLocaleString()} 字节；优化了 ${r.changed} / ${r.images} 个图片资源，动画参数校验通过。`;$('download').textContent=r.keptOriginal?'下载原文件':'下载压缩 SVGA';$('result').hidden=false;$('progress').value=100;message(r.keptOriginal?'处理完成，原文件体积更优，已保留原文件。':saving<.1?'本次只节省少量字节，压缩效果有限。':'压缩完成，预览确认后即可下载。')}catch(e){invalidate();message('压缩未完成：'+(e.message||'未知错误'),true)}finally{busy=false;controls()}};
+$('compress').onclick=async()=>{if(busy||!source)return;if(!validSettings()){message('请先修正自定义参数。',true);return}busy=true;invalidate();controls();$('progress').hidden=false;$('progress').value=0;message('正在压缩，请保持页面打开…');try{const r=await compressSvga(source,{mode:$('mode').value,custom:customValues(),optimizeImage:optimizeBrowserImage,onProgress:p=>{$('progress').value=Math.round(p*95)}});message('压缩结束，正在校验结果能否播放…');await preview(await openSvga(r.bytes),1);for(const p of players.filter(Boolean)){p.stopAnimation();if(!paused)p.startAnimation();else p.stepToFrame(0,false)}result=r;$('oldSize').textContent=size(source.bytes.length);$('newSize').textContent=size(r.bytes.length);const saving=(1-r.bytes.length/source.bytes.length)*100;$('saving').textContent=(saving>0&&saving<.1?'<0.1':saving.toFixed(1))+'%';$('resultTitle').textContent=r.keptOriginal?'未获得更小文件，保留原文件':saving<.1?'仅微量缩小，效果有限':'压缩完成';$('resultNote').textContent=r.keptOriginal?'本次设置没有获得更小体积，下载的是原始文件。可尝试强力模式，或降低自定义颜色数、JPEG 质量。':`实际减少 ${(source.bytes.length-r.bytes.length).toLocaleString()} 字节；优化了 ${r.changed} / ${r.images} 个图片资源，画布、全部素材尺寸及动画参数校验通过。`;$('download').textContent=r.keptOriginal?'下载原文件':'下载压缩 SVGA';$('result').hidden=false;$('progress').value=100;message(r.keptOriginal?'处理完成，原文件体积更优，已保留原文件。':saving<.1?'本次只节省少量字节，压缩效果有限。':'压缩完成，预览确认后即可下载。')}catch(e){invalidate();message('压缩未完成：'+(e.message||'未知错误'),true)}finally{busy=false;controls()}};
 $('download').onclick=()=>{if(!result)return;if(downloadUrl)URL.revokeObjectURL(downloadUrl);downloadUrl=URL.createObjectURL(new Blob([result.bytes],{type:'application/octet-stream'}));const a=document.createElement('a');a.href=downloadUrl;a.download=filename.replace(/\.svga$/i,'')+(result.keptOriginal?'-原文件':'-压缩')+'.svga';document.body.append(a);a.click();a.remove()};
 window.addEventListener('beforeunload',()=>{if(downloadUrl)URL.revokeObjectURL(downloadUrl)});
 window.addEventListener('error',e=>{if(e.target instanceof HTMLScriptElement)message('组件加载失败，请刷新页面后重试。',true)},true);

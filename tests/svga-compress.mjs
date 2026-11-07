@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import {createRequire} from 'node:module';
 import {readFileSync,writeFileSync} from 'node:fs';
-import {openSvga,compressSvga,fields,join,lengthField,vint,inflateSafe,encodePng,compressionSettings} from '../svga-compress/core.mjs';
+import {openSvga,compressSvga,fields,join,lengthField,vint,inflateSafe,encodePng,encodePalettePng,compressionSettings,imageDimensions} from '../svga-compress/core.mjs';
 const require=createRequire(import.meta.url);globalThis.pako=require('../vendor/pako.min.js');globalThis.JSZip=require('../vendor/jszip.min.js');
 let checks=0;const ok=(x,m)=>{assert.ok(x,m);checks++};
 for(const path of ['tests/fixtures/official.svga','tests/fixtures/extended/legacy.svga']){
@@ -21,6 +21,28 @@ const rgba=Uint8Array.from({length:16*16*4},(_,i)=>i%256);const png=encodePng(rg
 ok(png[0]===137,'png signature');
 console.log('PASS',checks,'checks');
 
-for(const custom of [{colors:7},{colors:257},{scale:0},{scale:101},{jpegQuality:0},{level:10},{colors:12.5},{scale:NaN}]){await assert.rejects(()=>compressSvga(original,{mode:'custom',custom}));checks++}
-for(const level of [1,5,9]){const r=await compressSvga(source,{mode:'custom',custom:{colors:37,scale:55,jpegQuality:47,level},optimizeImage:async (b,m,s)=>{assert.equal(m,'custom');assert.deepEqual(s,{colors:37,scale:55,jpegQuality:47,level});checks++;return b}});assert.deepEqual(inflateSafe(r.bytes),source.raw);checks++}
+for(const custom of [{colors:7},{colors:257},{jpegQuality:0},{level:10},{colors:12.5}]){await assert.rejects(()=>compressSvga(original,{mode:'custom',custom}));checks++}
+for(const level of [1,5,9]){const r=await compressSvga(source,{mode:'custom',custom:{colors:37,jpegQuality:47,level},optimizeImage:async (b,m,s)=>{assert.equal(m,'custom');assert.deepEqual(s,{colors:37,jpegQuality:47,level});checks++;return b}});assert.deepEqual(inflateSafe(r.bytes),source.raw);checks++}
 console.log('PASS',checks,'including custom validation, settings forwarding and container levels');
+
+// A scale value saved by the previous release must never affect output.
+assert.deepEqual(compressionSettings('custom',{scale:10}),{colors:128,jpegQuality:80,level:9});checks++;
+const noisy=new Uint8Array(64*48*4);let seed=12345;for(let i=0;i<noisy.length;i++){seed=(Math.imul(seed,1664525)+1013904223)>>>0;noisy[i]=i%4===3?255:seed>>>24}
+const inputPng=encodePng(noisy,64,48),sameSize=encodePalettePng(noisy,64,48,16),resized=encodePng(new Uint8Array(4*4*4),4,4);
+const embedded=await openSvga(pako.deflate(join([raw,lengthField(3,join([lengthField(1,new TextEncoder().encode('test-image')),lengthField(2,inputPng)]))]),{level:1}));
+const zip=new JSZip();zip.file('movie.spec',JSON.stringify({movie:{viewBox:{width:64,height:48},fps:5,frames:4},sprites:[],images:{test:'test.png'}}));zip.file('test.png',inputPng);zip.file('audio.bin',Uint8Array.of(1,2,3,4));
+const zipped=await openSvga(await zip.generateAsync({type:'uint8array',compression:'STORE'}));
+for(const s of [embedded,zipped]){
+ await assert.rejects(()=>compressSvga(s,{mode:'custom',custom:{scale:10},optimizeImage:async()=>resized}),/素材像素尺寸发生变化/);checks++;
+ const out=await compressSvga(s,{mode:'custom',custom:{scale:10},optimizeImage:async()=>sameSize});const parsed=await openSvga(out.bytes);assert.equal(out.changed,1);checks++;
+ assert.deepEqual(parsed.info,s.info);checks++;
+ if(s.kind==='zlib'){
+  const img=fields(fields(parsed.raw).filter(f=>f.id===3).at(-1).data).find(f=>f.id===2).data;
+  assert.deepEqual(imageDimensions(img),{width:64,height:48});checks++;
+  assert.deepEqual(fields(parsed.raw).filter(f=>f.id!==3).map(f=>f.raw),fields(s.raw).filter(f=>f.id!==3).map(f=>f.raw));checks++;
+ }else{
+  assert.deepEqual(imageDimensions(await parsed.zip.file('test.png').async('uint8array')),{width:64,height:48});checks++;
+  for(const name of ['movie.spec','audio.bin']){assert.deepEqual(await parsed.zip.file(name).async('uint8array'),await s.zip.file(name).async('uint8array'));checks++}
+ }
+}
+console.log('PASS',checks,'checks including fixed image dimensions, obsolete scale and resized-output rejection');
